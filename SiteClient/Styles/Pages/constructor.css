@@ -1,0 +1,230 @@
+﻿.gold { background-color: gold; }
+
+.chocolate { background-color: chocolate; }
+
+.leftright {
+    background-color: beige;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 5px;
+}
+
+.topbottom {
+    background-color: beige;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-width: 5px;
+}
+
+.topbottom:last-child {
+    background-color: beige;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-width: 0;
+}
+
+.topbottom:first-child {
+    background-color: beige;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-width: 0;
+}
+
+h4 {
+    margin-bottom: 2.5ex;
+    margin-top: 1.5ex;
+}
+
+.rightalign { float: right; }
+
+.inline {
+    display: inline-block;
+    margin: 10px;
+}
+
+.spantext {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.gradient { background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1)); }
+
+.gradient1 {
+    background: linear-gradient(to left, rgba(255, 0, 0, 0), rgb(238, 255, 0));
+    border: 2px solid #73AD21;
+    border-radius: 25px;
+    height: 20px;
+    width: 70px;
+}
+
+.gradient1:hover { background-color: yellow; }
+
+.size_radio { margin: 4px 0 17px -8px; }
+
+a {
+    color: #0078ae;
+    text-decoration: none;
+}
+
+.tab_box_content {
+    -moz-border-radius: 0 5px 5px 5px;
+    -webkit-border-radius: 0 5px 5px 5px;
+    background: url('/static/Dominos/img/form_bg.png') left bottom repeat-x;
+    background-color: rgba(0, 0, 0, 0);
+    background-color: #fff;
+    border: 3px solid #ececec;
+    border-radius: 0 5px 5px 5px;
+    padding: 18px 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.tab_box_page.active { display: block; }
+
+.tab_box_page { display: none; }
+
+.c_ingridients_list {
+    display: inline-block;
+    vertical-align: top;
+    width: 524px;
+}
+
+.ci_item {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    display: inline-block;
+    height: 67px;
+    list-style: none;
+    position: relative;
+    width: 258px;
+}
+
+.ci_item_wrap {
+    display: inline-block;
+    padding: 13px 0 0 0;
+    vertical-align: top;
+}
+
+.ci_item_btn_less, .ci_item_btn_more { margin: 2px 5px 0 0; }
+
+.ci_item_btn_more, .ip_item_btn_more {
+    background-position: -41px -336px;
+    left: 14px;
+}
+
+.wrapper {
+    background-color: beige;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    border: 0;
+    font: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    font-size: inherit;
+    font-weight: inherit;
+    font-weight: bold;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+#pz-submit #edit-submit {
+    background-color: transparent;
+    background-image: url('../../Content/images/tick.png');
+    border: none;
+    color: #ffffff;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    height: 62px;
+    margin-top: 19px;
+    outline: none;
+    padding: 0;
+    text-align: center;
+    text-shadow: none;
+    width: 400px;
+}
+
+.pz-items {
+    background-color: darkred;
+    border: 2px solid #a07471;
+    border-radius: 15px;
+    display: block;
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0 20px 0 20px;
+}
+
+.pz-item {
+    background-color: #3c0f0c;
+    border-color: #a07471;
+    border-style: solid;
+    border-width: 2px;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.pz-item .handle {
+    background-image: url('../../Content/images/tick.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    float: left;
+    height: 30px;
+    opacity: 0.6;
+    width: 30px;
+}
+
+li:hover .handle { opacity: 1; }
+
+.pz-item .title, .pz-item .separator, .pz-item .price_small, .pz-item .price_medium, .pz-item .price_big {
+    float: left;
+    font-size: 16px;
+    font-weight: normal;
+    height: 30px;
+    line-height: 30px;
+}
+
+.leftpanel {
+    -moz-border-radius: 10px;
+    background-color: peru;
+    border-color: #a07471;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 3px;
+    color: #ffffff;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    margin: 30px;
+    padding: 20px;
+}
+
+.rightpanel {
+    -moz-border-radius: 10px;
+    background-color: peru;
+    border-color: #a07471;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 3px;
+    color: #ffffff;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    margin: 30px;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-left: 20%;
+    margin-right: 20%;
+}
