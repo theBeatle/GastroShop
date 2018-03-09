@@ -8,6 +8,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="StyleSheets/StyleSheetForMainWindow.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="Icons/gs-logo.png" type="image/x-icon">
 </head>
 <body>
     <div id="HeaderDiv">
@@ -42,26 +43,16 @@
                     </p>
                 </div>
             </div>
-            <div class="div1Search">
-                <div class="Div2InDiv1">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" style="width: 100%; height:100%; margin-right:10%" type="text" placeholder="Search" aria-label="Search">
-                    </form>
-                </div>
-                <div class="Div1InDiv1">
-                    <button type="submit" class="btn btn-outline-warning" style="width: 60%; height:100%">Search</button>
-                </div>
-            </div>
         </div>
         <div class="LowerDivInHeaderDiv">
             <nav class="navbar navbar-expand-md navbar-dark bg-dark">
                 <p class="Logo">GastroShop</p>
-                <div class="collapse navbar-collapse" style="margin-left:50px" id="navbarsExampleDefault">
-                    <ul class="navbar-nav mr-auto" style="margin-left:50px">
-                        <li class="nav-item active" style="margin-left:50px">
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active" style="margin-left:30px">
                             <a class="nav-link menuInHeader" href="#">Home</a>
                         </li>
-                        <li class="nav-item dropdown" style="margin-left:50px">
+                        <li class="nav-item dropdown" style="margin-left:20px">
                             <a class="nav-link dropdown-toggle menuInHeader" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dishes</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown01">
                                 <a class="dropdown-item" href="#">Drinks</a>
@@ -69,16 +60,31 @@
                                 <a class="dropdown-item" href="#">Pizza</a>
                             </div>
                         </li>
-                        <li class="nav-item active" style="margin-left:50px">
+                        <li class="nav-item active" style="margin-left:20px">
                             <a class="nav-link menuInHeader" href="#">Contacs Us<span class="sr-only"></span></a>
                         </li>
+                        <li class="nav-item active" style="margin-left:60px">
+                            <form class="form-inline my-2 my-lg-1 col-lg-12">
+                                <input class="form-control mr-sm-2" style="width: 300px; height:100%" type="text" placeholder="Search" aria-label="Search">
+                            </form>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="#" class="btn btn-outline-secondary" style="height:90%; margin-top:2px">
+                                <!--<i class="fa fa-search" style="height:10px; width:10px"></i>-->
+                                Search
+                            </a>
+                        </li>
+
                     </ul>
 
-                    <form class="form-inline my-0 my-lg-0 mr-sm-0 col-lg-5">
+                    <form class="form-inline my-0 my-lg-0 mr-sm-0 col-lg-6">
+                        <a href="#" class="btn btn-outline-success mr-sm-4" style="margin-left:35px">
+                            <img src="Icons/basket.png" style="width:20px; height:20px"/>
+                        </a>
                         <input class="form-control mr-sm-2" type="text" placeholder="Login" aria-label="Login">
                         <input class="form-control mr-sm-2" type="text" placeholder="Password" aria-label="Password">
                         <button class="btn btn-outline-warning mr-sm-3 col-lg-2 btn-signIn" type="submit">Sing In</button>
-                        <button class="btn btn-outline-danger col-lg-2 mr-sm-0 btn-signUp" type="submit" style="margin-right:0">Sing Up</button>
+                        <button class="btn btn-outline-danger col-lg-2 btn-signUp" type="submit" style="margin-right:0">Sing Up</button>
                     </form>
                 </div>
             </nav>
