@@ -1,35 +1,64 @@
 ﻿window.addEventListener('load', function () {
 
-    document.getElementById('btnShowAllCommetns').addEventListener('click', AddDivIncomments);
-
-
+    document.getElementById('btnShowAllCommetns').addEventListener('click', ShowAllComments);
 });
 
 var x = 0;
 
+function AddComment(state)
+{
+    document.getElementById('styleAdditionWindow').style.display = state;
+    document.getElementById('styleAddWinwrap').style.display = state;
+}
+
+function ShowAllComments()
+{
+    window.location = 'AllBlogs.html';
+}
+
 function AddDivIncomments()
 {
-        var createDiv = document.createElement('div');
+    var createDiv = document.createElement('div');
 
-        createDiv.style.width = '90%';
+    createDiv.style.width = '90%';
 
-        createDiv.style.height = '24vh';
+    createDiv.style.height = '24vh';
 
-        createDiv.style.backgroundColor = 'green';
+    createDiv.style.backgroundColor = 'green';
 
-        createDiv.className = 'border';
+    createDiv.className = 'border';
 
-        createDiv.className = 'border-danger';
+    createDiv.className = 'border-danger';
 
-        createDiv.className = 'block';
+    createDiv.className = 'block';
 
-        createDiv.style.margin = '0 auto';
+    createDiv.style.margin = '0 auto';
 
-        createDiv.style.marginTop = '3%'; createDiv.style.marginBottom = '3%';
+    createDiv.style.marginTop = '3%'; createDiv.style.marginBottom = '3%';
 
-        createDiv.textContent = 'text' + x;
 
-        divForShowingComments.appendChild(createDiv);
+
+    var pAuthor = document.createElement('p');
+
+    pAuthor.textContent = 'Author: ' + x;
+
+    pAuthor.style.marginLeft = '1%';
+
+    createDiv.appendChild(pAuthor);
+
+
+
+    var pComment = document.createElement('p');
+
+    pComment.textContent = 'Comment: ' + x;
+
+    pComment.style.marginLeft = '1%';
+
+    createDiv.appendChild(pComment);
+
+
+
+    divForShowingComments.appendChild(createDiv);
    
-        x++;
+    x++;
 }
