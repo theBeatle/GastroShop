@@ -19,6 +19,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="Styles/StylesForMainWindow.css" rel="stylesheet" />
+
+    <style>
+
+        .block:active {
+            position: absolute;
+            top: 30%;
+            -webkit-transform: scale(2,3);
+            -webkit-transition-timing-function: ease-out;
+            -webkit-transition-duration: 200ms;
+        }
+
+    </style>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -53,6 +66,21 @@
         </div>
     </nav>
 
+
+     
+    <aside id="divForShowingComments" style="overflow-y:scroll;width:23%;float:right;height:90vh;margin-top:5%;margin-right:0.5%;background-image:url('Images/backgroundforaside3.jpg');background-size:cover" class="border border-info">
+
+        <p style="text-align:center; font-size:25px;font-family:Arial" class="text-dark">Comments</p>
+
+        <button id="btnShowAllCommetns" style="width:45%;height:5vh;margin-left:5%;color:white" class="btn btn-success">Show all</button>
+
+        <button id="btnAddComment" style="width:42%;height:5vh;float:right;margin-right:5%;color:white" class="btn btn-success">Add commetns</button>
+
+    </aside>
+
+
+
+    <script src="ScriptsForBlogs.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../../../assets/js/vendor/popper.min.js"></script>
