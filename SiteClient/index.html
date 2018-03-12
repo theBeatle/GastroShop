@@ -3,96 +3,155 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-
-   
-    <link href="Styles/bootstrap.css" rel="stylesheet" />    
+    <link href="Styles/bootstrap.css" rel="stylesheet" />
     <link href="StyleSheets/StyleSheetForMainWindow.css" rel="stylesheet" />
     <link rel="shortcut icon" href="Icons/gs-logo.png" type="image/x-icon">
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div id="HeaderDiv">
-        <div class="UpperDivInHeaderDiv">
-            <div class="div1">
-                <div class="Div1InDiv1">
-                    <img class="HeaderIcon" src="Icons/location.png" />
-                </div>
-                <div class="Div2InDiv1">
-                    <p class="PInDiv1">
-                        1234 Soborna 16a, Rivne, UA
-                    </p>
-                </div>
-            </div>
-            <div class="div1">
-                <div class="Div1InDiv1">
-                    <img class="HeaderIcon" src="Icons/phone-receiver.png" />
-                </div>
-                <div class="Div2InDiv1">
-                    <p class="PInDiv1">
-                        +38 (093) - 32 - 21 - 567
-                    </p>
-                </div>
-            </div>
-            <div class="div1">
-                <div class="Div1InDiv1">
-                    <img class="HeaderIcon" src="Icons/clock.png" />
-                </div>
-                <div class="Div2InDiv1">
-                    <p class="PInDiv1">
-                        Mo-Fr 11:00-00:00
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="LowerDivInHeaderDiv">
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-                <p class="Logo col-xl-1 col-lg-1 col-md-1 col-sm-1 mr-xl-2 mr-lg-3 mr-md-2 mr-sm-1">GastroShop</p>
-                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active" style="margin-left:10px">
-                            <a class="nav-link menuInHeader my-xl-2 my-md-2 my-sm-2 my-lg-2 my-2" href="#">Home</a>
-                        </li>
-                        <li class="nav-item dropdown" style="margin-left:20px">
-                            <a class="nav-link dropdown-toggle menuInHeader my-xl-2 my-md-2 my-sm-2 my-lg-2 my-2" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dishes</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                <a class="dropdown-item" href="#">Drinks</a>
-                                <a class="dropdown-item" href="#">Salads</a>
-                                <a class="dropdown-item" href="#">Pizza</a>
+
+    <div class="LowerDivInHeaderDiv">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <p class="Logo ">GastroShop</p>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active" style="margin-left:20px">
+                        <a class="nav-link menuInHeader my-2" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown" style="margin-left:20px">
+                        <a class="nav-link dropdown-toggle menuInHeader my-2 " href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dishes</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="#">Drinks</a>
+                            <a class="dropdown-item" href="#">Salads</a>
+                            <a class="dropdown-item" href="#">Pizza</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active" style="margin-left:20px">
+                        <a class="nav-link menuInHeader my-2" href="#">Contacs Us<span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item active" style="margin-left:20px">
+                        <form>
+                            <!--<input class="form-control  mr-sm-2" type="text" placeholder="Search" aria-label="Search">-->
+                            <div class="input-group my-3">
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="border-radius: 5px 0 0 5px; width:250px">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-outline-secondary" type="button" style="border-radius: 0 5px 5px 0">Search</button>
+                                </div>
                             </div>
-                        </li>
-                        <li class="nav-item active" style="margin-left:20px">
-                            <a class="nav-link menuInHeader my-2 my-xl-2 my-md-2 my-sm-2 my-lg-2" href="#">Contacs Us<span class="sr-only"></span></a>
-                        </li>
-                        <li class="nav-item active" style="margin-left:20px">
-                            <form class="form-inline">
-                                <input class="form-control col-xl-12 col-lg-11 col-md-10 col-sm-9 mr-xl-12 mr-lg-11 mr-md-10 mr-sm-9 my-xl-2 my-md-2 my-sm-2 my-lg-2 my-2" type="text" placeholder="Search" aria-label="Search">
-                            </form>
-                        </li>
-                        <li class="nav-item active">
-                            <a href="#" class="btn btn-outline-secondary my-xl-2 my-md-2 my-sm-2 my-lg-2 mr-xl-3 mr-lg-3 mr-md-2 mr-sm-1" style=" margin-left:10px">
-                                <!--<i class="fa fa-search" style="height:10px; width:10px"></i>-->
-                                Search
-                            </a>
-                        </li>
-
-                    </ul>
-
-                    <form class="form-inline ">
-                        <a href="#" class="btn btn-outline-success mr-xl-5 mr-lg-4 mr-md-3 mr-sm-2">
-                            <img src="Icons/basket.png" style="width:20px; height:20px; margin:0 auto" />
-                        </a>
-                        <input class="form-control my-xl-2 my-md-2 my-sm-2 my-lg-2 col-xl-3 col-lg-2 col-md-1 col-sm-0 mr-xl-4 mr-lg-3 mr-md-2 mr-sm-1" type="text" placeholder="Login" aria-label="Login">
-                        <input class="form-control col-xl-3 col-lg-2 col-md-1 col-sm-0 mr-xl-4 mr-lg-3 mr-md-2 mr-sm-1" type="text" placeholder="Password" aria-label="Password">
-                        <button class="btn btn-outline-warning mr-xl-4 mr-lg-3 mr-md-2 mr-sm-1 btn-signIn" type="submit">Sing In</button>
-                        <button class="btn btn-outline-danger mr-xl-4 mr-lg-3 mr-md-2 mr-sm-1 btn-signUp" type="submit" style="margin-right:0">Sing Up</button>
-                    </form>
+                        </form>
+                    </li>
+                </ul>
+                <form>
+                    <a href="#" class="btn btn-outline-success mr-xl-5 mr-lg-4 mr-md-3 mr-sm-2">
+                        <img src="Icons/basket.png" style="width:30px; height:30px; margin:0 auto" />
+                    </a>
+                    <!--<input class="form-control mr-sm-2" type="text" placeholder="Login" aria-label="Login">
+                    <input class="form-control  mr-sm-2" type="text" placeholder="Password" aria-label="Password">-->
+                    <button class="btn btn-outline-warning btn-signIn  mr-xl-5 mr-lg-4 mr-md-3 mr-sm-2 mr-1" data-toggle="modal" data-target="#SignInWindow" style="width:100px; height:40px" type="submit">
+                        <span><b>Sing In</b></span>
+                    </button>
+                    <button class="btn btn-outline-danger col-xl-6 col-lg-5 col-md-4 col-sm-3 btn-signUp" data-toggle="modal" data-target="#SignUpWindow" style="width:100px; height:40px" type="submit">
+                        <span><b>Sing Up</b></span>
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <div class="modal fade" id="SignUpWindow">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- header -->
+                <div class="modal-header">
+                    <h3 class="modal-title">Registration Form</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-            </nav>
+                <!-- body -->
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-address-card" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-address-card-o" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input type="text" class="form-control" placeholder="SurName" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-envelope" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input type="text" class="form-control" placeholder="E-mail" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-address-book" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Address" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-phone" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Phone" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-key" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Login" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-lock" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <!-- footer -->
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-block">Log In</button>
+                </div>
+
+            </div>
         </div>
     </div>
+    <div class="modal fade" id="SignInWindow">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- header -->
+                <div class="modal-header">
+                    <h3 class="modal-title">Login Form</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- body -->
+                <div class="modal-body"> 
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-key" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Login" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-lock" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <!-- footer -->
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-block">Log In</button>
+                </div>
 
-
+            </div>
+        </div>
+    </div>
 
     <script src="Scripts/jquery-3.3.1.js"></script>
     <script src="Scripts/popper.js"></script>
