@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFserver", "WCFserver\WCFserver.csproj", "{C520B26D-190B-4007-838A-B3F457F5EF42}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SiteClient", "SiteClient\", "{78232866-BB26-4FB7-95C4-AEAF4F61CC7A}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.1"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_7642"
 		Debug.AspNetCompiler.PhysicalPath = "SiteClient\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_7642\"
