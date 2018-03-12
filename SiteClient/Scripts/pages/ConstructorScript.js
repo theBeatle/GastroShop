@@ -8,5 +8,6 @@ $(function () {
             $(this).remove();
         })
         $('#useditems').append(additem);
+        $('#useditems').find('div.handle').removeClass('handle').addClass('delete');
     });
 });
