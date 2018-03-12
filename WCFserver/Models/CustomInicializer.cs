@@ -13,6 +13,7 @@ namespace WCFserver
             context.Categories.Add(new Category { Name = "Salat", Description = "Sochne" });
             context.Categories.Add(new Category { Name = "Drink", Description = "Pytne" });
 
+
             context.SaveChanges();
         }
     }

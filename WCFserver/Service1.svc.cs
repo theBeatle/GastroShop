@@ -12,14 +12,27 @@ namespace WCFserver
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public Account ValidateUser(string Login, string Password)
+        public Category[] CategoriesToReturn()
+        {
+            Category[] categoryToReturn = null;
+            using (var ctx = new GastroModel())
+            {
+
+                categoryToReturn = ctx.Categories.ToArray();
+            }
+            return categoryToReturn;
+        }
+
+        public Account ValidateUser(string login, string password)
         {
             Account userToReturn = null;
             using (var ctx = new GastroModel())
             {
-                userToReturn = ctx.Accounts.FirstOrDefault(i => i.Login == Login && i.Password == Password);
+                userToReturn = ctx.Accounts.FirstOrDefault(i => i.Login == login && i.Password == password);
             }
             return userToReturn;
         }
+
+        
     }
 }
