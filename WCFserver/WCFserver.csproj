@@ -76,10 +76,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="gastroModel.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Blogs.cs" />
+    <Compile Include="Models\BlogsCategory.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CustomInicializer.cs" />
+    <Compile Include="Models\gastroModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Ingredients.cs" />
+    <Compile Include="Models\ProductsType.cs" />
+    <Compile Include="Models\ReadyMeals.cs" />
+    <Compile Include="Models\UnitsOfMeasurement.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
