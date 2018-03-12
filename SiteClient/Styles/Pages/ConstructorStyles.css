@@ -246,6 +246,7 @@ li:hover .delete {
     border-color: #a07471;
     -moz-border-radius: 10px;
     border-radius: 10px;
+    float:left;
 }
 
 .rightpanel {
@@ -259,6 +260,12 @@ li:hover .delete {
     border-color: #a07471;
     -moz-border-radius: 10px;
     border-radius: 10px;
+    float:right;
+}
+.pz-total-price {
+    font-size: 20px;
+    text-align: center;
+    margin: 25px 0 20px 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
