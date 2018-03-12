@@ -16,7 +16,14 @@ namespace WCFserver
         [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest)]
-        Account ValidateUser(string Login, string Password);
+        Account ValidateUser(string login, string password);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        Category[] CategoriesToReturn();
+
     }
 
 
