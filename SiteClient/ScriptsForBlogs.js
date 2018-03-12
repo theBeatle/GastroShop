@@ -1,15 +1,24 @@
 ﻿window.addEventListener('load', function () {
 
-    document.getElementById('btnShowAllCommetns').addEventListener('click', ShowAllComments);
+    document.getElementById('btnShowAllCommetns').addEventListener('click', AddDivIncomments);
 });
 
 var x = 0;
 
-function AddComment(state)
+function AddCommentBlock()
 {
-    document.getElementById('styleAdditionWindow').style.display = state;
-    document.getElementById('styleAddWinwrap').style.display = state;
+    document.getElementById('styleAdditionWindow').style.display = 'block';
+    document.getElementById('styleAddWinwrap').style.display = 'block';
+    document.getElementById('inputComments').value = '';
 }
+
+
+function AddCommentNone()
+{
+    document.getElementById('styleAdditionWindow').style.display = 'none';
+    document.getElementById('styleAddWinwrap').style.display = 'none';
+}
+
 
 function ShowAllComments()
 {
@@ -58,7 +67,37 @@ function AddDivIncomments()
 
 
 
+    var btnAddCommentD = document.createElement('button');
+
+    btnAddCommentD.style.width = '35%';
+
+    btnAddCommentD.style.marginTop = '20%';
+
+    btnAddCommentD.id = 'btnAddCommentIntoBlog'
+
+    btnAddCommentD.style.height = '25%';
+
+    btnAddCommentD.style.cssFloat = 'right';
+
+    btnAddCommentD.style.marginRight = '5%';
+
+    btnAddCommentD.style.borderRadius = '5px';
+
+    btnAddCommentD.style.fontSize = '18px';
+
+    btnAddCommentD.className = 'btn';
+
+    btnAddCommentD.className = 'btn-outline-warning';
+
+    btnAddCommentD.textContent = 'Add comment';
+
+    btnAddCommentD.style.cursor = 'pointer';
+
+    createDiv.appendChild(btnAddCommentD);
+
+    btnAddCommentD.addEventListener('click', AddCommentBlock);
+
     divForShowingComments.appendChild(createDiv);
-   
+
     x++;
 }

@@ -22,13 +22,13 @@
 
     <style>
 
-        .block:active {
+        /*.block:active {
             position: absolute;
             top: 30%;
             -webkit-transform: scale(2,3);
             -webkit-transition-timing-function: ease-out;
             -webkit-transition-duration: 200ms;
-        }
+        }*/
 
         #styleAddWinwrap {
             display: none;
@@ -90,13 +90,13 @@
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Login" aria-label="Login">
                 <input class="form-control mr-sm-2" type="text" placeholder="Password" aria-label="Password">
-                <button class="btn btn-outline-success" type="submit">Sing In</button>
+                <button class="btn btn-outline-success">Sing In</button>
             </form>
         </div>
     </nav>
 
 
-    <div onclick="AddComment('none')" id="styleAddWinwrap"></div>
+    <div onclick="AddCommentNone()" id="styleAddWinwrap"></div>
 
     <div id="styleAdditionWindow">
 
@@ -104,9 +104,11 @@
 
         <br>
 
-        <input type="text" class="border border-success" style="height:40px" placeholder="Your comment">
+        <input id="inputComments" type="text" class="border border-success" style="height:40px;width:100%;margin:0 auto" autofocus placeholder="Your comment">
 
-        <button style="width:100px;height:50px" class="btn btn-success">Add</button>
+        <br><br>
+
+        <button style="width:100px;height:42px;margin-bottom:1%;float:right" class="btn btn-outline-success">Add</button>
 
        
     </div>
@@ -114,11 +116,11 @@
 
     <aside id="divForShowingComments" style="overflow-y:scroll;width:23%;float:right;height:90vh;margin-top:5%;margin-right:0.5%;background-image:url('Images/backgroundforaside3.jpg');background-size:cover" class="border border-info">
 
-        <p style="text-align:center; font-size:25px;font-family:Arial" class="text-dark">Comments</p>
+        <p style="font-size:25px;font-family:Arial" class="text-center text-dark">B l o g s</p>
 
         <button id="btnShowAllCommetns" style="width:45%;height:5vh;margin-left:5%;color:white" class="btn btn-success">Show all</button>
 
-        <button id="btnAddComment" style="width:42%;height:5vh;float:right;margin-right:5%;color:white" onclick="AddComment('block')" class="btn btn-success">Add commetns</button>
+        <!--<button id="btnAddComment" style="width:42%;height:5vh;float:right;margin-right:5%;color:white" onclick="AddComment('block')" class="btn btn-success">Add commetns</button>-->
 
     </aside>
 
