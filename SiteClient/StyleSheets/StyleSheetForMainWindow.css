@@ -88,7 +88,7 @@
     border-color: #ff6a00;
 }
 .menuInHeader:hover {
-    color: red;
+    color: black;
     background-color: #ff6a00;
     border-radius: 5px 5px 5px 5px;
 }
