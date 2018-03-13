@@ -33,17 +33,23 @@ function AddDivIncomments()
 
     createDiv.style.height = '24vh';
 
-    createDiv.style.backgroundColor = 'green';
+    createDiv.style.border = '2px solid';
 
-    createDiv.className = 'border';
+    createDiv.style.borderRadius = '5px';
 
-    createDiv.className = 'border-danger';
+    //createDiv.className = 'border-success';
 
-    createDiv.className = 'block';
+    createDiv.style.border = 'none';
 
     createDiv.style.margin = '0 auto';
 
     createDiv.style.marginTop = '3%'; createDiv.style.marginBottom = '3%';
+
+    createDiv.style.opacity = "0.8";
+
+    createDiv.style.backgroundColor = 'white';
+
+    //createDiv.style.backgroundColor = "black";
 
 
 
@@ -73,9 +79,7 @@ function AddDivIncomments()
 
     btnAddCommentD.style.marginTop = '20%';
 
-    btnAddCommentD.id = 'btnAddCommentIntoBlog'
-
-    btnAddCommentD.style.height = '25%';
+    btnAddCommentD.style.height = '20%';
 
     btnAddCommentD.style.cssFloat = 'right';
 
@@ -85,9 +89,11 @@ function AddDivIncomments()
 
     btnAddCommentD.style.fontSize = '18px';
 
-    btnAddCommentD.className = 'btn';
+    btnAddCommentD.className = 'border';
 
-    btnAddCommentD.className = 'btn-outline-warning';
+    btnAddCommentD.className = 'border-success';
+
+    btnAddCommentD.className = 'styleForAddBtn';
 
     btnAddCommentD.textContent = 'Add comment';
 
