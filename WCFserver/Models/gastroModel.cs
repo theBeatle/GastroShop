@@ -24,6 +24,14 @@ namespace WCFserver
 
         //public virtual DbSet<Blogs> Blogs { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
-        
+
+        public virtual DbSet<ProductsType> ProductTypes { get; set; }
+        public virtual DbSet<UnitsOfMeasurement> UnitsOfMeasurements { get; set; }
+        public virtual DbSet<BlogsCategory> BlogsCategorys { get; set; }
+        public virtual DbSet<Ingredients> Ingredients { get; set; }
+        public virtual DbSet<ReadyMeals> ReadyMeals { get; set; }
+        public virtual DbSet<Blogs> Blogs { get; set; }
+
+
     }
 }
