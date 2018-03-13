@@ -3,7 +3,7 @@
     document.getElementById('btnShowAllCommetns').addEventListener('click', AddDivIncomments);
 });
 
-var x = 0;
+var x = 0; var flagForIsShowComments = false;
 
 function AddCommentBlock()
 {
@@ -25,9 +25,59 @@ function ShowAllComments()
     window.location = 'AllBlogs.html';
 }
 
+function ShowBlogDiv()
+{
+
+}
+
+function ShowComments()
+{
+    if (flagForIsShowComments == false) {
+        var BlogDiv = document.getElementById('BlogDivId');
+
+        BlogDiv.innerHTML += "<h4 class='text-center text-info'>C o m m e n t s</h4>";
+
+
+
+        var divComment = document.createElement('div');
+
+        var pAuthoreOfTheComment = document.createElement('p');
+
+        pAuthoreOfTheComment.id = 'authoreIdWhichAddedTheComment';
+
+        pAuthoreOfTheComment.textContent = 'Empty name';
+
+        divComment.appendChild(pAuthoreOfTheComment);
+
+
+
+        var pCommenText = document.createElement('p');
+
+        pCommenText.id = 'CommentTextId';
+
+        pCommenText.textContent = 'empty text';
+
+        divComment.style.border = '2px solid';
+
+        divComment.className = 'border-info';
+
+        divComment.style.borderRadius = '3px';
+
+        divComment.appendChild(pCommenText);
+
+
+
+
+        BlogDivId.appendChild(divComment);
+
+        BlogDiv.innerHTML += '<br>';
+    }
+}
+
 function AddDivIncomments()
 {
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 3; i++)
+    {
         var createDiv = document.createElement('div');
 
         createDiv.style.width = '90%';
@@ -48,6 +98,20 @@ function AddDivIncomments()
 
         createDiv.style.backgroundColor = 'white';
 
+        createDiv.style.cursor = 'pointer';
+
+        createDiv.addEventListener('click', ShowBlogDiv);
+
+
+
+        var hTitle = document.createElement('h3');
+
+        hTitle.className = 'text-success';
+
+        hTitle.textContent = 'R e v i e w';
+
+        createDiv.appendChild(hTitle);
+
 
 
         var pAuthor = document.createElement('p');
@@ -60,43 +124,57 @@ function AddDivIncomments()
 
 
 
-        var pComment = document.createElement('p');
+        var pProdReview = document.createElement('p');
 
-        pComment.textContent = 'Comment: ' + x;
+        pProdReview.textContent = 'Product review: ' + x;
 
-        pComment.style.marginLeft = '1%';
+        pProdReview.style.marginLeft = '1%';
 
-        createDiv.appendChild(pComment);
+        createDiv.appendChild(pProdReview);
 
 
 
-        var btnAddCommentD = document.createElement('button');
+        var pText = document.createElement('p');
 
-        btnAddCommentD.style.width = '35%';
+        pText.textContent = 'Review description: ';
 
-        btnAddCommentD.style.marginTop = '20%';
+        pText.style.marginLeft = '1%';
 
-        btnAddCommentD.style.height = '20%';
+        createDiv.appendChild(pText);
 
-        btnAddCommentD.style.cssFloat = 'right';
 
-        btnAddCommentD.style.marginRight = '5%';
 
-        btnAddCommentD.style.borderRadius = '5px';
 
-        btnAddCommentD.style.fontSize = '18px';
+        //var btnAddCommentD = document.createElement('button');
 
-        btnAddCommentD.className = 'btn';
+        //btnAddCommentD.style.width = '40%';
 
-        btnAddCommentD.className = 'btn-outline-dark';
+        ////btnAddCommentD.style.marginTop = '20%';
 
-        btnAddCommentD.textContent = 'Add comment';
+        //btnAddCommentD.style.height = '20%';
 
-        btnAddCommentD.style.cursor = 'pointer';
+        //btnAddCommentD.style.cssFloat = 'right';
 
-        createDiv.appendChild(btnAddCommentD);
+        //btnAddCommentD.style.marginRight = '5%';
 
-        btnAddCommentD.addEventListener('click', AddCommentBlock);
+        //btnAddCommentD.style.borderRadius = '5px';
+
+        //btnAddCommentD.style.fontSize = '15px';
+
+        //btnAddCommentD.className = 'btn';
+
+        //btnAddCommentD.className = 'btn-outline-dark';
+
+        //btnAddCommentD.textContent = 'Add comment';
+
+        //btnAddCommentD.style.cursor = 'pointer';
+
+        //createDiv.appendChild(btnAddCommentD);
+
+        //btnAddCommentD.addEventListener('click', AddCommentBlock);
+
+
+
 
         divForShowingComments.appendChild(createDiv);
 
