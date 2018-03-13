@@ -27,83 +27,79 @@ function ShowAllComments()
 
 function AddDivIncomments()
 {
-    var createDiv = document.createElement('div');
+    for (var i = 0; i < 3; i++) {
+        var createDiv = document.createElement('div');
 
-    createDiv.style.width = '90%';
+        createDiv.style.width = '90%';
 
-    createDiv.style.height = '24vh';
+        createDiv.style.height = '24vh';
 
-    createDiv.style.border = '2px solid';
+        createDiv.style.border = '2px solid';
 
-    createDiv.style.borderRadius = '5px';
+        createDiv.style.borderRadius = '5px';
 
-    //createDiv.className = 'border-success';
+        createDiv.style.border = 'none';
 
-    createDiv.style.border = 'none';
+        createDiv.style.margin = '0 auto';
 
-    createDiv.style.margin = '0 auto';
+        createDiv.style.marginTop = '3%'; createDiv.style.marginBottom = '3%';
 
-    createDiv.style.marginTop = '3%'; createDiv.style.marginBottom = '3%';
+        createDiv.style.opacity = "0.8";
 
-    createDiv.style.opacity = "0.8";
-
-    createDiv.style.backgroundColor = 'white';
-
-    //createDiv.style.backgroundColor = "black";
+        createDiv.style.backgroundColor = 'white';
 
 
 
-    var pAuthor = document.createElement('p');
+        var pAuthor = document.createElement('p');
 
-    pAuthor.textContent = 'Author: ' + x;
+        pAuthor.textContent = 'Author: ' + x;
 
-    pAuthor.style.marginLeft = '1%';
+        pAuthor.style.marginLeft = '1%';
 
-    createDiv.appendChild(pAuthor);
-
-
-
-    var pComment = document.createElement('p');
-
-    pComment.textContent = 'Comment: ' + x;
-
-    pComment.style.marginLeft = '1%';
-
-    createDiv.appendChild(pComment);
+        createDiv.appendChild(pAuthor);
 
 
 
-    var btnAddCommentD = document.createElement('button');
+        var pComment = document.createElement('p');
 
-    btnAddCommentD.style.width = '35%';
+        pComment.textContent = 'Comment: ' + x;
 
-    btnAddCommentD.style.marginTop = '20%';
+        pComment.style.marginLeft = '1%';
 
-    btnAddCommentD.style.height = '20%';
+        createDiv.appendChild(pComment);
 
-    btnAddCommentD.style.cssFloat = 'right';
 
-    btnAddCommentD.style.marginRight = '5%';
 
-    btnAddCommentD.style.borderRadius = '5px';
+        var btnAddCommentD = document.createElement('button');
 
-    btnAddCommentD.style.fontSize = '18px';
+        btnAddCommentD.style.width = '35%';
 
-    btnAddCommentD.className = 'border';
+        btnAddCommentD.style.marginTop = '20%';
 
-    btnAddCommentD.className = 'border-success';
+        btnAddCommentD.style.height = '20%';
 
-    btnAddCommentD.className = 'styleForAddBtn';
+        btnAddCommentD.style.cssFloat = 'right';
 
-    btnAddCommentD.textContent = 'Add comment';
+        btnAddCommentD.style.marginRight = '5%';
 
-    btnAddCommentD.style.cursor = 'pointer';
+        btnAddCommentD.style.borderRadius = '5px';
 
-    createDiv.appendChild(btnAddCommentD);
+        btnAddCommentD.style.fontSize = '18px';
 
-    btnAddCommentD.addEventListener('click', AddCommentBlock);
+        btnAddCommentD.className = 'btn';
 
-    divForShowingComments.appendChild(createDiv);
+        btnAddCommentD.className = 'btn-outline-dark';
 
-    x++;
+        btnAddCommentD.textContent = 'Add comment';
+
+        btnAddCommentD.style.cursor = 'pointer';
+
+        createDiv.appendChild(btnAddCommentD);
+
+        btnAddCommentD.addEventListener('click', AddCommentBlock);
+
+        divForShowingComments.appendChild(createDiv);
+
+        x++;
+    }
 }

@@ -22,17 +22,23 @@
 
     <style>
 
-        /*.block:active {
+        .block:active {
             position: absolute;
             top: 30%;
             -webkit-transform: scale(2,3);
             -webkit-transition-timing-function: ease-out;
             -webkit-transition-duration: 200ms;
-        }*/
+        }
 
-        .styleForAddBtn:hover {
-            background-color: #282a2d;
-            color: white;
+        .styleForShowAllBTN {
+            color: black;
+            width: 45%;
+            height: 5vh;
+            margin-left: 5%;
+            opacity: 0.8;
+            cursor: pointer;
+            font-size:20px;
+            border-radius:3px
         }
 
         .styleForShowAllBTN:hover {
@@ -73,7 +79,7 @@
     </style>
 
 </head>
-<body>
+<body onload="AddDivIncomments()">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#">GastroShop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -127,11 +133,13 @@
 
     <aside id="divForShowingComments" style="overflow-y:scroll;width:23%;float:right;height:90vh;margin-top:5%;margin-right:0.5%;background-size:cover;border-radius:3px;background-image:url('Images/backgroundforaside3.jpg')" >
 
-        <p style="font-size:25px;font-family:Arial" class="text-center text-dark">B l o g s</p>
+        <p style="font-size:30px;font-family:Arial" class="text-center text-dark">B l o g s</p>
 
-        <button id="btnShowAllCommetns" style="width:45%;height:5vh;margin-left:5%;color:white;opacity:0.8" class="styleForShowAllBTN">Show all</button>
+        <!--<button id="btnShowAllCommetns" class="styleForShowAllBTN">Show all</button>-->
 
         <!--<button id="btnAddComment" style="width:42%;height:5vh;float:right;margin-right:5%;color:white" onclick="AddComment('block')" class="btn btn-success">Add commetns</button>-->
+
+        
 
     </aside>
 
