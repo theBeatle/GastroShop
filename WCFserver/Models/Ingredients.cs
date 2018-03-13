@@ -1,15 +1,20 @@
-﻿namespace WCFserver
+﻿    using System.Collections.Generic;
+using System.Runtime.Serialization;
+
+namespace WCFserver
 {
-    using System.Collections.Generic;
 
     public class Ingredients
     {
         public int ID { get; set; }
+        [DataMember]
         public string Name { get; set; }
+        [DataMember]
         public string Description { get; set; }
         public virtual UnitsOfMeasurement UnitsOfMeasurements { get; set; }
         public virtual ICollection<ReadyMeals> ReadyMeals { get; set; }
-        public float PriceForItem { get; set; }
+        [DataMember]
+        public double PriceForItem { get; set; }
         public virtual Category Category{get;set;}
         public virtual ProductsType ProductsType { get; set; }
 
