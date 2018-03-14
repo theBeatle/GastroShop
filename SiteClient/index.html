@@ -72,6 +72,19 @@
             border-radius:3px
         }
 
+        .styleHrefCreateBlog {
+            text-decoration: none;
+            margin-left: 5%;
+            font-size: 20px;
+            color: black
+        }
+
+        .styleHrefCreateBlog:hover {
+            text-decoration:dashed overline;
+            color: beige;
+            text-decoration-color:red
+        }
+
     </style>
 
 </head>
@@ -127,7 +140,7 @@
     </div>
 
 
-    <div id="BlogDivId" style="width:74%;height:90vh;float:left;margin-top:5%;margin-left:1%;z-index:10">
+    <div id="BlogDivId" style="width:74%;height:90vh;float:left;margin-top:5%;margin-left:1%;z-index:10;display:none">
 
         <h1 class="text-success text-center">R e v i e w</h1>
 
@@ -179,12 +192,26 @@
     </div>
 
 
+    <div style="width:74%;height:90vh;float:left;margin-top:5%;margin-left:1%;z-index:10;border:2px solid red">
+
+             <p style="float:left;margin-left:1%;margin-top:1%;font-size:20px;">Theme of review: </p> 
+             
+             <input type="text" style="height:3.5vh;float:left;margin-left:1%;margin-top:1%" class="border border-danger">
+
+             <p style="float:left;margin-left:1%;margin-top:1%;font-size:20px;">Product review: </p>
+
+             <input type="text" style="height:3.5vh;float:left;margin-left:1%;margin-top:1%" class="border border-danger">
+
+    </div>
+
+
     <aside id="divForShowingComments" class="styleAsideShowBlogs" >
 
-        <p style="font-size:30px;font-family:Arial" class="text-center text-dark">B l o g s</p>
+        <p style="font-size:30px;font-family:Arial;margin-left:5%;color:black;" >B l o g s</p>
 
+        <a href="CreateBlog.html" class="styleHrefCreateBlog"><b>Create blog</b></a>  
         
-
+        
     </aside>
 
 

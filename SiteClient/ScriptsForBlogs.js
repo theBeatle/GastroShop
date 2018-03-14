@@ -27,12 +27,19 @@ function ShowAllComments()
 
 function ShowBlogDiv()
 {
-
+    document.getElementById('BlogDivId').style.display = 'block';
 }
+
+function RemoveBlogDiv()
+{
+    document.getElementById('BlogDivId').style.display = 'none';
+}
+
 
 function ShowComments()
 {
-    if (flagForIsShowComments == false) {
+    if (flagForIsShowComments == false)
+    {
         var BlogDiv = document.getElementById('BlogDivId');
 
         BlogDiv.innerHTML += "<h4 class='text-center text-info'>C o m m e n t s</h4>";
@@ -71,6 +78,10 @@ function ShowComments()
         BlogDivId.appendChild(divComment);
 
         BlogDiv.innerHTML += '<br>';
+
+        flagForIsShowComments = true;
+
+        document.getElementById('ShowCommentsForThisReviewId').title = 'Comments is added';    
     }
 }
 
@@ -101,6 +112,10 @@ function AddDivIncomments()
         createDiv.style.cursor = 'pointer';
 
         createDiv.addEventListener('click', ShowBlogDiv);
+
+
+        var pDataOfAdded = document.createElement('p');
+
 
 
 
