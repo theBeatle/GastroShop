@@ -3,13 +3,12 @@
     document.getElementById('btnShowAllCommetns').addEventListener('click', AddDivIncomments);
 });
 
-var x = 0; var flagForIsShowComments = false;
+var x = 0; var flagForIsShowComments = false; var flagForClickPutGradeBTN = false;
 
 function AddCommentBlock()
 {
     document.getElementById('styleAdditionWindow').style.display = 'block';
     document.getElementById('styleAddWinwrap').style.display = 'block';
-    document.getElementById('inputComments').value = '';
 }
 
 
@@ -27,6 +26,7 @@ function ShowAllComments()
 
 function ShowBlogDiv()
 {
+    RemoveDivAddBlog();
     document.getElementById('BlogDivId').style.display = 'block';
 }
 
@@ -35,6 +35,38 @@ function RemoveBlogDiv()
     document.getElementById('BlogDivId').style.display = 'none';
 }
 
+function RemoveDivAddBlog()
+{
+    document.getElementById('divAddBlog').style.display = 'none';
+}
+
+function ShowDivAddBlog()
+{
+    RemoveBlogDiv();
+    var divGradePut = document.getElementById('DivPutGrade');
+
+    divGradePut.innerHTML = '';
+
+    flagForClickPutGradeBTN = false;
+
+    document.getElementById('divAddBlog').style.display = 'block';
+}
+
+
+function ShowDivPutTheGrade()
+{
+    if (flagForClickPutGradeBTN == false)
+    {
+        flagForClickPutGradeBTN = true;
+        var divGradePut = document.getElementById('DivPutGrade');
+
+        divGradePut.innerHTML += "<br><br><p style='font-size:20px'><b>The reviewer's assessment helps determine his karma(to some extent, this is an indicator of how much you can trust him)</b></p>";
+
+        divGradePut.innerHTML += "<br><div class='form-group'><label for='selectGradeId'><b>Select grade:</b></label><select class='form-control' style='width:15%' id='selectGradeId'><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>";
+
+        divGradePut.innerHTML += "<button style='width:15%;font-size:20px' class='btn btn-outline-primary'>Put</button><br><br>"
+    }
+}
 
 function ShowComments()
 {
@@ -42,7 +74,7 @@ function ShowComments()
     {
         var BlogDiv = document.getElementById('BlogDivId');
 
-        BlogDiv.innerHTML += "<h4 class='text-center text-info'>C o m m e n t s</h4>";
+        BlogDiv.innerHTML += "<br><br><h4 class='text-center text-primary'>C o m m e n t s</h4>";
 
 
 
@@ -51,6 +83,8 @@ function ShowComments()
         var pAuthoreOfTheComment = document.createElement('p');
 
         pAuthoreOfTheComment.id = 'authoreIdWhichAddedTheComment';
+
+        pAuthoreOfTheComment.style.fontWeight = 'bold';
 
         pAuthoreOfTheComment.textContent = 'Empty name';
 
@@ -62,14 +96,21 @@ function ShowComments()
 
         pCommenText.id = 'CommentTextId';
 
-        pCommenText.textContent = 'empty text';
+        pCommenText.className = 'form-group';
 
-        divComment.style.border = '2px solid';
+        pCommenText.style.display = 'initial';
 
-        divComment.className = 'border-info';
+        pCommenText.readOnly = true;
 
-        divComment.style.borderRadius = '3px';
+        pCommenText.style.border = '0px'
 
+        pCommenText.style.backgroundColor = 'lightGray';
+
+        pCommenText.style.borderRadius = '7px';
+
+        pCommenText.textContent = 'Empty text';
+
+        
         divComment.appendChild(pCommenText);
 
 
@@ -112,6 +153,8 @@ function AddDivIncomments()
         createDiv.style.cursor = 'pointer';
 
         createDiv.addEventListener('click', ShowBlogDiv);
+
+        createDiv.title = 'Read review';
 
 
         var pDataOfAdded = document.createElement('p');
