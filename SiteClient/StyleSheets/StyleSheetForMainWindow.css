@@ -1,0 +1,30 @@
+﻿body {
+    margin: 0
+}
+.Logo {
+    font-size: 40px;
+    color: white;
+}
+.btn-signIn:hover {
+    color: #ff9400;
+    background-color: black;
+    border-color: #ff6a00;
+}
+.btn-signUp:hover {
+    color: red;
+    background-color: black;
+    border-color: red;
+}
+.btn-search:hover {
+    color: #ff6a00;
+    background-color: lightgray;
+    border-color: #ff6a00;
+}
+.menuInHeader:hover {
+    color: black;
+    background-color: #ff6a00;
+    border-radius: 5px 5px 5px 5px;
+}
+.Basket:hover {
+    color: #ff6a00;
+}

@@ -12,22 +12,108 @@ namespace WCFserver
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+        public BlogsCategory[] BlogsCategoriesToReturn()
         {
-            return string.Format("You entered: {0}", value);
+            BlogsCategory[] categoryToReturn = null;
+            using (var ctx = new GastroModel())
+            {
+
+                categoryToReturn = ctx.BlogsCategorys.ToArray();
+            }
+            return categoryToReturn;
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public Category[] CategoriesToReturn()
         {
-            if (composite == null)
+            Category[] categoryToReturn = null;
+            using (var ctx = new GastroModel())
             {
-                throw new ArgumentNullException("composite");
+
+                categoryToReturn = ctx.Categories.ToArray();
             }
-            if (composite.BoolValue)
+            return categoryToReturn;
+        }
+
+        public Ingredients[] IngredientsToReturn()
+        {
+            Ingredients[] ingredientsToReturn = null;
+            using (var ctx = new GastroModel())
             {
-                composite.StringValue += "Suffix";
+
+                ingredientsToReturn = ctx.Ingredients.ToArray();
             }
-            return composite;
+            return ingredientsToReturn;
+        }
+
+        public ProductsType[] ProductsTypeToReturn()
+        {
+            ProductsType[] productsTypeToReturn = null;
+            using (var ctx = new GastroModel())
+            {
+
+                productsTypeToReturn = ctx.ProductTypes.ToArray();
+            }
+            return productsTypeToReturn;
+        }
+
+        public ReadyMeals[] ReadyMealsToReturn()
+        {
+            ReadyMeals[] readyMealsToReturn = null;
+            using (var ctx = new GastroModel())
+            {
+
+                readyMealsToReturn = ctx.ReadyMeals.ToArray();
+            }
+            return readyMealsToReturn;
+        }
+
+        ////
+        public ClientBlog[] TestUserBlog()
+        {
+
+            ClientBlog[] blogs = null;
+            using (var ctx = new GastroModel())
+            {
+
+                blogs = ctx.Blogs.Include("Accounts")
+                    .Select(i => (new ClientBlog { AuthorName = i.Account.FirstName,
+                                                  AuthorSurname = i.Account.Surname }))
+                    .ToArray();
+                
+            }
+            return blogs;
+        }
+
+        public UnitsOfMeasurement[] UnitsOfMeasurToReturn()
+        {
+            UnitsOfMeasurement[] unitsOfMeasurToReturn = null;
+            using (var ctx = new GastroModel())
+            {
+
+                unitsOfMeasurToReturn = ctx.UnitsOfMeasurements.ToArray();
+            }
+            return unitsOfMeasurToReturn;
+        }
+
+        public Account ValidateUser(string login, string password)
+        {
+            Account userToReturn = null;
+            using (var ctx = new GastroModel())
+            {
+                userToReturn = ctx.Accounts.FirstOrDefault(i => i.Login == login && i.Password == password);
+            }
+            return userToReturn;
+        }
+
+        Blogs[] IService1.BlogsToReturn()
+        {
+            Blogs[] blogsToReturn = null;
+            using (var ctx = new GastroModel())
+            {
+
+                blogsToReturn = ctx.Blogs.ToArray();
+            }
+            return blogsToReturn;
         }
     }
 }
