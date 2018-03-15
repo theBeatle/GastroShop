@@ -71,5 +71,8 @@ namespace WCFserver
            ResponseFormat = WebMessageFormat.Json,
            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         EatConstruct[] TestEatConstGet();
+
+    
+        
     }
 }
