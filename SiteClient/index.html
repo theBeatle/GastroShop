@@ -7,6 +7,38 @@
     <link href="StyleSheets/StyleSheetForMainWindow.css" rel="stylesheet" />
     <link rel="shortcut icon" href="Icons/gs-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="Styles/jquery-ui.structure.css" rel="stylesheet" />
+    <link href="Styles/jquery-ui.theme.css" rel="stylesheet" />
+    <link href="Styles/jquery-ui.css" rel="stylesheet" />
+
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+   
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+    <script src="Scripts/jquery-ui.js"></script>
+
+    <script>
+
+        $(function () {
+            $("#slider-range").slider({
+                range: true,
+                min: 0,
+                max: 500,
+                values: [75, 300],
+                slide: function (event, ui) {
+                    $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                }
+            });
+
+
+            $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+                " - $" + $("#slider-range").slider("values", 1));
+        });
+
+    </script>
 </head>
 <body>
 
@@ -47,7 +79,7 @@
                     <a href="#" class="btn btn-outline-success mr-xl-3 mr-lg-2 mr-md-1 mr-sm-0">
                         <img src="Icons/basket.png" style="width:30px; height:30px; margin:0 auto" />
                     </a>
-                    
+
                     <button class="btn btn-outline-warning btn-signIn  mr-xl-5 mr-lg-4 mr-md-3 mr-sm-2 mr-1" data-toggle="modal" data-target="#SignInWindow" style="width:100px; height:40px" type="submit">
                         <span><b>Sing In</b></span>
                     </button>
@@ -128,7 +160,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <!-- body -->
-                <div class="modal-body"> 
+                <div class="modal-body">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend" style="width:15%">
                             <i class="fa fa-key" style="font-size:40px; margin-right:10px"></i>
@@ -151,8 +183,99 @@
         </div>
     </div>
 
-    <script src="Scripts/jquery-3.3.1.js"></script>
-    <script src="Scripts/bootstrap.js"></script>
+    <div class="panel panel-primary filter-panel">
+        <div class="panel-heading filter-title">Filter</div>
+        <div class="panel-body">
+            <hr />
+
+            Category:
+
+            <div class="dropdown" style="display: inline-block;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Pizza
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+
+            <hr />
+
+            Price:<br />
+
+            <div class="slidecontainer">
+                <b>€ 10</b>
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            </div>
+            <b>€ 1298</b>
+
+            <hr />
+
+            Rating: <span style="font-style:italic; font-size: 0.8em;">not less than</span>
+            <div class="star-rating" style="text-align: center;">
+                <span class="fa fa-star-o" data-rating="1"></span>
+                <span class="fa fa-star-o" data-rating="2"></span>
+                <span class="fa fa-star-o" data-rating="3"></span>
+                <span class="fa fa-star-o" data-rating="4"></span>
+                <span class="fa fa-star-o" data-rating="5"></span>
+                <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+            </div>
+
+            <hr>
+
+            Size:
+
+            <div class="dropdown" style="display: inline-block;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    5 oz.
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+
+            <hr />
+
+            Required ingredients:
+
+            <div style="width:100%;">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Apple
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item disabled">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+
+            <hr />
+
+
+
+            <p>
+                Price range:
+                <input type="reset" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" />
+            </p>
+            <div id="slider-range"></div>
+        </div>
+    </div>
+
+    <script src="Scripts/product_filter.js"></script>
 
 </body>
 </html>

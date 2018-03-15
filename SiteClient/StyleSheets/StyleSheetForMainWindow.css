@@ -1,30 +1,88 @@
 ﻿body {
     margin: 0
 }
+
 .Logo {
     font-size: 40px;
     color: white;
 }
+
 .btn-signIn:hover {
     color: #ff9400;
     background-color: black;
     border-color: #ff6a00;
 }
+
 .btn-signUp:hover {
     color: red;
     background-color: black;
     border-color: red;
 }
+
 .btn-search:hover {
     color: #ff6a00;
     background-color: lightgray;
     border-color: #ff6a00;
 }
+
 .menuInHeader:hover {
     color: black;
     background-color: #ff6a00;
     border-radius: 5px 5px 5px 5px;
 }
+
 .Basket:hover {
     color: #ff6a00;
+}
+
+.filter-panel {
+    margin: 5px;
+    padding: 5px 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.filter-title {
+    font-size: 24px;
+    text-align: center;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.ui-rangeslider {
+    margin: .5em 0;
+}
+
+/* star raiting */
+.star-rating {
+    line-height: 32px;
+    font-size: 1.25em;
+}
+.star-rating .fa-star {
+    color: #e29d1d;
 }
