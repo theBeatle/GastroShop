@@ -51,7 +51,7 @@ $(function () {
                     tdd.attr("width", "35%");
                     var buttonMinus = $("<button></button>")
                     buttonMinus.addClass("btn btn-default fa fa-minus");
-                    buttonMinus.attr({ "data-value": "decrease", "data-target": "#spinner", "data-toggle": "spinner"});
+                    buttonMinus.attr({ "data-value": "decrease", "data-target": "#spinner" + (j + 1), "data-toggle": "spinner"});
                     buttonMinus.on("click", moreLessQuantity);
                     
                     tdd.append(buttonMinus);
@@ -61,7 +61,7 @@ $(function () {
                     tdd.attr("width", "30%");
                     var input = $("<input></input>");
                     input.addClass("form-control input-number");
-                    input.attr({ "type": "text", "data-ride": "spinner", "id": "spinner", "value": inputMass[j][2], "width": "40px" });
+                    input.attr({ "type": "text", "data-ride": "spinner", "id": "spinner" + (j + 1), "value": inputMass[j][2], "width": "40px" });
                     tdd.append(input);
 
                     tr.append(tdd);
@@ -70,7 +70,7 @@ $(function () {
                     tdd.attr("width", "35%");
                     var buttonPlus = $("<button></button>");
                     buttonPlus.addClass("btn btn-default fa fa-plus");
-                    buttonPlus.attr({ "data-value": "increase", "data-target": "#spinner", "data-toggle": "spinner" })
+                    buttonPlus.attr({ "data-value": "increase", "data-target": "#spinner" + (j + 1), "data-toggle": "spinner" })
                     buttonPlus.on("click", moreLessQuantity);
 
                     tdd.append(buttonPlus);
