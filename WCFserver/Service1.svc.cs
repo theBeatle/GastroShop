@@ -68,17 +68,37 @@ namespace WCFserver
         }
 
         ////
+        public EatConstruct[] TestEatConstGet()
+        {
+            EatConstruct[] eatConst = null;
+            using (var ctx = new GastroModel())
+            {
+                eatConst = ctx.Ingredients.Include("ProductsType").Include("Category").Include("UnitsOfMeasurement")
+                    .Select(i => (new EatConstruct
+                    {
+                        TypeOfMeals = i.Category.Name,
+                        CategoryIngredients = i.ProductsType.Name,
+                        Ingredient = i.Name,
+                        Amount = i.Name,
+                        PriceForItem = i.PriceForItem
+
+                    })).ToArray();
+            }
+            return eatConst;
+
+        }
+
         public ClientBlog[] TestUserBlog()
         {
-
             ClientBlog[] blogs = null;
             using (var ctx = new GastroModel())
             {
-
                 blogs = ctx.Blogs.Include("Accounts")
-                    .Select(i => (new ClientBlog { AuthorName = i.Account.FirstName,
-                                                  AuthorSurname = i.Account.Surname }))
-                    .ToArray();
+                    .Select(i => (new ClientBlog
+                    {
+                        AuthorName = i.Account.FirstName,
+                        AuthorSurname = i.Account.Surname
+                    })).ToArray();
                 
             }
             return blogs;

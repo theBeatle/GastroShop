@@ -66,5 +66,10 @@ namespace WCFserver
            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         ClientBlog[] TestUserBlog();
 
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+           ResponseFormat = WebMessageFormat.Json,
+           BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        EatConstruct[] TestEatConstGet();
     }
 }
