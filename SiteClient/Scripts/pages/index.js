@@ -1,1 +1,1 @@
-﻿
+﻿var categories = ["Chees", "Vegetables"];
