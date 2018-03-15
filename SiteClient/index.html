@@ -35,11 +35,11 @@
             width: 23%;
             float: right;
             height: 90vh;
-            margin-top: 5%;
+            margin-top: 6.5%;
             margin-right: 0.5%;
             background-size: cover;
             border-radius: 3px;
-            background-image: url('Images/backgroundforaside3.jpg')
+            background-image: url('Images/backgroundforaside3.jpg');
         }
 
          #styleAddWinwrap {
@@ -124,6 +124,9 @@
     </nav>
 
 
+
+
+
     <div onclick="AddCommentNone()" id="styleAddWinwrap"></div>
 
     <div id="styleAdditionWindow">
@@ -139,11 +142,11 @@
     </div>
 
 
-    <div id="BlogDivId" style="width:74%;height:90vh;float:left;margin-top:5%;margin-left:1%;z-index:10;display:none">
+    <div id="BlogDivId" style="width:74%;height:90vh;float:left;margin-top:6.5%;margin-left:1%;z-index:10;display:none">
 
-        <h1 class="text-success text-center">R e v i e w</h1>
+        <h1 id="hIdThemeofReview" class="text-success text-center">Theme of review</h1>
 
-        <h5 id="authorOfBlogId" style="margin-left:1%;float:left">Authore: </h5>
+        <h5 id="authorOfBlogId" style="margin-left:1%;float:left">Author: </h5>
 
         <h5 id="reviewProductId" class="text-center">Review product: </h5>
 
@@ -172,18 +175,22 @@
     </div>
 
 
-    <div id="divAddBlog" style="display:none;width:74%;height:90vh;float:left;margin-top:5%;margin-left:1%;z-index:10;">
+    <div id="divAddBlog" style="display:none;width:74%;height:90vh;float:left;margin-top:6.5%;margin-left:1%;z-index:10;">
 
+
+        <div style="width:25%">
         <label for="inpThemeOfReview" style="margin-left:1%;margin-top:1%;font-size:20px;">Theme of review: </label> 
         
-        <input id="inpThemeOfReview" type="text" style="height:3.5vh;margin-left:1%;margin-top:1%" class="border border-danger">
+        <input id="inpThemeOfReview" type="text" style="float:right;height:3.5vh;margin-left:1%;margin-top:1%;border-radius:5px" class="border border-danger">
 
         <br>
 
         <label for="ProductRev" style="margin-left:1%;margin-top:1%;font-size:20px;">Product review: </label>
 
-        <input id="ProductRev" type="text" style="height:3.5vh;margin-left:2.4%;margin-top:1%" class="border border-danger">
+        <input id="ProductRev" type="text" style="float:right;height:3.5vh;margin-left:2.4%;margin-top:1%;border-radius:5px" class="border border-danger">
         
+        </div>
+
         <br><br>
         
         <div class="form-group" style="margin-left:1%;margin-right:1%">
@@ -217,5 +224,6 @@
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../../../assets/js/vendor/popper.min.js"></script>
     <script src="../../../../dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>

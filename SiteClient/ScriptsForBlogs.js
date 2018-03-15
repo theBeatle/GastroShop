@@ -194,7 +194,7 @@ function AddDivIncomments()
 
         var pText = document.createElement('p');
 
-        pText.textContent = 'Review description: ';
+        pText.textContent = 'Review theme: ';
 
         pText.style.marginLeft = '1%';
 
