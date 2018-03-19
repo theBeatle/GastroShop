@@ -122,7 +122,8 @@ namespace WCFserver
             {
                 userToReturn = ctx.Accounts.FirstOrDefault(i => i.Login == login && i.Password == password);
             }
-            return userToReturn;
+            return new Account();
+            //return userToReturn;
         }
 
         Blogs[] IService1.BlogsToReturn()
