@@ -3,6 +3,14 @@
 <head>
     <meta charset="utf-8">
     <title></title>
+
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <!--<script src="Scripts/popper.js"></script>-->
+    <!--<script src="Scripts/bootstrap.js"></script>-->
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <link href="Styles/bootstrap.css" rel="stylesheet" />
     <link href="StyleSheets/StyleSheetForMainWindow.css" rel="stylesheet" />
     <link rel="shortcut icon" href="Icons/gs-logo.png" type="image/x-icon">
@@ -12,31 +20,16 @@
     <link href="Styles/jquery-ui.theme.css" rel="stylesheet" />
     <link href="Styles/jquery-ui.css" rel="stylesheet" />
 
-    <script src="Scripts/bootstrap.bundle.min.js"></script>
-    <script src="Scripts/bootstrap.bundle.js"></script>
-    <script src="Scripts/jquery-3.3.1.js"></script>
-    <script src="Scripts/bootstrap.js"></script>
-   
-    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+
+
+    <!--<script src="Scripts/jquery-ui-1.12.1.js"></script>-->
     <script src="Scripts/jquery-ui.js"></script>
+
+
 
     <script>
 
-        $(function () {
-            $("#slider-range").slider({
-                range: true,
-                min: 0,
-                max: 500,
-                values: [75, 300],
-                slide: function (event, ui) {
-                    $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-                }
-            });
 
-
-            $("#amount").val("$" + $("#slider-range").slider("values", 0) +
-                " - $" + $("#slider-range").slider("values", 1));
-        });
 
     </script>
 </head>
@@ -191,6 +184,7 @@
             Category:
 
             <div class="dropdown" style="display: inline-block;">
+
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Pizza
                 </button>
@@ -203,14 +197,9 @@
 
             <hr />
 
-            Price:<br />
+            Price: <input type="reset" id="amount" style="border: 0; background: none; font-weight: bold;" />
 
-            <div class="slidecontainer">
-                <b>€ 10</b>
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-            </div>
-            <b>€ 1298</b>
-
+            <div id="slider-range" class="slider" style="margin-top: 10px;"></div>
             <hr />
 
             Rating: <span style="font-style:italic; font-size: 0.8em;">not less than</span>
@@ -242,9 +231,10 @@
 
             Required ingredients:
 
-            <div style="width:100%;">
+
+            <div style="margin: 10px 0; display: inline-block;">
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button style="width: 100%;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Apple
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -255,6 +245,9 @@
                 </div>
             </div>
 
+            <button type="button" class="btn btn-primary">+</button>
+
+
             <ul class="list-group">
                 <li class="list-group-item disabled">Cras justo odio</li>
                 <li class="list-group-item">Dapibus ac facilisis in</li>
@@ -262,16 +255,6 @@
                 <li class="list-group-item">Porta ac consectetur ac</li>
                 <li class="list-group-item">Vestibulum at eros</li>
             </ul>
-
-            <hr />
-
-
-
-            <p>
-                Price range:
-                <input type="reset" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" />
-            </p>
-            <div id="slider-range"></div>
         </div>
     </div>
 

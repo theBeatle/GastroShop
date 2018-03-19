@@ -44,8 +44,10 @@
 }
 
 .filter-title {
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
 }
 
 .slider {
@@ -60,19 +62,19 @@
     transition: opacity .2s;
 }
 
-.slider:hover {
-    opacity: 1;
-}
+    .slider:hover {
+        opacity: 1;
+    }
 
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #4CAF50;
-    cursor: pointer;
-}
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #4CAF50;
+        cursor: pointer;
+    }
 
 .ui-rangeslider {
     margin: .5em 0;
@@ -83,6 +85,7 @@
     line-height: 32px;
     font-size: 1.25em;
 }
-.star-rating .fa-star {
-    color: #e29d1d;
-}
+
+    .star-rating .fa-star {
+        color: #e29d1d;
+    }
