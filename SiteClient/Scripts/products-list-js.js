@@ -8,26 +8,26 @@ function PageNavigationUpdate() {
         $("#products-nav li:eq(2)").nextUntil("#products-nav li:eq(" + (curAm - 2) + ")").remove();
         $("#products-nav li").removeClass("disabled");
         if (currPage > 4 && currPage < amountOfPage - 3) {
-            $("<li class='page-item'><a class='page-link' href='#'>...</a></li>").insertAfter("li:eq(2)");
-            $("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + (currPage - 1) + "</a></li>").insertAfter("li:eq(3)");
-            $("<li class='page-item active'><a class='page-link' href='#'>" + currPage + "</a></li>").insertAfter("li:eq(4)");
-            $("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + (currPage + 1) + "</a></li>").insertAfter("li:eq(5)");
-            $("<li class='page-item'><a class='page-link' href='#'>...</a></li>").insertAfter("li:eq(6)");
+            $("<li class='page-item'><a class='page-link' href='#'>...</a></li>").insertAfter("#products-nav li:eq(2)");
+            $("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + (currPage - 1) + "</a></li>").insertAfter("#products-nav li:eq(3)");
+            $("<li class='page-item active'><a class='page-link' href='#'>" + currPage + "</a></li>").insertAfter("#products-nav li:eq(4)");
+            $("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + (currPage + 1) + "</a></li>").insertAfter("#products-nav li:eq(5)");
+            $("<li class='page-item'><a class='page-link' href='#'>...</a></li>").insertAfter("#products-nav li:eq(6)");
         }
         else if (currPage > 4) {
-            $("<li class='page-item'><a class='page-link' href='#'>...</a></li>").insertAfter("li:eq(2)");
+            $("<li class='page-item'><a class='page-link' href='#'>...</a></li>").insertAfter("#products-nav li:eq(2)");
             for (var i = amountOfPage - 6; i < amountOfPage; ++i) {
-                $("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + i + "</a></li>").insertBefore("li:not(li:last):last");
+                $("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + i + "</a></li>").insertBefore("#products-nav li:not(#products-nav li:last):last");
             }
             curAm = $("li").length - 2;
             $("#products-nav li:eq(" + (curAm - (amountOfPage - currPage)) + ")").addClass("active");
         }
         else if (currPage < amountOfPage - 3) {
             for (var i = 3; i < 7; ++i) {
-                $("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + i + "</a></li>").insertBefore("li:not(li:last):last");
+                $("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + i + "</a></li>").insertBefore("#products-nav li:not(#products-nav li:last):last");
             }
-            $("<li class='page-item'><a class='page-link' href='#'>...</a></li>").insertBefore("li:not(li:last):last");
-            $("#products-nav  li:eq(" + currPage + ")").addClass("active");
+            $("<li class='page-item'><a class='page-link' href='#'>...</a></li>").insertBefore("#products-nav li:not(#products-nav li:last):last");
+            $("#products-nav li:eq(" + currPage + ")").addClass("active");
         }
     }
     else {

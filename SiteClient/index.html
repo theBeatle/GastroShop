@@ -3,8 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <link rel="stylesheet" href="Styles/bootstrap.css" />
+    <link rel="stylesheet" href="Styles/products-list-css.css"/>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/products-list-js.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
 </head>
-<body>
-
+<body onload="LoadPages()">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="products-list"></div>
+        </div>
+        <div class="row">
+            <nav aria-label="Page navigation example" id="products-nav">
+                <ul class="pagination">
+                </ul>
+            </nav>
+        </div>
+    </div>
 </body>
 </html>
