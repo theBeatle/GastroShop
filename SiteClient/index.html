@@ -28,32 +28,34 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link menuInHeader my-2 mr-xl-3 mr-lg-2 mr-md-1 mr-sm-0"
-                       style="margin-left:10px" href="#">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle menuInHeader my-2 mr-xl-3 mr-lg-2 mr-md-1 mr-sm-0"
-                       href="http://example.com" id="dropdown01"
-                       data-toggle="dropdown"
-                       aria-haspopup="true"
-                       aria-expanded="false">Dishes</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="#">Drinks</a>
-                        <a class="dropdown-item" href="#">Salads</a>
-                        <a class="dropdown-item" href="#">Pizza</a>
-                    </div>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link menuInHeader my-2" href="#">Contacs Us<span class="sr-only"></span></a>
-                </li>
+            <div style="width:30%">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link menuInHeader my-2 "
+                           style="margin-left:10px" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle menuInHeader my-2"
+                           href="http://example.com" id="dropdown01"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false">Dishes</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="#">Drinks</a>
+                            <a class="dropdown-item" href="#">Salads</a>
+                            <a class="dropdown-item" href="#">Pizza</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link menuInHeader my-2" href="#">Contacs Us<span class="sr-only"></span></a>
+                    </li>
+                </ul>
+            </div>
 
-            </ul>
             <div class="input-group my-3">
-                <input type="text" class="form-control col-xl-7 col-lg-5 col-md-3" placeholder="" aria-label="" aria-describedby="basic-addon1" style="border-radius: 5px 0 0 5px;">
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="border-radius: 5px 0 0 5px; margin-left:40px">
                 <div class="input-group-prepend">
-                    <button class="btn btn-outline-secondary" type="button" style="border-radius: 0 5px 5px 0">Search</button>
+                    <button class="btn btn-outline-secondary" type="button" style="border-radius: 0 5px 5px 0; margin-right:20px">Search</button>
                 </div>
             </div>
             <form>
@@ -66,7 +68,7 @@
                         data-toggle="modal"
                         data-target="#SignInWindow"
                         style="width:100px;
-                            height:40px"
+                        height:40px"
                         type="button">
                     <span><b>Sing In</b></span>
                 </button>
@@ -74,6 +76,9 @@
                 <button type="button" class="btn btn-outline-danger  btn-signUp"
                         data-toggle="modal" data-target="#SignUpWindow" style="width:100px; height:40px">
                     <span><b>Sing Up</b></span>
+                </button>
+                <button type="button" class="btn btn-outline-danger" style="width:150px; height:40px">
+                    <span><b>Constructor food</b></span>
                 </button>
             </form>
         </div>
@@ -155,13 +160,13 @@
                         <div class="input-group-prepend" style="width:15%">
                             <i class="fa fa-key" style="font-size:40px; margin-right:10px"></i>
                         </div>
-                        <input type="text" id="loginInput" class="form-control" placeholder="Login" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" id="SignInloginInput" class="form-control" placeholder="Login" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend" style="width:15%">
                             <i class="fa fa-lock" style="font-size:40px; margin-right:10px"></i>
                         </div>
-                        <input type="text" id="passwordInput" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" id="SignInpasswordInput" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <!-- footer -->
