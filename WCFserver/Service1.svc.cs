@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Web.Script.Serialization;
 
 namespace WCFserver
 {
@@ -99,7 +100,7 @@ namespace WCFserver
                         AuthorName = i.Account.FirstName,
                         AuthorSurname = i.Account.Surname
                     })).ToArray();
-                
+
             }
             return blogs;
         }
@@ -115,14 +116,15 @@ namespace WCFserver
             return unitsOfMeasurToReturn;
         }
 
-        public Account ValidateUser(string login, string password)
+        public string ValidateUser(string login, string password)
         {
-            Account userToReturn = null;
-            using (var ctx = new GastroModel())
-            {
-                userToReturn = ctx.Accounts.FirstOrDefault(i => i.Login == login && i.Password == password);
-            }
-            return new Account();
+            //Account userToReturn = null;
+            //using (var ctx = new GastroModel())
+            //{
+            //    userToReturn = ctx.Accounts.FirstOrDefault(i => i.Login == login && i.Password == password);
+            //}
+            //return new Account();
+            return new JavaScriptSerializer().Serialize($"Test {login} {password}");
             //return userToReturn;
         }
 

@@ -2,21 +2,23 @@
 
 
 $(function () {
-    $("#btSubmit").addEventListener("click", Summ);
+    $("#signInBtn").on("click", PostValidateUser);
 });
 
 
-function Get() {
+function PostValidateUser() {
 
     var arrData = {};
-    arrData.iOpe1 = $("#txt_X").value;
-    arrData.iOpe2 = $("#txt_Y").value;
+    arrData.login =   $("#loginInput").val();
+    arrData.password = $("#passwordInput").val();
 
+    console.log(arrData);
 
     $.ajax({
-        url: "http://localhost:7212/Service1.svc/TestEatConstGet",
-        //data: JSON.stringify(arrData),
+        url: "http://10.7.180.110/GastroService/Service1.svc/ValidateUser",
+
         type: "POST",
+        data: JSON.stringify(arrData),
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function (data) {
@@ -27,6 +29,5 @@ function Get() {
             console.log(textStatus);
         }
     });
-
 
 }
