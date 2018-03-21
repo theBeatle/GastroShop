@@ -4,11 +4,7 @@
 $(function () {
     $("#signInBtn").on("click", PostValidateUser);
 
-
-
-
-
-
+    loadMainProductList();
 
 });
 

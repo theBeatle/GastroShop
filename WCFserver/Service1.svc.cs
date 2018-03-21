@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Web.Script.Serialization;
+using WCFserver.DTO;
 
 namespace WCFserver
 {
@@ -24,15 +25,30 @@ namespace WCFserver
             return categoryToReturn;
         }
 
-        public Category[] CategoriesToReturn()
+        public CategoryDTO[] CategoriesToReturn()
         {
-            Category[] categoryToReturn = null;
-            using (var ctx = new GastroModel())
-            {
 
-                categoryToReturn = ctx.Categories.ToArray();
-            }
-            return categoryToReturn;
+            var ingredient = new IngredientDTO
+            {
+                ID = 0,
+                Name = "Chees",
+                Description = "Something"
+            };
+            var ingredients = new List<IngredientDTO> { ingredient }.ToArray();
+            var list = new List<CategoryDTO>()
+            {
+               new CategoryDTO(){ ID = 1, Name = "Pizza", Description = "Muchnoe",
+               Ingredients = ingredients
+               }
+            };
+
+
+            //using (var ctx = new GastroModel())
+            //{
+            //
+            //    categoryToReturn = ctx.Categories.ToArray();
+            //}
+            return list.ToArray();
         }
 
         public Ingredients[] IngredientsToReturn()
