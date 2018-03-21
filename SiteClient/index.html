@@ -7,6 +7,11 @@
     <link href="StyleSheets/StyleSheetForMainWindow.css" rel="stylesheet" />
     <link rel="shortcut icon" href="Icons/gs-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Styles/products-list-css.css"/>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/products-list-js.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
 </head>
 <body>
     <!--nav bar-->
@@ -209,5 +214,15 @@
 
     <script src="Scripts/pages/indexBasketFoods.js"></script>
     <link rel="stylesheet" href="StyleSheets/StyleSheetForShoppingCart.css" />
+    <div class="container-fluid">
+        <div class="row" id="products-list">
+        </div>
+        <div class="row">
+            <nav id="products-nav">
+                <ul class="pagination">
+                </ul>
+            </nav>
+        </div>
+    </div>
 </body>
 </html>
