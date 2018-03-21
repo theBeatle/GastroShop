@@ -122,7 +122,7 @@
                         <div class="input-group-prepend" style="width:15%">
                             <i class="fa fa-lock" style="font-size:40px; margin-right:10px"></i>
                         </div>
-                        <input id="password" name="password" type="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                        <input id="password" type="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <!-- footer -->
@@ -148,18 +148,18 @@
                         <div class="input-group-prepend" style="width:15%">
                             <i class="fa fa-key" style="font-size:40px; margin-right:10px"></i>
                         </div>
-                        <input type="text" name="login" class="form-control" placeholder="Login" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" id="loginInput" class="form-control" placeholder="Login" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend" style="width:15%">
                             <i class="fa fa-lock" style="font-size:40px; margin-right:10px"></i>
                         </div>
-                        <input type="text" name="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" id="passwordInput" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <!-- footer -->
                 <div class="modal-footer">
-                    <button class="btn btn-primary">Sign In</button>
+                    <button id="signInBtn" class="btn btn-primary">Sign In</button>
                 </div>
 
             </div>
@@ -205,6 +205,8 @@
     <!-- scripts -->
     <script src="Scripts/jquery-3.3.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/pages/index.js"></script>
+
     <script src="Scripts/pages/indexBasketFoods.js"></script>
     <link rel="stylesheet" href="StyleSheets/StyleSheetForShoppingCart.css" />
 </body>

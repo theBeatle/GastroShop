@@ -1,10 +1,11 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.ServiceModel.Activation;
 
 namespace WCFserver
 {
@@ -16,7 +17,7 @@ namespace WCFserver
         [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest)]
-        Account ValidateUser(string login, string password);
+        string ValidateUser(string login, string password);
 
         [OperationContract]
         [WebInvoke(Method = "POST",
