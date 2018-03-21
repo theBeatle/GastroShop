@@ -9,8 +9,8 @@ $(function () {
 function PostValidateUser() {
 
     var arrData = {};
-    arrData.login =   $("#loginInput").val();
-    arrData.password = $("#passwordInput").val();
+    arrData.login =   $("#SignInloginInput").val();
+    arrData.password = $("#SignInpasswordInput").val();
 
     console.log(arrData);
 
@@ -29,5 +29,12 @@ function PostValidateUser() {
             console.log(textStatus);
         }
     });
+    document.getElementById("SignInloginInput").value = "";
+    document.getElementById("SignInpasswordInput").value = "";
 
+    $('#SingInWindow').click(function (e) {
+        e.stopPropagation();
+    });
 }
+
+
