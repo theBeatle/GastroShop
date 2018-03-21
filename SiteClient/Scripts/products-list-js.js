@@ -101,6 +101,7 @@ function LoadPages() {
         $("#products-nav ul").append("<li class='page-item' onclick='NextPage()'><a class='page-link' href='#'>Next</a></li>");
     }
     currPage = 1;
+    LoadDefProd();
     /*
              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
              <li class="page-item"><a class="page-link" href="#" onclick="ChangePage(this)">1</a></li>
@@ -108,4 +109,76 @@ function LoadPages() {
              <li class="page-item"><a class="page-link" href="#" onclick="ChangePage(this)">3</a></li>
              <li class="page-item"><a class="page-link" href="#">Next</a></li>
      */
+}
+
+function LoadDefProd()
+{
+    var s = "<div class='col-xl-2 col-lg-3 col-md-4 col-sm-6 сol-12 product'>";
+    s += "<div class='card'>";
+    s += "<div class='product-img-container'>";
+    s += "<img src='" + "https://5.imimg.com/data5/PE/RX/MY-1489587/china-dish-500x500.jpg" + "' alt='" + "' class='card-img-top product-image'>";
+    s += "</div>";
+    s += "<div class='card-body'>";
+    s += "<h2 class='card-title'>";
+    s += "<span class='product-name'>" + "Pizza"+ "</span>";
+    s += "<span class='product-raiting'>" +"4.6"+ "</span>";
+    s += "</h2>";
+    s += "<p class='card-text'>" + "Kind of best pizzas ever been, just awesome. Such good as it could be expected. Mmmmm, just perfect!" +"</p>";
+    s += "<span class='product-price'>" +"125"+ "</span>";
+    s += "<a href='#' class='btn btn-dark basket-btn' onclick='AddNewProductToMain()'>Buy</a>";
+    s += "</div>";
+    s += "</div>";
+    s += "</div>";
+    $("#products-list").append(s);
+    var s = "<div class='col-xl-2 col-lg-3 col-md-4 col-sm-6 сol-12 product'>";
+    s += "<div class='card'>";
+    s += "<div class='product-img-container'>";
+    s += "<img src='" + "https://5.imimg.com/data5/PE/RX/MY-1489587/china-dish-500x500.jpg" + "' alt='" + "' class='card-img-top product-image'>";
+    s += "</div>";
+    s += "<div class='card-body'>";
+    s += "<h2 class='card-title'>";
+    s += "<span class='product-name'>" + "Pizza" + "</span>";
+    s += "<span class='product-raiting'>" + "4.6" + "</span>";
+    s += "</h2>";
+    s += "<p class='card-text'>" + "Kind of best pizzas ever been, just awesome. Such good as it could be expected. Mmmmm, just perfect!" + "</p>";
+    s += "<span class='product-price'>" + "125" + "</span>";
+    s += "<a href='#' class='btn btn-dark basket-btn' onclick='AddNewProductToMain()'>Buy</a>";
+    s += "</div>";
+    s += "</div>";
+    s += "</div>";
+    $("#products-list").append(s);
+    var s = "<div class='col-xl-2 col-lg-3 col-md-4 col-sm-6 сol-12 product'>";
+    s += "<div class='card'>";
+    s += "<div class='product-img-container'>";
+    s += "<img src='" + "https://5.imimg.com/data5/PE/RX/MY-1489587/china-dish-500x500.jpg" + "' alt='" + "' class='card-img-top product-image'>";
+    s += "</div>";
+    s += "<div class='card-body'>";
+    s += "<h2 class='card-title'>";
+    s += "<span class='product-name'>" + "Pizza" + "</span>";
+    s += "<span class='product-raiting'>" + "4.6" + "</span>";
+    s += "</h2>";
+    s += "<p class='card-text'>" + "Kind of best pizzas ever been, just awesome. Such good as it could be expected. Mmmmm, just perfect!" + "</p>";
+    s += "<span class='product-price'>" + "125" + "</span>";
+    s += "<a href='#' class='btn btn-dark basket-btn' onclick='AddNewProductToMain()'>Buy</a>";
+    s += "</div>";
+    s += "</div>";
+    s += "</div>";
+    $("#products-list").append(s);
+    var s = "<div class='col-xl-2 col-lg-3 col-md-4 col-sm-6 сol-12 product'>";
+    s += "<div class='card'>";
+    s += "<div class='product-img-container'>";
+    s += "<img src='" + "https://5.imimg.com/data5/PE/RX/MY-1489587/china-dish-500x500.jpg" + "' alt='" + "' class='card-img-top product-image'>";
+    s += "</div>";
+    s += "<div class='card-body'>";
+    s += "<h2 class='card-title'>";
+    s += "<span class='product-name'>" + "Pizza" + "</span>";
+    s += "<span class='product-raiting'>" + "4.6" + "</span>";
+    s += "</h2>";
+    s += "<p class='card-text'>" + "Kind of best pizzas ever been, just awesome. Such good as it could be expected. Mmmmm, just perfect!" + "</p>";
+    s += "<span class='product-price'>" + "125" + "</span>";
+    s += "<a href='#' class='btn btn-dark basket-btn' onclick='AddNewProductToMain()'>Buy</a>";
+    s += "</div>";
+    s += "</div>";
+    s += "</div>";
+    $("#products-list").append(s);
 }
