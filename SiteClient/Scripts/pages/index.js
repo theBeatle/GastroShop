@@ -2,7 +2,7 @@
 
 
 $(function () {
-    $("#signInBtn").on("click", PostValidateUser);
+    $("#modalSignInBtn").on("click", PostValidateUser);
 
     loadMainProductList();
 
@@ -35,8 +35,11 @@ function PostValidateUser() {
     document.getElementById("SignInloginInput").value = "";
     document.getElementById("SignInpasswordInput").value = "";
 
-    $("#signInBtn").click(function () {
+    $("#modalSignInBtn").click(function () {
         $("#SignInWindow").modal("hide");
+        $("SignUpBtn").hide();
+
+
     })
 }
 
