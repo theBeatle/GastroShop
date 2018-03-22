@@ -76,21 +76,12 @@ namespace WCFserver
             return acc;
         }
 
-        static RandomMeals[] GetRandMeals(/*int pageNum,*/ int elemetsForPage)
+        public Meals[] GetMeals(int pageNum, int elementsForPage)
         {
-            RandomMeals[] getArr = new RandomMeals[elemetsForPage];
-            int[] id = { 0, 1, 2, 3, 4 };
-            string[] name = { "Four cheese", "Cessar", "Napoletana", "Grecheskii", "New-York" };
-            string[] description = { "Descrition 1", "Descrition 2", "Descrition 3", "Descrition 4", "Descrition 5" };
-            double[] raiting = { 1.1, 4.2, 10.5, 11.1, 7.2 };
-            string[] size = { "XXL", "XL", "L", "M", "S" };
-            Random rand = new Random();
-            //int randNum = rand.Next(0, 5);
-            for (var i = 0; i < elemetsForPage; i++)
-            {
-                getArr[i] = new RandomMeals { ID = id[rand.Next(0, 5)], Name = name[rand.Next(0, 5)], Description = description[rand.Next(0, 5)], Raiting = raiting[rand.Next(0, 5)], Size = size[rand.Next(0, 5)] };
-            }
-            return getArr;
+
+
+
+            return Utils.Utilities.RandomMealsGenerator(elementsForPage);
         }
 
         public Ingredients[] IngredientsToReturn()

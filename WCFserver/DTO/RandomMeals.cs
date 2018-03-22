@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WCFserver
 {
-    public class RandomMeals
+    public class Meals
     {
         public int ID { get; set; }
         public string Name { get; set; }
