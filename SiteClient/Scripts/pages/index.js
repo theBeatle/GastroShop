@@ -35,9 +35,9 @@ function PostValidateUser() {
     document.getElementById("SignInloginInput").value = "";
     document.getElementById("SignInpasswordInput").value = "";
 
-    $('#SingInWindow').click(function (e) {
-        e.stopPropagation();
-    });
+    $("#signInBtn").click(function () {
+        $("#SignInWindow").modal("hide");
+    })
 }
 
 

@@ -58,21 +58,21 @@ namespace WCFserver
             context.BlogsCategorys.Add(new BlogsCategory { Name = "News", Description = "Future new meals" });
 
             //
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
-            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Beeter Italian Pizza from Milano", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
+            context.ReadyMeals.Add(new ReadyMeals { Name = "Four chesse", Description = "Chesse, vegatables, souces", Raiting = 4.6, Size = "XXL" });
 
             context.ReadyMeals.Add(new ReadyMeals { Name = "Cezar", Description = "Jedna od prednosti LCHF-a je svakako veći izbor", Raiting = 4.6, Size = "250g" });
             context.ReadyMeals.Add(new ReadyMeals { Name = "Cezar", Description = "Jedna od prednosti LCHF-a je svakako veći izbor", Raiting = 4.6, Size = "250g" });
