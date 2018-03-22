@@ -44,11 +44,14 @@ $(function () {
 });
 $('#ConstructorBucket').click(function () {
     if (value > 0) {
-        var newobject = { type: "CustomerConstructed",  coast: value, count:1};
+        var newobject = ["CustomerConstructed", value.toString(), (""+1) ];
         mass.push(newobject);
         $('#useditems').empty();
         value = 0;
         $('#spanValue').html(value);
         $('#Constructor').modal('hide');
+
+        $('#quantityInIconCart').html(mass.length);
+
     }
 });
