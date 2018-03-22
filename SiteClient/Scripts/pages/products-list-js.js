@@ -83,35 +83,7 @@
         $("#products-list").append(s);
     }
 
-    function LoadPages() {
-        if (amountOfPage < 15) {
-            $("#products-nav ul").append("<li class='page-item disabled' onclick='PrevPage()'><a class='page-link' href='#'>Previous</a></li>");
-            $("#products-nav ul").append("<li class='page-item active' onclick='ChangePage(this)'><a class='page-link' href='#'>1</a></li>");
-            for (let i = 2; i <= amountOfPage; ++i) {
-                $("#products-nav ul").append("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + i + "</a></li>");
-            }
-            $("#products-nav ul").append("<li class='page-item' onclick='NextPage()'><a class='page-link' href='#'>Next</a></li>");
-        }
-        else {
-            $("#products-nav ul").append("<li class='page-item disabled' onclick='PrevPage()'><a class='page-link' href='#'>Previous</a></li>");
-            for (let i = 1; i < 7; ++i) {
-                $("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + i + "</a></li>").appendTo("#products-nav ul");
-            }
-            $("<li class='page-item'><a class='page-link' href='#'>...</a></li>").appendTo("#products-nav ul");
-            $("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + amountOfPage + "</a></li>").appendTo("#products-nav ul");
-            $("#products-nav  li:eq(1)").addClass("active");
-            $("#products-nav ul").append("<li class='page-item' onclick='NextPage()'><a class='page-link' href='#'>Next</a></li>");
-        }
-        currPage = 1;
-        LoadDefProd();
-        /*
-                 <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                 <li class="page-item"><a class="page-link" href="#" onclick="ChangePage(this)">1</a></li>
-                 <li class="page-item"><a class="page-link" href="#" onclick="ChangePage(this)">2</a></li>
-                 <li class="page-item"><a class="page-link" href="#" onclick="ChangePage(this)">3</a></li>
-                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
-         */
-    }
+
 
     function LoadDefProd() {
         let s = "<div class='col-xl-2 col-lg-3 col-md-4 col-sm-6 сol-12 product'>";
@@ -183,4 +155,35 @@
         s += "</div>";
         $("#products-list").append(s);
     }
+
+    (function LoadPages() {
+        if (amountOfPage < 15) {
+            $("#products-nav ul").append("<li class='page-item disabled' onclick='PrevPage()'><a class='page-link' href='#'>Previous</a></li>");
+            $("#products-nav ul").append("<li class='page-item active' onclick='ChangePage(this)'><a class='page-link' href='#'>1</a></li>");
+            for (let i = 2; i <= amountOfPage; ++i) {
+                $("#products-nav ul").append("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + i + "</a></li>");
+            }
+            $("#products-nav ul").append("<li class='page-item' onclick='NextPage()'><a class='page-link' href='#'>Next</a></li>");
+        }
+        else {
+            $("#products-nav ul").append("<li class='page-item disabled' onclick='PrevPage()'><a class='page-link' href='#'>Previous</a></li>");
+            for (let i = 1; i < 7; ++i) {
+                $("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + i + "</a></li>").appendTo("#products-nav ul");
+            }
+            $("<li class='page-item'><a class='page-link' href='#'>...</a></li>").appendTo("#products-nav ul");
+            $("<li class='page-item' onclick='ChangePage(this)'><a class='page-link' href='#'>" + amountOfPage + "</a></li>").appendTo("#products-nav ul");
+            $("#products-nav  li:eq(1)").addClass("active");
+            $("#products-nav ul").append("<li class='page-item' onclick='NextPage()'><a class='page-link' href='#'>Next</a></li>");
+        }
+        currPage = 1;
+        LoadDefProd();
+        /*
+                 <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                 <li class="page-item"><a class="page-link" href="#" onclick="ChangePage(this)">1</a></li>
+                 <li class="page-item"><a class="page-link" href="#" onclick="ChangePage(this)">2</a></li>
+                 <li class="page-item"><a class="page-link" href="#" onclick="ChangePage(this)">3</a></li>
+                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
+         */
+    })();
+
 }

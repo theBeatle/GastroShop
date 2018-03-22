@@ -4,7 +4,19 @@
 $(function () {
     $("#signInBtn").on("click", PostValidateUser);
 
-    loadMainProductList();
+
+    $.ajax({
+        url: 'Pages/productTable.html',
+        success: function (data) {
+            $('#mainContainer').html(data); // Load data into a <div> as HTML
+            console.log('The page was loaded!');
+
+            loadMainProductList();
+        }
+
+    });
+
+
 
 });
 
