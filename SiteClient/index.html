@@ -20,18 +20,8 @@
     <link href="Styles/jquery-ui.theme.css" rel="stylesheet" />
     <link href="Styles/jquery-ui.css" rel="stylesheet" />
 
-
-
     <!--<script src="Scripts/jquery-ui-1.12.1.js"></script>-->
     <script src="Scripts/jquery-ui.js"></script>
-
-
-
-    <script>
-
-
-
-    </script>
 </head>
 <body>
 
@@ -176,66 +166,17 @@
         </div>
     </div>
 
-    <div class="panel panel-primary filter-panel">
-        <div class="panel-heading filter-title">Filter</div>
-        <div class="panel-body">
-            <hr />
+    <button class="btn btn-outline-dark btn-sm" style="margin:5px;" data-toggle="collapse" data-target="#filter-collapse">FILTER ></button>
 
-            Category:
+    <div id="filter-collapse" class="collapse">
 
-            <div class="dropdown" style="display: inline-block;">
+        <div class="panel panel-primary filter-panel">
+            <div class="panel-body">
+                <div class="filter-name">Category</div>
 
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Pizza
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
-
-            <hr />
-
-            Price: <input type="reset" id="amount" style="border: 0; background: none; font-weight: bold;" />
-
-            <div id="slider-range" class="slider" style="margin-top: 10px;"></div>
-            <hr />
-
-            Rating: <span style="font-style:italic; font-size: 0.8em;">not less than</span>
-            <div class="star-rating" style="text-align: center;">
-                <span class="fa fa-star-o" data-rating="1"></span>
-                <span class="fa fa-star-o" data-rating="2"></span>
-                <span class="fa fa-star-o" data-rating="3"></span>
-                <span class="fa fa-star-o" data-rating="4"></span>
-                <span class="fa fa-star-o" data-rating="5"></span>
-                <input type="hidden" name="whatever1" class="rating-value" value="2.56">
-            </div>
-
-            <hr>
-
-            Size:
-
-            <div class="dropdown" style="display: inline-block;">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    5 oz.
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
-
-            <hr />
-
-            Required ingredients:
-
-
-            <div style="margin: 10px 0; display: inline-block;">
                 <div class="dropdown">
-                    <button style="width: 100%;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Apple
+                    <button style="width:100%;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pizza
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">Action</a>
@@ -243,18 +184,95 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
+
+                <hr />
+
+                <div class="filter-name">
+                    Price
+                    <input type="reset" id="amount" style="border: 0; background: none;" />
+                </div>
+
+                <div id="slider-range" class="slider" style="margin-top: 10px;"></div>
+                <hr />
+
+                <div class="filter-name">Rating <em style="font-weight:normal;">not less than</em></div>
+
+                <div class="star-rating" style="text-align: center;">
+                    <span class="fa fa-star-o" data-rating="1"></span>
+                    <span class="fa fa-star-o" data-rating="2"></span>
+                    <span class="fa fa-star-o" data-rating="3"></span>
+                    <span class="fa fa-star-o" data-rating="4"></span>
+                    <span class="fa fa-star-o" data-rating="5"></span>
+                    <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                </div>
+
+                <hr>
+
+                <div class="filter-name">Size</div>
+
+                <div class="dropdown">
+                    <button style="width: 100%;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        5 oz.
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="filter-name">Required ingredients</div>
+
+                <div style="position:relative;">
+                    <div class="dropdown" style="display: inline-block; width: 75%;">
+                        <button style="width: 100%;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Apple
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+
+
+                    <button style="position:absolute; right: 0px;" type="button" class="btn btn-primary">+</button>
+                </div>
+
+                <ul class="list-group" style="margin: 10px 0 5px 0;">
+                    <li class="list-group-item">
+                        <div style="width:100%;">
+                            <span style="width: 74%; display:inline-block;">Cras jusretgre</span>
+                            <button style="vertical-align:top; border-radius:10px; display:inline-block;" type="button" class="btn btn-outline-danger btn-sm"><b class="fa fa-close"></b></button>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div style="width:100%;">
+                            <span style="width: 74%; display:inline-block;">Dapibus ac facilisis in</span>
+                            <button style="vertical-align:top; border-radius:10px; display:inline-block;" type="button" class="btn btn-outline-danger btn-sm"><b class="fa fa-close"></b></button>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div style="width:100%;">
+                            <span style="width: 74%; display:inline-block;">Morbi leo risus</span>
+                            <button style="vertical-align:top; border-radius:10px; display:inline-block;" type="button" class="btn btn-outline-danger btn-sm"><b class="fa fa-close"></b></button>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div style="width:100%;">
+                            <span style="width: 74%; display:inline-block;">Porta ac consectetur ac</span>
+                            <button style="vertical-align:top; border-radius:10px; display:inline-block;" type="button" class="btn btn-outline-danger btn-sm"><b class="fa fa-close"></b></button>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div style="width:100%;">
+                            <span style="width: 74%; display:inline-block;">Vestibulum at eros</span>
+                            <button style="vertical-align:top; border-radius:10px; display:inline-block;" type="button" class="btn btn-outline-danger btn-sm"><b class="fa fa-close"></b></button>
+                        </div>
+                    </li>
+                </ul>
             </div>
-
-            <button type="button" class="btn btn-primary">+</button>
-
-
-            <ul class="list-group">
-                <li class="list-group-item disabled">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
         </div>
     </div>
 
