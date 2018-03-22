@@ -174,7 +174,8 @@ function removeProduct() {
 
     var temp = $(this).parent().parent().remove();
 
-    delete inputMass[index - 1];
+    inputMass.splice(index - 1, 1);
+    $("#quantityInCart").text(inputMass.length + " items");
 
     var k = 1;
     var trr = $("#tableCart > tr").find("td:first");

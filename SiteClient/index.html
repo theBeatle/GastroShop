@@ -7,30 +7,38 @@
     <link href="StyleSheets/StyleSheetForMainWindow.css" rel="stylesheet" />
     <link rel="shortcut icon" href="Icons/gs-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="Styles/products-list-css.css"/>
+
 </head>
 <body>
-    <!--nav bar-->
+
+    <div id="mainContainer"></div>
+
+    <!--navigation bar-->
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-            <p class="Logo ">GastroShop</p>
-            <button class="navbar-toggler collapsed" type="button" 
-                    data-toggle="collapse" 
-                    data-target="#navbarsExampleDefault" 
-                    aria-controls="navbarsExampleDefault" 
-                    aria-expanded="true" 
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <p class="Logo ">GastroShop</p>
+        <button class="navbar-toggler collapsed" type="button"
+                data-toggle="collapse"
+                data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault"
+                aria-expanded="true"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <div style="width:30%">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link menuInHeader my-2 mr-xl-3 mr-lg-2 mr-md-1 mr-sm-0" 
+                        <a class="nav-link menuInHeader my-2 "
                            style="margin-left:10px" href="#">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle menuInHeader my-2 mr-xl-3 mr-lg-2 mr-md-1 mr-sm-0" 
-                           href="http://example.com" id="dropdown01" 
-                           data-toggle="dropdown" 
-                           aria-haspopup="true" 
+                        <a class="nav-link dropdown-toggle menuInHeader my-2"
+                           href="http://example.com" id="dropdown01"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
                            aria-expanded="false">Dishes</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             <a class="dropdown-item" href="#">Drinks</a>
@@ -39,41 +47,42 @@
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link menuInHeader my-2 mr-xl-3 mr-lg-2 mr-md-1 mr-sm-0" href="#">Contacs Us<span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <form>
-                            <div class="input-group my-3">
-                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="border-radius: 5px 0 0 5px; width:250px">
-                                <div class="input-group-prepend">
-                                    <button class="btn btn-outline-secondary" type="button" style="border-radius: 0 5px 5px 0">Search</button>
-                                </div>
-                            </div>
-                        </form>
+                        <a class="nav-link menuInHeader my-2" href="#">Contacs Us<span class="sr-only"></span></a>
                     </li>
                 </ul>
-                <form>
-                    <a id="cartLinkModal" href="#modalCart" data-toggle="modal" style=" text-decoration:none" class="btn btn-outline-success mr-xl-3 mr-lg-2 mr-md-1 mr-sm-0">
-                        <span class="fa fa-cart-plus" style="font-size:30px; display:inline-block; vertical-align:middle; position:relative;"></span>
-                        <span id="quantityInIconCart" class="badge" style="font-size:20px; display:inline-block; vertical-align:middle; position:relative;">4</span>
-                    </a>
-
-                    <button class="btn btn-outline-warning btn-signIn  mr-xl-5 mr-lg-4 mr-md-3 mr-sm-2 mr-1" 
-                            data-toggle="modal" 
-                            data-target="#SignInWindow" 
-                            style="width:100px; 
-                            height:40px"
-                            type="button">
-                        <span><b>Sing In</b></span>
-                    </button>
-
-                    <button  type="button" class="btn btn-outline-danger col-xl-6 col-lg-5 col-md-4 col-sm-3 btn-signUp" 
-                            data-toggle="modal" data-target="#SignUpWindow" style="width:100px; height:40px">
-                        <span><b>Sing Up</b></span>
-                    </button>
-                </form>
             </div>
-        </nav>
+
+            <div class="input-group my-3">
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="border-radius: 5px 0 0 5px; margin-left:40px">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button" style="border-radius: 0 5px 5px 0; margin-right:20px">Search</button>
+                </div>
+            </div>
+            <form>
+                <a id="cartLinkModal" href="#modalCart" data-toggle="modal" style=" text-decoration:none" class="btn btn-outline-success">
+                    <span class="fa fa-cart-plus" style="font-size:30px; display:inline-block; vertical-align:middle; position:relative;"></span>
+                    <span id="quantityInIconCart" class="badge" style="font-size:20px; display:inline-block; vertical-align:middle; position:relative;">4</span>
+                </a>
+
+                <button class="btn btn-outline-warning btn-signIn"
+                        data-toggle="modal"
+                        data-target="#SignInWindow"
+                        style="width:100px;
+                        height:40px"
+                        type="button">
+                    <span><b>Sing In</b></span>
+                </button>
+
+                <button type="button" class="btn btn-outline-danger  btn-signUp"
+                        data-toggle="modal" data-target="#SignUpWindow" style="width:100px; height:40px">
+                    <span><b>Sing Up</b></span>
+                </button>
+                <button type="button" class="btn btn-outline-danger" style="width:150px; height:40px">
+                    <span><b>Constructor food</b></span>
+                </button>
+            </form>
+        </div>
+    </nav>
     <!-- registration modal -->
     <div class="modal fade" id="SignUpWindow">
         <div class="modal-dialog">
@@ -83,59 +92,59 @@
                     <h3 class="modal-title">Registration Form</h3>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                    <!-- body -->
-                    <div class="modal-body">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend" style="width:15%">
-                                <i class="fa fa-address-card" style="font-size:40px; margin-right:10px"></i>
-                            </div>
-                            <input id="name" name="name" type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1" required>
+                <!-- body -->
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-address-card" style="font-size:40px; margin-right:10px"></i>
                         </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend" style="width:15%">
-                                <i class="fa fa-address-card-o" style="font-size:40px; margin-right:10px"></i>
-                            </div>
-                            <input id="surname" name="surname" type="text" class="form-control" placeholder="SurName" aria-label="SurName" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend" style="width:15%">
-                                <i class="fa fa-envelope" style="font-size:40px; margin-right:10px"></i>
-                            </div>
-                            <input id="email" name="email" type="text" class="form-control" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend" style="width:15%">
-                                <i class="fa fa-address-book" style="font-size:40px; margin-right:10px"></i>
-                            </div>
-                            <input id="address" name="address" type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend" style="width:15%">
-                                <i class="fa fa-phone" style="font-size:40px; margin-right:10px"></i>
-                            </div>
-                            <input id="phone" name="phone" type="text" class="form-control" placeholder="Phone" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend" style="width:15%">
-                                <i class="fa fa-key" style="font-size:40px; margin-right:10px"></i>
-                            </div>
-                            <input id="login" name="login" type="text" class="form-control" placeholder="Login" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend" style="width:15%">
-                                <i class="fa fa-lock" style="font-size:40px; margin-right:10px"></i>
-                            </div>
-                            <input id="password" name="password" type="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
+                        <input id="name" name="name" type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1" required>
                     </div>
-                    <!-- footer -->
-                    <div class="modal-footer">
-                        <button class="btn btn-primary">Sign Up</button>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-address-card-o" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input id="surname" name="surname" type="text" class="form-control" placeholder="SurName" aria-label="SurName" aria-describedby="basic-addon1">
                     </div>
-
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-envelope" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input id="email" name="email" type="text" class="form-control" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-address-book" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input id="address" name="address" type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-phone" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input id="phone" name="phone" type="text" class="form-control" placeholder="Phone" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-key" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input id="login" name="login" type="text" class="form-control" placeholder="Login" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend" style="width:15%">
+                            <i class="fa fa-lock" style="font-size:40px; margin-right:10px"></i>
+                        </div>
+                        <input id="password" type="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
                 </div>
+                <!-- footer -->
+                <div class="modal-footer">
+                    <button class="btn btn-primary">Sign Up</button>
+                </div>
+
             </div>
         </div>
+    </div>
     <!-- sign in modal -->
     <div class="modal fade" id="SignInWindow">
         <div class="modal-dialog">
@@ -151,18 +160,18 @@
                         <div class="input-group-prepend" style="width:15%">
                             <i class="fa fa-key" style="font-size:40px; margin-right:10px"></i>
                         </div>
-                        <input type="text" class="form-control" placeholder="Login" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" id="SignInloginInput" class="form-control" placeholder="Login" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend" style="width:15%">
                             <i class="fa fa-lock" style="font-size:40px; margin-right:10px"></i>
                         </div>
-                        <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" id="SignInpasswordInput" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <!-- footer -->
                 <div class="modal-footer">
-                    <button class="btn btn-primary">Sign In</button>
+                    <button id="signInBtn" class="btn btn-primary">Sign In</button>
                 </div>
 
             </div>
@@ -186,9 +195,7 @@
                         </span>
                     </div>
                 </div>
-
                 <div id="modalBody" class="modal-body"></div>
-
                 <div class="modal-footer">
                     <div>
                         <span style="float:left">
@@ -202,10 +209,15 @@
             </div>
         </div>
     </div>
+
     <!-- scripts -->
     <script src="Scripts/jquery-3.3.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/products-list-js.js"></script>
+    <script src="Scripts/pages/index.js"></script>
+
     <script src="Scripts/pages/indexBasketFoods.js"></script>
+
     <link rel="stylesheet" href="StyleSheets/StyleSheetForShoppingCart.css" />
 </body>
 </html>

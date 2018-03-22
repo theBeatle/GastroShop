@@ -21,7 +21,7 @@ loadDoc();
         //{
         //    loaded += "<li class=pz-item><div class=handle></div><div class=title>" + categories[i].ingredients[j].name + "</div> <div class=coast>" + categories[i].ingredients[j].price + "</div></li>";
         //}
-        loaded += "</ul></div></div>"
+        loaded += "</ul></div></div>";
     }
     $('#rightform').append(loaded);
   
