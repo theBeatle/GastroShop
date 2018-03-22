@@ -1,5 +1,16 @@
 ﻿var categories = ["Chees", "Vegetables"];
 var value = 0;
+function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            categories = this.responseText;
+        }
+    };
+    xhttp.open("POST", , true);
+    xhttp.send();
+};
+loadDoc();
 (function constructorLoad() {
     var loaded = "";
     for (var i = 0; i < categories.length; i++) {
@@ -13,6 +24,7 @@ var value = 0;
         loaded += "</ul></div></div>"
     }
     $('#rightform').append(loaded);
+  
 })(); 
 $(function () {
     $('li').click(function () {
