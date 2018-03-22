@@ -51,6 +51,24 @@ namespace WCFserver
             return list.ToArray();
         }
 
+        public EditAccount GetEditAcc(string login, string pass)
+        {
+            EditAccount acc = null;
+            using (var ctx = new GastroModel())
+            {
+                acc = ctx.Accounts.Where(i => i.Login == login && i.Password == pass)
+                    .Select(s => (new EditAccount
+                    {
+                        FirstName = s.FirstName,
+                        SurName = s.Surname,
+                        Email = s.Email,
+                        Address = s.Address,
+                        PhoneNumber = s.PhoneNumber
+                    })).SingleOrDefault();
+            }
+            return acc;
+        }
+
         public Ingredients[] IngredientsToReturn()
         {
             Ingredients[] ingredientsToReturn = null;
@@ -60,6 +78,18 @@ namespace WCFserver
                 ingredientsToReturn = ctx.Ingredients.ToArray();
             }
             return ingredientsToReturn;
+        }
+
+        public int NumberOfReadyMeals()
+        {
+            int numb = 0;
+            ReadyMeals[] readyMeals = null;
+            using (var ctx = new GastroModel())
+            {
+                readyMeals = ctx.ReadyMeals.ToArray();
+                numb = readyMeals.Length;
+            }
+            return numb;
         }
 
         public ProductsType[] ProductsTypeToReturn()
@@ -84,7 +114,6 @@ namespace WCFserver
             return readyMealsToReturn;
         }
 
-        ////
         public EatConstruct[] TestEatConstGet()
         {
             EatConstruct[] eatConst = null;
@@ -98,7 +127,6 @@ namespace WCFserver
                         Ingredient = i.Name,
                         Amount = i.Name,
                         PriceForItem = i.PriceForItem
-
                     })).ToArray();
             }
             return eatConst;
@@ -110,13 +138,19 @@ namespace WCFserver
             ClientBlog[] blogs = null;
             using (var ctx = new GastroModel())
             {
-                blogs = ctx.Blogs.Include("Accounts")
+                blogs = ctx.Blogs.Include("Accounts").Include("BlogsCategory").Include("ReadyMeals")
                     .Select(i => (new ClientBlog
                     {
                         AuthorName = i.Account.FirstName,
-                        AuthorSurname = i.Account.Surname
+                        AuthorSurname = i.Account.Surname,
+                        NameCategory = i.BlogsCategory.Name,
+                        Raiting = i.Raiting,
+                        Title = i.Title,
+                        Text = i.Text,
+                        TimeCreate = i.DateTime,
+                        NamedDishes = i.ReadyMeals.Name
                     })).ToArray();
-
+                
             }
             return blogs;
         }

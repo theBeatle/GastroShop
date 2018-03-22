@@ -74,7 +74,17 @@ namespace WCFserver
            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         EatConstruct[] TestEatConstGet();
 
-    
-        
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+           ResponseFormat = WebMessageFormat.Json,
+           BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        EditAccount GetEditAcc(string login, string pass);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+           ResponseFormat = WebMessageFormat.Json,
+           BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        int NumberOfReadyMeals();
+
     }
 }
