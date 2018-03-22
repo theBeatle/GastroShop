@@ -2,9 +2,21 @@
 
 
 $(function () {
-    $("#signInBtn").on("click", PostValidateUser);
+    $("#modalSignInBtn").on("click", PostValidateUser);
 
-    loadMainProductList();
+
+    $.ajax({
+        url: 'Pages/productTable.html',
+        success: function (data) {
+            $('#mainContainer').html(data); // Load data into a <div> as HTML
+            console.log('The page was loaded!');
+
+            loadMainProductList();
+        }
+
+    });
+
+
 
 });
 
@@ -35,9 +47,12 @@ function PostValidateUser() {
     document.getElementById("SignInloginInput").value = "";
     document.getElementById("SignInpasswordInput").value = "";
 
-    $('#SingInWindow').click(function (e) {
-        e.stopPropagation();
-    });
+    $("#modalSignInBtn").click(function () {
+        $("#SignInWindow").modal("hide");
+        $("SignUpBtn").hide();
+
+
+    })
 }
 
 

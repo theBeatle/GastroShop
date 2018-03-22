@@ -7,14 +7,14 @@
     <link href="StyleSheets/StyleSheetForMainWindow.css" rel="stylesheet" />
     <link rel="shortcut icon" href="Icons/gs-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="Styles/Pages/ConstructorStyles.css" rel="stylesheet" />
 
-
-    <link rel="stylesheet" href="Styles/products-list-css.css"/>
+    <link rel="stylesheet" href="Styles/products-list-css.css" />
 
 </head>
 <body>
 
-    <div id="mainContainer"></div>
+
 
     <!--navigation bar-->
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
@@ -65,24 +65,140 @@
                 </a>
 
                 <button class="btn btn-outline-warning btn-signIn"
+                        id="SignInButton"
                         data-toggle="modal"
                         data-target="#SignInWindow"
                         style="width:100px;
                         height:40px"
                         type="button">
-                    <span><b>Sing In</b></span>
+                    <span><b class="sgnIn-btn sgnUp-btn">Sing In</b></span>
                 </button>
 
-                <button type="button" class="btn btn-outline-danger  btn-signUp"
+                <button type="button" class="btn btn-outline-danger  btn-signUp" id="SignUpBtn"
                         data-toggle="modal" data-target="#SignUpWindow" style="width:100px; height:40px">
                     <span><b>Sing Up</b></span>
                 </button>
-                <button type="button" class="btn btn-outline-danger" style="width:150px; height:40px">
+                <button type="button" class="btn btn-outline-danger" style="width:150px; height:40px"
+                        data-toggle="modal" data-target="#Constructor">
                     <span><b>Constructor food</b></span>
                 </button>
             </form>
         </div>
     </nav>
+
+    <div id="mainContainer"></div>
+
+    <!-- constructor modal -->
+    <div class="modal fade" id="Constructor">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Constructor</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row  wrapper ">
+                        <div class="leftpanel ">
+                            <form class="align-middle">
+                                <div class="titlemiddle">
+                                    <h2>Обрані додатки:</h2>
+                                </div>
+                                <div class="listwrapper">
+                                    <ul class="pz-items" id="useditems"></ul>
+                                </div>
+                                <div class="pz-total-price">Ціна: <span class="value"></span> грн</div>
+                                <div class="bucketbutton">
+                                    <button type="button" class="btn btn-info">В корзину</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="rightpanel">
+                            <form id="rightform" class="align-middle">
+                                <div class="titlemiddle">
+                                    <h2 class="title-items">Selected ingredients:</h2>
+                                </div>
+                                <div class="form-group">
+                                    <div class="titlemiddle">
+                                        <h4>Сир3</h4>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="titlemiddle"> <h4>Мясо</h4></div>
+                                    <div class="listwrapper">
+                                        <ul class="pz-items">
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Стейк</div>
+                                                <div class="coast">15</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Філе</div>
+                                                <div class="coast">65</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Філе</div>
+                                                <div class="coast">85</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Філе</div>
+                                                <div class="coast">55</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Філе3fdfdgfdgfghjjhjhhhghghg</div>
+                                                <div class="coast">45</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="titlemiddle"><h4>Сири</h4></div>
+                                    <div class="listwrapper">
+                                        <ul class="pz-items">
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Сирggfgfgfg1ghgghghgggggggggggggg</div>
+                                                <div class="coast">15</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Сир2</div>
+                                                <div class="coast">65</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Сир3</div>
+                                                <div class="coast">85</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Сир4</div>
+                                                <div class="coast">55</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Сир5</div>
+                                                <div class="coast">45</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" style="width:150px; height:40px">
+                        <span><b>Constructor food</b></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- registration modal -->
     <div class="modal fade" id="SignUpWindow">
         <div class="modal-dialog">
@@ -171,7 +287,7 @@
                 </div>
                 <!-- footer -->
                 <div class="modal-footer">
-                    <button id="signInBtn" class="btn btn-primary">Sign In</button>
+                    <button id="modalSignInBtn" class="btn btn-primary">Sign In</button>
                 </div>
 
             </div>
@@ -213,9 +329,11 @@
     <!-- scripts -->
     <script src="Scripts/jquery-3.3.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/products-list-js.js"></script>
+    <script src="Scripts/pages/products-list-js.js"></script>
+
     <script src="Scripts/pages/index.js"></script>
 
+    <script src="Scripts/pages/ConstructorScript.js"></script>
     <script src="Scripts/pages/indexBasketFoods.js"></script>
 
     <link rel="stylesheet" href="StyleSheets/StyleSheetForShoppingCart.css" />
