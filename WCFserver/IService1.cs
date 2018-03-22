@@ -87,5 +87,12 @@ namespace WCFserver
            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         int NumberOfReadyMeals();
 
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+           ResponseFormat = WebMessageFormat.Json,
+           BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        RandomMeals[] GetRandMeals();
+
+
     }
 }
