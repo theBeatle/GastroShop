@@ -51,6 +51,7 @@ namespace WCFserver
             return list.ToArray();
         }
 
+        //fix error
         public EditAccount GetEditAcc(string login, string pass)
         {
             EditAccount acc = null;
