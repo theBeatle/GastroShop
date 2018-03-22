@@ -65,15 +65,16 @@
                 </a>
 
                 <button class="btn btn-outline-warning btn-signIn"
+                        id="SignInButton"
                         data-toggle="modal"
                         data-target="#SignInWindow"
                         style="width:100px;
                         height:40px"
                         type="button">
-                    <span><b>Sing In</b></span>
+                    <span><b class="sgnIn-btn sgnUp-btn">Sing In</b></span>
                 </button>
 
-                <button type="button" class="btn btn-outline-danger  btn-signUp"
+                <button type="button" class="btn btn-outline-danger  btn-signUp" id="SignUpBtn"
                         data-toggle="modal" data-target="#SignUpWindow" style="width:100px; height:40px">
                     <span><b>Sing Up</b></span>
                 </button>
@@ -286,7 +287,7 @@
                 </div>
                 <!-- footer -->
                 <div class="modal-footer">
-                    <button id="signInBtn" class="btn btn-primary">Sign In</button>
+                    <button id="modalSignInBtn" class="btn btn-primary">Sign In</button>
                 </div>
 
             </div>
