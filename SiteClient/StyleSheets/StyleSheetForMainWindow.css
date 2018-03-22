@@ -48,6 +48,7 @@
 .btns-info {
     width: 20%;
     float: left;
+    background-color:green
 }
 
 .input-search {
@@ -62,11 +63,16 @@
 
 .div-home {
     width: 30%;
+    height:50%;
     float: left;
+    margin-top:30px;
+    background-color:red
 }
 
 .btn-home {
-    width: 100%
+    width: 80%;
+    height:100%;
+    display: block
 }
 
 .btn-contact-us {
