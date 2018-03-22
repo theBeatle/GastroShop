@@ -122,20 +122,39 @@ namespace WCFserver
 
         public EatConstruct[] TestEatConstGet()
         {
-            EatConstruct[] eatConst = null;
-            using (var ctx = new GastroModel())
+            ////EatConstruct[] eatConst = null;
+            ////using (var ctx = new GastroModel())
+            ////{
+            //    eatConst = ctx.Ingredients.Include("ProductsType").Include("Category").Include("UnitsOfMeasurement")
+            //        .Select(i => (new EatConstruct
+            //        {
+            //            TypeOfMeals = i.Category.Name,
+            //            CategoryIngredients = i.ProductsType.Name,
+            //            Ingredient = i.Name,
+            //            Amount = i.Name,
+            //            PriceForItem = i.PriceForItem
+            //        })).ToArray();
+            //}
+            var eat1 = new EatConstruct
             {
-                eatConst = ctx.Ingredients.Include("ProductsType").Include("Category").Include("UnitsOfMeasurement")
-                    .Select(i => (new EatConstruct
-                    {
-                        TypeOfMeals = i.Category.Name,
-                        CategoryIngredients = i.ProductsType.Name,
-                        Ingredient = i.Name,
-                        Amount = i.Name,
-                        PriceForItem = i.PriceForItem
-                    })).ToArray();
-            }
-            return eatConst;
+                TypeOfMeals = "Pizza",
+                Amount = "2",
+                CategoryIngredients = "meat",
+                Ingredient = "Varenka",
+                PriceForItem = 10.87
+            };
+
+            var eat2 = new EatConstruct
+            {
+                TypeOfMeals = "Salat",
+                Amount = "3",
+                CategoryIngredients = "vegetables",
+                Ingredient = "potato",
+                PriceForItem = 34.67
+            };
+            // var
+
+            return new List<EatConstruct> { eat1, eat2 }.ToArray();
 
         }
 
@@ -156,7 +175,7 @@ namespace WCFserver
                         TimeCreate = i.DateTime,
                         NamedDishes = i.ReadyMeals.Name
                     })).ToArray();
-                
+
             }
             return blogs;
         }
