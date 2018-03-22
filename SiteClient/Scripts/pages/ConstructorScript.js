@@ -42,3 +42,13 @@ $(function () {
         $('span.value').html(value);
     });
 });
+$('#ConstructorBucket').click(function () {
+    if (value > 0) {
+        var newobject = { type: "CustomerConstructed",  coast: value, count:1};
+        mass.push(newobject);
+        $('#useditems').empty();
+        value = 0;
+        $('#spanValue').html(value);
+        $('#Constructor').modal('hide');
+    }
+});
