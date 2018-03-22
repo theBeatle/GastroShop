@@ -146,6 +146,7 @@
     <Compile Include="DTO\CategoryDTO.cs" />
     <Compile Include="DTO\ClientBlog.cs" />
     <Compile Include="DTO\EatConstruct.cs" />
+    <Compile Include="DTO\EditAccount.cs" />
     <Compile Include="DTO\IngredientDTO.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Blogs.cs" />
