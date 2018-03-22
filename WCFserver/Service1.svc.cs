@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Web.Script.Serialization;
+using WCFserver.DTO;
 
 namespace WCFserver
 {
@@ -23,15 +25,30 @@ namespace WCFserver
             return categoryToReturn;
         }
 
-        public Category[] CategoriesToReturn()
+        public CategoryDTO[] CategoriesToReturn()
         {
-            Category[] categoryToReturn = null;
-            using (var ctx = new GastroModel())
-            {
 
-                categoryToReturn = ctx.Categories.ToArray();
-            }
-            return categoryToReturn;
+            var ingredient = new IngredientDTO
+            {
+                ID = 0,
+                Name = "Chees",
+                Description = "Something"
+            };
+            var ingredients = new List<IngredientDTO> { ingredient }.ToArray();
+            var list = new List<CategoryDTO>()
+            {
+               new CategoryDTO(){ ID = 1, Name = "Pizza", Description = "Muchnoe",
+               Ingredients = ingredients
+               }
+            };
+
+
+            //using (var ctx = new GastroModel())
+            //{
+            //
+            //    categoryToReturn = ctx.Categories.ToArray();
+            //}
+            return list.ToArray();
         }
 
         public EditAccount GetEditAcc(string login, string pass)
@@ -133,6 +150,7 @@ namespace WCFserver
                         TimeCreate = i.DateTime,
                         NamedDishes = i.ReadyMeals.Name
                     })).ToArray();
+                
             }
             return blogs;
         }
@@ -148,14 +166,16 @@ namespace WCFserver
             return unitsOfMeasurToReturn;
         }
 
-        public Account ValidateUser(string login, string password)
+        public string ValidateUser(string login, string password)
         {
-            Account userToReturn = null;
-            using (var ctx = new GastroModel())
-            {
-                userToReturn = ctx.Accounts.FirstOrDefault(i => i.Login == login && i.Password == password);
-            }
-            return userToReturn;
+            //Account userToReturn = null;
+            //using (var ctx = new GastroModel())
+            //{
+            //    userToReturn = ctx.Accounts.FirstOrDefault(i => i.Login == login && i.Password == password);
+            //}
+            //return new Account();
+            return new JavaScriptSerializer().Serialize($"Test {login} {password}");
+            //return userToReturn;
         }
 
         Blogs[] IService1.BlogsToReturn()
