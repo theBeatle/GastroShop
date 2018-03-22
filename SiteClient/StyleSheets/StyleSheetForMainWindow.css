@@ -1,30 +1,164 @@
 ﻿body {
     margin: 0
 }
-.Logo {
-    font-size: 40px;
-    color: white;
+
+.nav {
+    height: 100px;
+    background-color: white;
+    /*#454647*/
 }
+
+.Logo {
+    width: 100%;
+    font-size: 28px;
+    color: white;
+    margin-top: 20%;
+}
+
 .btn-signIn:hover {
     color: #ff9400;
     background-color: black;
     border-color: #ff6a00;
 }
+
 .btn-signUp:hover {
     color: red;
     background-color: black;
     border-color: red;
 }
+
 .btn-search:hover {
     color: #ff6a00;
     background-color: lightgray;
     border-color: #ff6a00;
 }
+
 .menuInHeader:hover {
     color: black;
     background-color: #ff6a00;
     border-radius: 5px 5px 5px 5px;
 }
-.Basket:hover {
-    color: #ff6a00;
+
+.logo {
+    width: 10%;
+    float: left;
+    background-color: red;
+}
+
+.btns-info {
+    width: 20%;
+    float: left;
+}
+
+.input-search {
+    width: 30%;
+    float: left;
+}
+
+.btns-for-user {
+    width: 40%;
+    float: left;
+}
+
+.div-home {
+    width: 30%;
+    float: left;
+}
+
+.btn-home {
+    width: 100%
+}
+
+.btn-contact-us {
+    width: 100%
+}
+
+.div-contact-us {
+    width: 30%;
+    float: left;
+}
+
+.div-dishes {
+    width: 40%;
+    float: left;
+}
+
+@media only screen and (max-width: 1350px) {
+    .Logo {
+        font-size: 24px;
+    }
+
+    .logo {
+        width: 9%;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .Logo {
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 8.7%;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .Logo {
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 8.7%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .Logo {
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 8.4%;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .Logo {
+        font-size: 16px;
+    }
+
+    .logo {
+        width: 8.4%;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .Logo {
+        font-size: 14px;
+    }
+
+    .logo {
+        width: 8.1%;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .Logo {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 8.1%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .Logo {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 7.8%;
+    }
 }
