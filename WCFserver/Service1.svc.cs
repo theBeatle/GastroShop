@@ -34,7 +34,13 @@ namespace WCFserver
                 Name = "Chees",
                 Description = "Something"
             };
-            var ingredients = new List<IngredientDTO> { ingredient }.ToArray();
+            var ingredient2 = new IngredientDTO
+            {
+                ID = 0,
+                Name = "Kolbasa",
+                Description = "Smachna kolbasa"
+            };
+            var ingredients = new List<IngredientDTO> { ingredient, ingredient2}.ToArray();
             var list = new List<CategoryDTO>()
             {
                new CategoryDTO(){ ID = 1, Name = "Pizza", Description = "Muchnoe",
