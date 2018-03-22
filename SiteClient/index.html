@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <div id="mainContainer"></div>
+
 
     <!--navigation bar-->
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
@@ -81,120 +81,123 @@
                         data-toggle="modal" data-target="#Constructor">
                     <span><b>Constructor food</b></span>
                 </button>
-                <!-- constructor modal -->
-                <div class="modal fade" id="Constructor">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h3 class="modal-title">Constructor</h3>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row  wrapper ">
-                                    <div class="leftpanel ">
-                                        <form class="align-middle">
-                                            <div class="titlemiddle">
-                                                <h2>Обрані додатки:</h2>
-                                            </div>
-                                            <div class="listwrapper">
-                                                <ul class="pz-items" id="useditems"></ul>
-                                            </div>
-                                            <div class="pz-total-price">Ціна: <span class="value"></span> грн</div>
-                                            <div class="bucketbutton">
-                                                <button type="button" class="btn btn-info">В корзину</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="rightpanel">
-                                        <form id="rightform" class="align-middle">
-                                            <div class="titlemiddle">
-                                                <h2 class="title-items">Selected ingredients:</h2>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="titlemiddle">
-                                                    <h4>Сир3</h4>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="titlemiddle"> <h4>Мясо</h4></div>
-                                                <div class="listwrapper">
-                                                    <ul class="pz-items">
-                                                        <li class="pz-item">
-                                                            <div class="handle"></div>
-                                                            <div class="title">Стейк</div>
-                                                            <div class="coast">15</div>
-                                                        </li>
-                                                        <li class="pz-item">
-                                                            <div class="handle"></div>
-                                                            <div class="title">Філе</div>
-                                                            <div class="coast">65</div>
-                                                        </li>
-                                                        <li class="pz-item">
-                                                            <div class="handle"></div>
-                                                            <div class="title">Філе</div>
-                                                            <div class="coast">85</div>
-                                                        </li>
-                                                        <li class="pz-item">
-                                                            <div class="handle"></div>
-                                                            <div class="title">Філе</div>
-                                                            <div class="coast">55</div>
-                                                        </li>
-                                                        <li class="pz-item">
-                                                            <div class="handle"></div>
-                                                            <div class="title">Філе3fdfdgfdgfghjjhjhhhghghg</div>
-                                                            <div class="coast">45</div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="titlemiddle"><h4>Сири</h4></div>
-                                                <div class="listwrapper">
-                                                    <ul class="pz-items">
-                                                        <li class="pz-item">
-                                                            <div class="handle"></div>
-                                                            <div class="title">Сирggfgfgfg1ghgghghgggggggggggggg</div>
-                                                            <div class="coast">15</div>
-                                                        </li>
-                                                        <li class="pz-item">
-                                                            <div class="handle"></div>
-                                                            <div class="title">Сир2</div>
-                                                            <div class="coast">65</div>
-                                                        </li>
-                                                        <li class="pz-item">
-                                                            <div class="handle"></div>
-                                                            <div class="title">Сир3</div>
-                                                            <div class="coast">85</div>
-                                                        </li>
-                                                        <li class="pz-item">
-                                                            <div class="handle"></div>
-                                                            <div class="title">Сир4</div>
-                                                            <div class="coast">55</div>
-                                                        </li>
-                                                        <li class="pz-item">
-                                                            <div class="handle"></div>
-                                                            <div class="title">Сир5</div>
-                                                            <div class="coast">45</div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-danger" style="width:150px; height:40px">
-                                    <span><b>Constructor food</b></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </form>
         </div>
     </nav>
+
+    <div id="mainContainer"></div>
+
+    <!-- constructor modal -->
+    <div class="modal fade" id="Constructor">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Constructor</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row  wrapper ">
+                        <div class="leftpanel ">
+                            <form class="align-middle">
+                                <div class="titlemiddle">
+                                    <h2>Обрані додатки:</h2>
+                                </div>
+                                <div class="listwrapper">
+                                    <ul class="pz-items" id="useditems"></ul>
+                                </div>
+                                <div class="pz-total-price">Ціна: <span class="value"></span> грн</div>
+                                <div class="bucketbutton">
+                                    <button type="button" class="btn btn-info">В корзину</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="rightpanel">
+                            <form id="rightform" class="align-middle">
+                                <div class="titlemiddle">
+                                    <h2 class="title-items">Selected ingredients:</h2>
+                                </div>
+                                <div class="form-group">
+                                    <div class="titlemiddle">
+                                        <h4>Сир3</h4>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="titlemiddle"> <h4>Мясо</h4></div>
+                                    <div class="listwrapper">
+                                        <ul class="pz-items">
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Стейк</div>
+                                                <div class="coast">15</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Філе</div>
+                                                <div class="coast">65</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Філе</div>
+                                                <div class="coast">85</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Філе</div>
+                                                <div class="coast">55</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Філе3fdfdgfdgfghjjhjhhhghghg</div>
+                                                <div class="coast">45</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="titlemiddle"><h4>Сири</h4></div>
+                                    <div class="listwrapper">
+                                        <ul class="pz-items">
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Сирggfgfgfg1ghgghghgggggggggggggg</div>
+                                                <div class="coast">15</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Сир2</div>
+                                                <div class="coast">65</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Сир3</div>
+                                                <div class="coast">85</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Сир4</div>
+                                                <div class="coast">55</div>
+                                            </li>
+                                            <li class="pz-item">
+                                                <div class="handle"></div>
+                                                <div class="title">Сир5</div>
+                                                <div class="coast">45</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" style="width:150px; height:40px">
+                        <span><b>Constructor food</b></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- registration modal -->
     <div class="modal fade" id="SignUpWindow">
         <div class="modal-dialog">
@@ -325,8 +328,10 @@
     <!-- scripts -->
     <script src="Scripts/jquery-3.3.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/products-list-js.js"></script>
+    <script src="Scripts/pages/products-list-js.js"></script>
+
     <script src="Scripts/pages/index.js"></script>
+
     <script src="Scripts/pages/ConstructorScript.js"></script>
     <script src="Scripts/pages/indexBasketFoods.js"></script>
 
