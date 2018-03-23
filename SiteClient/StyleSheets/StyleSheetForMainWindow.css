@@ -42,13 +42,13 @@
 .logo {
     width: 10%;
     float: left;
-    background-color: red;
+    background-color: blue;
 }
 
 .btns-info {
     width: 20%;
     float: left;
-    background-color:green
+    background-color:green;
 }
 
 .input-search {
@@ -70,9 +70,10 @@
 }
 
 .btn-home {
-    width: 80%;
-    height:100%;
-    display: block
+    height: 50%;
+    width: 100px;
+   margin: 0 auto;
+   display: block;
 }
 
 .btn-contact-us {
