@@ -82,25 +82,6 @@ function LoadMealsOnPage() { // функція яка буде вішаться 
         });
 }
 
-function GetMeals(page, elemsPerPage) {
-    return new Promise(function (resolve, reject) {
-
-        $.ajax({
-            url: "http://localhost:7212/Service1.svc/GetMeals",
-            type: "POST",
-            data: JSON.stringify({ pageNum: page, elementsForPage: elemsPerPage }),
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                resolve(data);
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                reject(textStatus);
-            }
-        });
-    });
-}
-
 
 function LoadProducts(data) {
     meals = data;
