@@ -3,7 +3,7 @@ var massHeadersWidths = ["5%", "30%", "20%", "15%", "15%", "15%"];
 
 var mass = [["OG Air Max 93", "109.50", "1"], ["AIR MAX 1", "134.00", "2"], ["Jordan 12", "157.00", "1"], ["Jordan 8", "221.00", "3"]];
 
-var inputMass;// = mass;
+var inputMass=mass;
 
 $(function () {
 
