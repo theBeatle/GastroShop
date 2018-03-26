@@ -22,6 +22,7 @@
 
     <!--<script src="Scripts/jquery-ui-1.12.1.js"></script>-->
     <script src="Scripts/jquery-ui.js"></script>
+    <script src="Scripts/product_filter.js"></script>
 </head>
 <body>
 
@@ -166,13 +167,19 @@
         </div>
     </div>
 
-    <button class="btn btn-outline-dark btn-sm" style="margin:5px;" data-toggle="collapse" data-target="#filter-collapse">FILTER ></button>
+    <button onclick="ShowOrHideFilter();" id="btn-filrer-show" class="btn btn-outline-primary btn-sm" style="margin:2px; height:70px; width: 30px; padding: 0;" data-toggle="collapse" data-target="#filter-collapse">
+        <span style="writing-mode: vertical-lr;transform: rotate(-180deg);">< FILTER</span>
+    </button>
 
     <div id="filter-collapse" class="collapse">
 
         <div class="panel panel-primary filter-panel">
             <div class="panel-body">
-                <div class="filter-name">Category</div>
+
+                <div class="filter-name">
+                    Category
+                    <button style="float: right;" onclick="ShowOrHideFilter();" type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse" data-target="#filter-collapse"><</button>
+                </div>
 
                 <div class="dropdown">
                     <button style="width:100%;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -275,8 +282,6 @@
             </div>
         </div>
     </div>
-
-    <script src="Scripts/product_filter.js"></script>
 
 </body>
 </html>

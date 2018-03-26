@@ -1,4 +1,5 @@
 ﻿var $star_rating = $('.star-rating .fa');
+var filter_visible = false;
 
 var SetRatingStar = function () {
     return $star_rating.each(function () {
@@ -35,3 +36,13 @@ $(function () {
     $("#amount").val("$" + $("#slider-range").slider("values", 0) +
         " - $" + $("#slider-range").slider("values", 1));
 });
+
+function ShowOrHideFilter() {
+    if (filter_visible) {
+        $("#btn-filrer-show").css("display", "block");
+    }
+    else {
+        $("#btn-filrer-show").css("display", "none");
+    }
+    filter_visible = !filter_visible;
+}
