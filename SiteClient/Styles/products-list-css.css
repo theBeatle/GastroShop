@@ -9,16 +9,16 @@
         }
         .product-name{
             color:black;
-            float:left;
             display:inline-block;
+            float:left;
         }
         .product-description{
             font-size:1em;
-            display:none;
+            text-align:justify;
+            height:200px;
+            overflow-y:auto;
         }
-        .product:hover .product-description{
-            display:inline-block;
-        }
+
 
         .product-img-container {
             height:100px;
@@ -31,6 +31,12 @@
             height:100px;
             width: 100%;
             object-fit:cover;
+        }
+        .product-title{
+            width:100%;
+            margin-left:0;
+            font-size:1.3em;
+            font-weight:bold;
         }
         .product-raiting{
             color:red;
@@ -58,4 +64,14 @@
         }
         #products-nav{
             margin-top:5px;
+        }
+        .basket-btn
+        {
+            color:white;
+            font-weight:bold;
+            background-color:lightgreen;
+        }
+        .basket-btn:hover{
+            background-color:darkgreen;
+            color:white;
         }

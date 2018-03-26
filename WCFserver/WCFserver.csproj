@@ -148,6 +148,7 @@
     <Compile Include="DTO\EatConstruct.cs" />
     <Compile Include="DTO\EditAccount.cs" />
     <Compile Include="DTO\IngredientDTO.cs" />
+    <Compile Include="DTO\RandomMeals.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Blogs.cs" />
     <Compile Include="Models\BlogsCategory.cs" />
@@ -166,6 +167,7 @@
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

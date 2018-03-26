@@ -74,6 +74,7 @@ namespace WCFserver
            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         EatConstruct[] TestEatConstGet();
 
+        //
         [OperationContract]
         [WebInvoke(Method = "POST",
            ResponseFormat = WebMessageFormat.Json,
@@ -85,6 +86,13 @@ namespace WCFserver
            ResponseFormat = WebMessageFormat.Json,
            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         int NumberOfReadyMeals();
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+           ResponseFormat = WebMessageFormat.Json,
+           BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        Meals[] GetMeals(int pageNum, int elementsForPage);
+
 
     }
 }

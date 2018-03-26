@@ -40,7 +40,7 @@ namespace WCFserver
                 Name = "Kolbasa",
                 Description = "Smachna kolbasa"
             };
-            var ingredients = new List<IngredientDTO> { ingredient, ingredient2}.ToArray();
+            var ingredients = new List<IngredientDTO> { ingredient, ingredient2 }.ToArray();
             var list = new List<CategoryDTO>()
             {
                new CategoryDTO(){ ID = 1, Name = "Pizza", Description = "Muchnoe",
@@ -57,6 +57,7 @@ namespace WCFserver
             return list.ToArray();
         }
 
+        //fix error
         public EditAccount GetEditAcc(string login, string pass)
         {
             EditAccount acc = null;
@@ -73,6 +74,14 @@ namespace WCFserver
                     })).SingleOrDefault();
             }
             return acc;
+        }
+
+        public Meals[] GetMeals(int pageNum, int elementsForPage)
+        {
+
+
+
+            return Utils.Utilities.RandomMealsGenerator(elementsForPage);
         }
 
         public Ingredients[] IngredientsToReturn()
@@ -152,7 +161,6 @@ namespace WCFserver
                 Ingredient = "potato",
                 PriceForItem = 34.67
             };
-            // var
 
             return new List<EatConstruct> { eat1, eat2 }.ToArray();
 
