@@ -55,4 +55,63 @@ function PostValidateUser() {
     })
 }
 
+function GetAllCategories() {
+	return new Promise(function (resolve, reject) {
+		$.ajax({
+			url: "http://10.7.180.110/GastroService/Service1.svc/CategoriesToReturn",
+			//url: "http://localhost:7212/Service1.svc/CategoriesToReturn",
+			type: "POST",
+			dataType: "json",
+			contentType: "application/json; charset=utf-8",
+			success: function (data) {
+				console.log(data);
+				resolve(data);
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				console.log(textStatus);
+				reject(textStatus);
+			}
+		});
+	});
+}
 
+function GetMealsForConstructor() {
+	return new Promise(function (resolve, reject) {
+		$.ajax({
+			url: "http://10.7.180.110/GastroService/Service1.svc/TestEatConstGet",
+			//url: "http://localhost:7212/Service1.svc/TestEatConstGet",
+			type: "POST",
+			dataType: "json",
+			contentType: "application/json; charset=utf-8",
+			success: function (data) {
+				console.log(data);
+				resolve(data);
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				console.log(textStatus);
+				reject(textStatus);
+			}
+		});
+	});
+}
+
+function GetMeals(page, elemsPerPage) {
+	return new Promise(function (resolve, reject) {
+		$.ajax({
+			url: "http://10.7.180.110/GastroService/Service1.svc/GetMeals",
+			//url: "http://localhost:7212/Service1.svc/GetMeals",
+			type: "POST",
+			data: JSON.stringify({ pageNum: page, elementsForPage: elemsPerPage }),
+			dataType: "json",
+			contentType: "application/json; charset=utf-8",
+			success: function (data) {
+				console.log(data);
+				resolve(data);
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				console.log(textStatus);
+				reject(textStatus);
+			}
+		});
+	});
+}
