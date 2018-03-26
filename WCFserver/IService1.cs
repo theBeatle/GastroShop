@@ -16,6 +16,13 @@ namespace WCFserver
     {
         [OperationContract]
         [WebInvoke(Method = "POST",
+        ResponseFormat = WebMessageFormat.Json,
+        BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        string AddReview(string title, string text);
+
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         string ValidateUser(string login, string password);

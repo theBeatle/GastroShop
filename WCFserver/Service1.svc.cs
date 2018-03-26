@@ -14,6 +14,24 @@ namespace WCFserver
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        public string AddReview(string titleOfReview, string textOfReview)
+        {
+            try
+            {
+                using (var ctx = new GastroModel())
+                {
+                    ctx.Blogs.Add(new Blogs() {Title = titleOfReview,Text = textOfReview, DateTime = DateTime.Now});
+                    ctx.SaveChanges();
+                }
+
+                return "You successfully added review";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
         public BlogsCategory[] BlogsCategoriesToReturn()
         {
             BlogsCategory[] categoryToReturn = null;

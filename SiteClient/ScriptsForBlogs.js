@@ -1,9 +1,42 @@
 ﻿window.addEventListener('load', function () {
 
-    document.getElementById('btnShowAllCommetns').addEventListener('click', AddDivIncomments);
+    //document.getElementById('btnShowAllCommetns').addEventListener('click', AddDivIncomments);
+    document.getElementById('AnswerYesInreview').addEventListener('click', AddReview);
 });
 
 var x = 0; var flagForIsShowComments = false; var flagForClickPutGradeBTN = false;
+
+
+function AddReview()
+{
+    var themeReview = document.getElementById('inpThemeOfReview');
+
+    var textReview = document.getElementById('reviewId');
+
+    var dataReview = {};
+
+    dataReview.titleOfReview = themeReview.value;
+
+    dataReview.textOfReview = textReview.value;
+
+    if (themeReview.value != '')
+    {
+        $.ajax({
+            url: "http://localhost:7212/Service1.svc/AddReview", data: JSON.stringify(dataReview), type: "POST", dataType: "JSON", contentType: "application/json; charset=utf8",
+
+            success: function (data) {
+                alert(data);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(textStatus);
+            }
+        });
+    }
+    else
+    {
+        alert('Enter theme of review');
+    }
+}
 
 function AddCommentBlock()
 {
