@@ -1,54 +1,57 @@
-﻿body {
+﻿* {
+    transition: all .2s;
+}
+
+body {
     margin: 0
 }
 
 .nav {
     height: 100px;
-    background-color: white;
-    /*#454647*/
+    background-color: #454647;
 }
 
 .Logo {
     width: 100%;
-    font-size: 28px;
+    font-size: 70px;
     color: white;
-    margin-top: 20%;
 }
 
-.btn-signIn:hover {
-    color: #ff9400;
-    background-color: black;
-    border-color: #ff6a00;
+.btn-constructor-food:hover {
+    background-color: orange;
+    color: white;
 }
 
-.btn-signUp:hover {
-    color: red;
-    background-color: black;
-    border-color: red;
+.btn-sign-in:hover {
+    background-color: orange;
+    color: white;
+}
+
+.btn-sign-up:hover {
+    background-color: orange;
+    color: white;
 }
 
 .btn-search:hover {
-    color: #ff6a00;
-    background-color: lightgray;
-    border-color: #ff6a00;
+    background-color: orange;
+    color: white;
 }
 
 .menuInHeader:hover {
-    color: black;
-    background-color: #ff6a00;
+    background-color: orange;
+    color: white;
     border-radius: 5px 5px 5px 5px;
 }
 
 .logo {
-    width: 10%;
+    width: 20%;
+    min-width: 7.8%;
     float: left;
-    background-color: blue;
 }
 
 .btns-info {
     width: 20%;
     float: left;
-    background-color:green;
 }
 
 .input-search {
@@ -57,115 +60,315 @@
 }
 
 .btns-for-user {
-    width: 40%;
-    float: left;
-}
-
-.div-home {
     width: 30%;
-    height:50%;
     float: left;
-    margin-top:30px;
-    background-color:red
 }
 
 .btn-home {
-    height: 50%;
-    width: 100px;
-   margin: 0 auto;
-   display: block;
+    width: 90%;
 }
 
+    .btn-home:hover {
+        background-color: orange;
+        color: white;
+    }
+
+
+.btn-dishes {
+    width: 90%;
+}
+
+    .btn-dishes:hover {
+        background-color: orange;
+        color: white;
+    }
+
+
+
 .btn-contact-us {
-    width: 100%
+    width: 90%;
+    margin: 0;
+    text-align: center;
+}
+
+    .btn-contact-us:hover {
+        background-color: orange;
+        color: white;
+    }
+
+.div-home {
+    width: 33%;
+    float: left;
+    margin-top: 30px;
 }
 
 .div-contact-us {
-    width: 30%;
+    width: 33%;
     float: left;
+    margin-top: 30px;
 }
 
 .div-dishes {
-    width: 40%;
+    width: 34%;
     float: left;
+    margin-top: 30px;
+}
+
+.btn-in-btns-info {
+    font-size: 14px;
+}
+
+.inpt-seacrh {
+    width: 50%;
+}
+
+.input-and-btn-search {
+    margin-top: 30px
+}
+
+.div-basket {
+    width: 20%;
+    float: left;
+    background-color: red;
+    height: 100%;
+}
+
+.div-sign-in {
+    width: 23%;
+    float: left;
+    background-color: blue;
+    height: 100%;
+}
+
+.div-sign-up {
+    width: 23%;
+    float: left;
+    background-color: cadetblue;
+    height: 100%;
+}
+
+.div-constructor-food {
+    width: 34%;
+    float: left;
+    background-color: aqua;
+    height: 100%;
+}
+
+@media only screen and (max-width: 1750px) {
+    .Logo {
+        font-size: 65px;
+    }
+
+
+    .btn-in-btns-info {
+        font-size: 14px;
+    }
+}
+
+#p-basket-icon {
+    font-size: 25px
+}
+
+.p-basket-num {
+    font-size: 25px
+}
+
+.p-sign-in {
+    font-size: 15px
+}
+
+.p-sign-up {
+    font-size: 15px
+}
+
+.p-constructor-food {
+    font-size: 15px
+}
+
+@media only screen and (max-width: 1700px) {
+    .Logo {
+        font-size: 55px;
+        margin-top: 2px;
+    }
+
+
+
+    .btn-in-btns-info {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 1650px) {
+    .Logo {
+        font-size: 53px;
+        margin-top: 3px;
+    }
+
+
+    .btn-in-btns-info {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .Logo {
+        font-size: 52px;
+        margin-top: 5px;
+    }
+
+    .btn-in-btns-info {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 1550px) {
+    .Logo {
+        font-size: 50px;
+        margin-top: 7px;
+    }
+
+
+    .btn-in-btns-info {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .Logo {
+        font-size: 49px;
+        margin-top: 8px;
+    }
+
+
+    .btn-in-btns-info {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .Logo {
+        font-size: 47px;
+        margin-top: 10px;
+    }
+
+
+
+    .btn-in-btns-info {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .Logo {
+        font-size: 46px;
+        margin-top: 11px;
+    }
+
+
+    .btn-in-btns-info {
+        font-size: 10px;
+    }
 }
 
 @media only screen and (max-width: 1350px) {
     .Logo {
-        font-size: 24px;
+        font-size: 44px;
+        margin-top: 13px;
     }
 
-    .logo {
-        width: 9%;
+    .btn-in-btns-info {
+        font-size: 10px;
     }
 }
 
 @media only screen and (max-width: 1300px) {
     .Logo {
-        font-size: 20px;
+        font-size: 43px;
+        margin-top: 14px;
     }
 
-    .logo {
-        width: 8.7%;
+    .btn-in-btns-info {
+        font-size: 10px;
+    }
+
+    .p-sign-in {
+        font-size:14px
+    }
+
+    .p-sign-up {
+    }
+
+    .p-constructor-food {
     }
 }
 
 @media only screen and (max-width: 1250px) {
     .Logo {
-        font-size: 18px;
+        font-size: 42px;
+        margin-top: 20px;
     }
 
-    .logo {
-        width: 8.7%;
+
+    .btn-in-btns-info {
+        font-size: 10px;
     }
 }
 
 @media only screen and (max-width: 1200px) {
     .Logo {
-        font-size: 18px;
+        font-size: 41px;
+        margin-top: 22px;
     }
 
-    .logo {
-        width: 8.4%;
+    .btn-in-btns-info {
+        font-size: 10px;
     }
 }
 
 @media only screen and (max-width: 1150px) {
     .Logo {
-        font-size: 16px;
+        font-size: 39px;
+        margin-top: 24px;
     }
 
-    .logo {
-        width: 8.4%;
+
+
+    .btn-in-btns-info {
+        font-size: 9px;
     }
 }
 
 @media only screen and (max-width: 1100px) {
     .Logo {
-        font-size: 14px;
+        font-size: 38px;
+        margin-top: 26px;
     }
 
-    .logo {
-        width: 8.1%;
+
+    .btn-in-btns-info {
+        font-size: 9px;
     }
 }
 
 @media only screen and (max-width: 1050px) {
     .Logo {
-        font-size: 12px;
+        font-size: 36px;
+        margin-top: 28px;
     }
 
-    .logo {
-        width: 8.1%;
+
+    .btn-in-btns-info {
+        font-size: 9px;
     }
 }
 
 @media only screen and (max-width: 1000px) {
     .Logo {
-        font-size: 12px;
+        font-size: 35px;
+        margin-top: 30px;
     }
 
-    .logo {
-        width: 7.8%;
+    .btn-in-btns-info {
+        font-size: 9px;
     }
 }

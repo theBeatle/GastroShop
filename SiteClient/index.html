@@ -23,14 +23,16 @@
             </button>-->
         </div>
         <div class="btns-info">
-           <div style="text-align:center;">
-                <button class="btn btn-home"><p><b>Home</b></p></button>
-           </div>
-            <!--<div class="div-contact-us"><button type="button" class="btn btn-contact-us">Contact us</button></div>-->
-            <!--<div class="div-dishes">
+            <div class="div-home" style="text-align:center;">
+                <button class="btn btn-home btn-outline-secondary"><b class="btn-in-btns-info">Home</b></button>
+            </div>
+            <div class="div-contact-us" style="text-align:center;">
+                <button type="button" class="btn btn-contact-us"><b class="btn-in-btns-info">Contact us</b></button>
+            </div>
+            <div class="div-dishes" style="text-align:center;">
                 <div class="dropdown">
                     <button class="btn dropdown-toggle btn-dishes" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dishes
+                        <b class="btn-in-btns-info">Dishes</b>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <button class="dropdown-item" type="button">Drinks</button>
@@ -38,12 +40,54 @@
                         <button class="dropdown-item" type="button">Pizza</button>
                     </div>
                 </div>
-            </div-->
-
+            </div>
         </div>
 
-        <div class="input-search">a</div>
-        <div class="btns-for-user">a</div>
+
+        <div class="input-search">
+            <div class="input-and-btn-search">
+                <input type="text" class=" inpt-seacrh" aria-label="Text input with checkbox">
+                <!--<div class="input-group">
+                    <input type="text" class="form-control inpt-seacrh">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-danger" type="button"><b>Seacrh</b></button>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+
+
+
+
+
+        <div class="btns-for-user">
+            <div class="div-basket" style="text-align:center;">
+                <a id="cartLinkModal" href="#modalCart" data-toggle="modal" style="margin-top:30px; text-decoration:none" class="btn btn-outline-success">
+                        <span class="fa fa-cart-plus" id="p-basket-icon" style="display:inline-block; vertical-align:middle; position:relative;"></span>
+                        <span id="quantityInIconCart" class="badge p-basket-num" style="display:inline-block; vertical-align:middle; position:relative;">4</span>
+                </a>
+            </div>
+            <div class="div-sign-in" style="text-align:center;">
+                <button class="btn btn-sign-in"
+                        data-toggle="modal"
+                        data-target="#SignInWindow"
+                        style="width:100px; margin-top:30px"
+                        type="button">
+                    <span><b class="p-sign-in">Sing In</b></span>
+                </button>
+            </div>
+            <div class="div-sign-up" style="text-align:center;">
+                <button type="button" class="btn btn-sign-up"
+                        data-toggle="modal" data-target="#SignUpWindow" style="width:100px; margin-top:30px">
+                    <span><b class="p-sign-up">Sing Up</b></span>
+                </button>
+            </div>
+            <div class="div-constructor-food" style="text-align:center;">
+                <button type="button" class="btn btn-constructor-food" style="width:150px; margin-top:30px">
+                    <span><b class="p-constructor-food">Constructor food</b></span>
+                </button>
+            </div>
+        </div>
 
         <!--"-->
         <!--<div class="collapse navbar-collapse" id="navbarsExampleDefault">
@@ -249,9 +293,9 @@
 
     <script src="Scripts/pages/indexBasketFoods.js"></script>
 
-    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="StyleSheets/StyleSheetForShoppingCart.css" />
     <link href="Styles/bootstrap.css" rel="stylesheet" />
