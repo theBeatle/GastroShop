@@ -14,12 +14,13 @@ namespace WCFserver
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        //private GastroModel _ctx = new GastroModel();
+
         public BlogsCategory[] BlogsCategoriesToReturn()
         {
             BlogsCategory[] categoryToReturn = null;
             using (var ctx = new GastroModel())
             {
-
                 categoryToReturn = ctx.BlogsCategorys.ToArray();
             }
             return categoryToReturn;
@@ -30,21 +31,25 @@ namespace WCFserver
 
             var ingredient = new IngredientDTO
             {
-                ID = 0,
+
                 Name = "Chees",
                 Description = "Something"
             };
             var ingredient2 = new IngredientDTO
             {
-                ID = 0,
+
                 Name = "Kolbasa",
                 Description = "Smachna kolbasa"
             };
             var ingredients = new List<IngredientDTO> { ingredient, ingredient2 }.ToArray();
             var list = new List<CategoryDTO>()
             {
-               new CategoryDTO(){ ID = 1, Name = "Pizza", Description = "Muchnoe",
-               Ingredients = ingredients
+               new CategoryDTO()
+               {
+                   ID = 1,
+                   Name = "Pizza",
+                   Description = "Muchnoe",
+                   Ingredients = ingredients
                }
             };
 
@@ -76,12 +81,51 @@ namespace WCFserver
             return acc;
         }
 
-        public Meals[] GetMeals(int pageNum, int elementsForPage)
+        public ReadyMealDTO[] GetMeals(int pageNum, int elementsForPage)
         {
+            GastroModel _ctx = new GastroModel();
+            var meals = new List<ReadyMealDTO>();
+            int mealsCount = _ctx.ReadyMeals.Count();
+            var tmpResult = _ctx.ReadyMeals.Include("Ingredients")
+                .Select(m => new //ReadyMealDTO
+                {
+                    m.ID,
+                    m.Name,
+                    m.Description,
+                    m.Raiting,
+                    m.Size,
+                    m.MealPicUrl,
+                    Price = 1.2 * m.Ingredients.Select(i => i.PriceForItem).Sum(),
+                    Ingredients = m.Ingredients.Select(t => new IngredientDTO()
+                    {
+                        Name = t.Name,
+                        Description = t.Description
+                    }) //.ToArray()
+                })
+               .ToList()
+               .Select(obj => new ReadyMealDTO
+               {
+                   ID = obj.ID,
+                   Name = obj.Name,
+                   Description = obj.Description,
+                   Raiting = obj.Raiting,
+                   Size = obj.Size,
+                   MealPicUrl = obj.MealPicUrl,
+                   Price = obj.Price,
+                   Ingredients = obj.Ingredients.ToArray()
+               });
 
+            if (mealsCount <= elementsForPage)
+            {
+                meals = tmpResult.ToList();
+            }
+            else
+            {
+                meals = tmpResult.Skip(pageNum * elementsForPage).Take(elementsForPage).ToList();
+            }
 
-
-            return Utils.Utilities.RandomMealsGenerator(elementsForPage);
+            return meals.ToArray();
+            //return Utils.Utilities.RandomMealsGenerator(elementsForPage);
         }
 
         public Ingredients[] IngredientsToReturn()
