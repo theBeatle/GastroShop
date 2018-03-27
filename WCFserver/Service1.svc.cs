@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Web.Script.Serialization;
+using WCFserver.DTO;
 
 namespace WCFserver
 {
@@ -12,26 +14,118 @@ namespace WCFserver
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        //private GastroModel _ctx = new GastroModel();
+
         public BlogsCategory[] BlogsCategoriesToReturn()
         {
             BlogsCategory[] categoryToReturn = null;
             using (var ctx = new GastroModel())
             {
-
                 categoryToReturn = ctx.BlogsCategorys.ToArray();
             }
             return categoryToReturn;
         }
 
-        public Category[] CategoriesToReturn()
+        public CategoryDTO[] CategoriesToReturn()
         {
-            Category[] categoryToReturn = null;
-            using (var ctx = new GastroModel())
+
+            var ingredient = new IngredientDTO
             {
 
-                categoryToReturn = ctx.Categories.ToArray();
+                Name = "Chees",
+                Description = "Something"
+            };
+            var ingredient2 = new IngredientDTO
+            {
+
+                Name = "Kolbasa",
+                Description = "Smachna kolbasa"
+            };
+            var ingredients = new List<IngredientDTO> { ingredient, ingredient2 }.ToArray();
+            var list = new List<CategoryDTO>()
+            {
+               new CategoryDTO()
+               {
+                   ID = 1,
+                   Name = "Pizza",
+                   Description = "Muchnoe",
+                   Ingredients = ingredients
+               }
+            };
+
+
+            //using (var ctx = new GastroModel())
+            //{
+            //
+            //    categoryToReturn = ctx.Categories.ToArray();
+            //}
+            return list.ToArray();
+        }
+
+        //fix error
+        public EditAccount GetEditAcc(string login, string pass)
+        {
+            EditAccount acc = null;
+            using (var ctx = new GastroModel())
+            {
+                acc = ctx.Accounts.Where(i => i.Login == login && i.Password == pass)
+                    .Select(s => (new EditAccount
+                    {
+                        FirstName = s.FirstName,
+                        SurName = s.Surname,
+                        Email = s.Email,
+                        Address = s.Address,
+                        PhoneNumber = s.PhoneNumber
+                    })).SingleOrDefault();
             }
-            return categoryToReturn;
+            return acc;
+        }
+
+        public ReadyMealDTO[] GetMeals(int pageNum, int elementsForPage)
+        {
+            GastroModel _ctx = new GastroModel();
+            var meals = new List<ReadyMealDTO>();
+            int mealsCount = _ctx.ReadyMeals.Count();
+            var tmpResult = _ctx.ReadyMeals.Include("Ingredients")
+                .Select(m => new //ReadyMealDTO
+                {
+                    m.ID,
+                    m.Name,
+                    m.Description,
+                    m.Raiting,
+                    m.Size,
+                    m.MealPicUrl,
+                    Price = 1.2 * m.Ingredients.Select(i => i.PriceForItem).Sum(),
+                    Ingredients = m.Ingredients.Select(t => new IngredientDTO()
+                    {
+                        Name = t.Name,
+                        Description = t.Description
+                    }) //.ToArray()
+                })
+               .ToList()
+               .Select(obj => new ReadyMealDTO
+               {
+                   ID = obj.ID,
+                   Name = obj.Name,
+                   Description = obj.Description,
+                   Raiting = obj.Raiting,
+                   Size = obj.Size,
+                   MealPicUrl = obj.MealPicUrl,
+                   Price = obj.Price,
+                   Ingredients = obj.Ingredients.ToArray()
+               });
+
+            if (mealsCount <= elementsForPage)
+            {
+                meals = tmpResult.ToList();
+            }
+            else
+            {
+                meals = tmpResult.Skip(pageNum * elementsForPage).Take(elementsForPage).ToList();
+            }
+
+            return meals.ToArray();
+            //return Utils.Utilities.RandomMealsGenerator(elementsForPage);
         }
 
         public Ingredients[] IngredientsToReturn()
@@ -43,6 +137,18 @@ namespace WCFserver
                 ingredientsToReturn = ctx.Ingredients.ToArray();
             }
             return ingredientsToReturn;
+        }
+
+        public int NumberOfReadyMeals()
+        {
+            int numb = 0;
+            ReadyMeals[] readyMeals = null;
+            using (var ctx = new GastroModel())
+            {
+                readyMeals = ctx.ReadyMeals.ToArray();
+                numb = readyMeals.Length;
+            }
+            return numb;
         }
 
         public ProductsType[] ProductsTypeToReturn()
@@ -67,24 +173,40 @@ namespace WCFserver
             return readyMealsToReturn;
         }
 
-        ////
         public EatConstruct[] TestEatConstGet()
         {
-            EatConstruct[] eatConst = null;
-            using (var ctx = new GastroModel())
+            ////EatConstruct[] eatConst = null;
+            ////using (var ctx = new GastroModel())
+            ////{
+            //    eatConst = ctx.Ingredients.Include("ProductsType").Include("Category").Include("UnitsOfMeasurement")
+            //        .Select(i => (new EatConstruct
+            //        {
+            //            TypeOfMeals = i.Category.Name,
+            //            CategoryIngredients = i.ProductsType.Name,
+            //            Ingredient = i.Name,
+            //            Amount = i.Name,
+            //            PriceForItem = i.PriceForItem
+            //        })).ToArray();
+            //}
+            var eat1 = new EatConstruct
             {
-                eatConst = ctx.Ingredients.Include("ProductsType").Include("Category").Include("UnitsOfMeasurement")
-                    .Select(i => (new EatConstruct
-                    {
-                        TypeOfMeals = i.Category.Name,
-                        CategoryIngredients = i.ProductsType.Name,
-                        Ingredient = i.Name,
-                        Amount = i.Name,
-                        PriceForItem = i.PriceForItem
+                TypeOfMeals = "Pizza",
+                Amount = "2",
+                CategoryIngredients = "meat",
+                Ingredient = "Varenka",
+                PriceForItem = 10.87
+            };
 
-                    })).ToArray();
-            }
-            return eatConst;
+            var eat2 = new EatConstruct
+            {
+                TypeOfMeals = "Salat",
+                Amount = "3",
+                CategoryIngredients = "vegetables",
+                Ingredient = "potato",
+                PriceForItem = 34.67
+            };
+
+            return new List<EatConstruct> { eat1, eat2 }.ToArray();
 
         }
 
@@ -93,13 +215,19 @@ namespace WCFserver
             ClientBlog[] blogs = null;
             using (var ctx = new GastroModel())
             {
-                blogs = ctx.Blogs.Include("Accounts")
+                blogs = ctx.Blogs.Include("Accounts").Include("BlogsCategory").Include("ReadyMeals")
                     .Select(i => (new ClientBlog
                     {
                         AuthorName = i.Account.FirstName,
-                        AuthorSurname = i.Account.Surname
+                        AuthorSurname = i.Account.Surname,
+                        NameCategory = i.BlogsCategory.Name,
+                        Raiting = i.Raiting,
+                        Title = i.Title,
+                        Text = i.Text,
+                        TimeCreate = i.DateTime,
+                        NamedDishes = i.ReadyMeals.Name
                     })).ToArray();
-                
+
             }
             return blogs;
         }
@@ -115,14 +243,16 @@ namespace WCFserver
             return unitsOfMeasurToReturn;
         }
 
-        public Account ValidateUser(string login, string password)
+        public string ValidateUser(string login, string password)
         {
-            Account userToReturn = null;
-            using (var ctx = new GastroModel())
-            {
-                userToReturn = ctx.Accounts.FirstOrDefault(i => i.Login == login && i.Password == password);
-            }
-            return userToReturn;
+            //Account userToReturn = null;
+            //using (var ctx = new GastroModel())
+            //{
+            //    userToReturn = ctx.Accounts.FirstOrDefault(i => i.Login == login && i.Password == password);
+            //}
+            //return new Account();
+            return new JavaScriptSerializer().Serialize($"Test {login} {password}");
+            //return userToReturn;
         }
 
         Blogs[] IService1.BlogsToReturn()

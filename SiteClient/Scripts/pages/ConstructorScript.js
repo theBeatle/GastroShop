@@ -24,7 +24,6 @@ var value = 0;
 //        loaded += "</ul></div></div>";
 //    }
 //    $('#rightform').append(loaded);
-
 //})(); 
 $(function () {
     $('li').click(function () {
@@ -44,7 +43,9 @@ $(function () {
 });
 $('#ConstructorBucket').click(function () {
     if (value > 0) {
+
         var newobject = ["CustomerConstructed", value.toString(), ("" + 1)];
+
         mass.push(newobject);
         $('#useditems').empty();
         value = 0;
@@ -53,5 +54,6 @@ $('#ConstructorBucket').click(function () {
 
         $('#quantityInIconCart').html(mass.length);
         $("#cartLinkModal").css("display", "inline-block");
+
     }
 });

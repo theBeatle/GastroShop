@@ -6,8 +6,10 @@
 var massHeaders = ["№", "Image", "Item", "Unit Price", "Quantity", "Price", "Remove"];
 var massHeadersWidths = ["5%", "30%", "20%", "15%", "15%", "15%"];
 
+
 var mass = [];
 var inputMass = mass;
+
 
 function build() {
 
@@ -32,7 +34,7 @@ function build() {
 
     for (var j = 0; j < inputMass.length; j++) {
         var tdrow = $("<tr></tr>");
-        for (var i = 0; i < massHeaders.length; i++) {
+        for (let i = 0; i < massHeaders.length; i++) {
             switch (massHeaders[i]) {
                 case "№":
                     td = $("<td>" + (j + 1) + "</td>");
@@ -109,13 +111,13 @@ function build() {
     $("#checkOut").onclick = checkout;
 
     trow = $("<tr></tr>");
-    for (var i = 0; i < massHeaders.length; i++) {
+    for (let i = 0; i < massHeaders.length; i++) {
         var tddd = $("<td></td>");
-        if (i == 0) {
+        if (i === 0) {
             tddd.text("Total:");
             tddd.attr({ "colspan": 5 });
         }
-        else if (i == massHeaders.length - 1) {
+        else if (i === massHeaders.length - 1) {
             tddd.addClass("data-total");
             tddd.last().text(totalTemp);
         }
