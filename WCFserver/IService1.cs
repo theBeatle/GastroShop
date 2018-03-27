@@ -91,7 +91,7 @@ namespace WCFserver
         [WebInvoke(Method = "POST",
            ResponseFormat = WebMessageFormat.Json,
            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
-        Meals[] GetMeals(int pageNum, int elementsForPage);
+        ReadyMealDTO[] GetMeals(int pageNum, int elementsForPage);
 
 
     }
