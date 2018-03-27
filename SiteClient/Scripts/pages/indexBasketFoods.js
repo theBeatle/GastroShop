@@ -1,17 +1,23 @@
-﻿var massHeaders = ["№", "Image", "Item", "Unit Price", "Quantity", "Price", "Remove"];
+﻿$('#modalCart').on('show.bs.modal', function () {
+    if ($("#quantityInIconCart").text() != "")
+        build();
+});
+
+var massHeaders = ["№", "Image", "Item", "Unit Price", "Quantity", "Price", "Remove"];
 var massHeadersWidths = ["5%", "30%", "20%", "15%", "15%", "15%"];
 
-var mass = [["OG Air Max 93", "109.50", "1"], ["AIR MAX 1", "134.00", "2"], ["Jordan 12", "157.00", "1"], ["Jordan 8", "221.00", "3"]];
-
+var mass = [];
 var inputMass = mass;
 
-$(function () {
+function build() {
+
+    $("#modalBody").empty();
 
     $("#quantityInCart").text(inputMass.length + " items");
 
     var table = $("<table></table>");
-    table.attr({ "id": "tableCart", "border-collapse": "collapsed"});
-    table.addClass("table table-bordered");
+    table.attr({ "id": "tableCart", "border-collapse": "collapsed" });
+    table.addClass("table");// table-bordered");
 
     var trow = $("<tr></tr>");
 
@@ -51,9 +57,9 @@ $(function () {
                     tdd.attr("width", "35%");
                     var buttonMinus = $("<button></button>")
                     buttonMinus.addClass("btn btn-default fa fa-minus");
-                    buttonMinus.attr({ "data-value": "decrease", "data-target": "#spinner" + (j + 1), "data-toggle": "spinner"});
+                    buttonMinus.attr({ "data-value": "decrease", "data-target": "#spinner" + (j + 1), "data-toggle": "spinner" });
                     buttonMinus.on("click", moreLessQuantity);
-                    
+
                     tdd.append(buttonMinus);
                     tr.append(tdd);
 
@@ -121,10 +127,12 @@ $(function () {
     table.append(trow);
 
     $("#modalBody").append(table);
-});
+}
 
 function moreLessQuantity() {
     var action = $(this).attr("data-value");
+    var indexRow = $(this).parent().parent().parent().parent().parent().children().first().text() - 1;
+
     switch (action) {
         case "decrease":
             var input = $(this).parent().next().children().first();
@@ -132,6 +140,7 @@ function moreLessQuantity() {
             if (value > 1) {
                 input.val(--value);
                 recountValues($(this), value);
+                inputMass[indexRow][2] = value.toString();
             }
             break;
         case "increase":
@@ -139,6 +148,7 @@ function moreLessQuantity() {
             var value = parseInt(input.val());
             input.val(++value);
             recountValues($(this), value);
+            inputMass[indexRow][2] = value.toString();
             break;
     }
 };
@@ -177,6 +187,12 @@ function removeProduct() {
     inputMass.splice(index - 1, 1);
     $("#quantityInCart").text(inputMass.length + " items");
 
+    $("#quantityInIconCart").text(inputMass.length == 0 ? "" : inputMass.length.toString());
+    if (inputMass.length == 0) {
+        $("#cartLinkModal").css("display", "none");
+        $("#modalCart").modal("hide");
+    }
+
     var k = 1;
     var trr = $("#tableCart > tr").find("td:first");
     for (var i = 0; i < trr.length - 1; i++) {
@@ -186,5 +202,17 @@ function removeProduct() {
 
 
 function checkout() {
-    alert('checkout');
+    this.innerText = "BUY";
+    buildCheckOut();
+}
+
+function buildCheckOut() {
+    $("#checkOutCart").css("display", "block");
+
+    $("#cartName").val("NA");
+    $("#cartSurname").val("SU");
+    $("#cartAdress").val("AD");
+    $("#cartPhone").val("PH");
+
+
 }
