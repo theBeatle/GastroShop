@@ -90,15 +90,21 @@ function LoadProducts(data) {
         var s = "<div class='col-xl-3 col-lg-4 col-md-6 col-sm-6 сol-12 product'>";
         s += "<div class='card'>";
         s += "<div class='product-img-container'>";
-        s += "<img src='" + "https://d2nznsm87rjw1k.cloudfront.net/media/dominos/osg/big/2018/01/17/650_500_1.png" + "' alt='" + data[i].Name + ".jpg' class='card-img-top product-image'>";
+        s += "<img src='" + meals[i].MealPicUrl + "' alt='" + data[i].Name + ".jpg' class='card-img-top product-image'>";
         s += "</div>";
         s += "<div class='card-body'>";
         s += "<h2 class='card-title product-title'>";
-        s += "<span class='product-name'>" + data[i].Name + "</span>";
-        s += "<span class='product-raiting'>" + data[i].Raiting + "</span>";
+        s += "<span class='product-name'>" + meals[i].Name + "</span>";
+        s += "<span class='product-raiting'>" + meals[i].Raiting + "</span>";
         s += "</h2>";
-        s += "<p class='card-text product-description'>" + data[i].Description + "</p>";
-        s += "<span class='product-price'>" + "125" + "UAH</span>";
+        s += "<p class='card-text product-description'>";
+        s += "<ul class='ingridient-list'>"
+        meals[i].Ingridients.forEach(function(item, i, arr) {
+            s +="<li class='ingridient' data-toggle='tooltip' data-placement='Top' title='" + item.Description + ">" + item.Name + "</li>"
+        });
+        s += "</ul>";
+        s += meals[i].Description + "</p>";
+        s += "<span class='product-price'>" + meals[i].Price + "UAH</span>";
         s += "<a href='#' class='btn basket-btn' onclick='AddNewProductToBasket(this)'>Buy</a>";
         s += "</div>";
         s += "</div>";
