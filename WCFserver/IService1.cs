@@ -93,6 +93,12 @@ namespace WCFserver
            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         ReadyMealDTO[] GetMeals(int pageNum, int elementsForPage);
 
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+           ResponseFormat = WebMessageFormat.Json,
+           BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        EatConstruct[] GetIngredientsForConstructor();
+
 
     }
 }

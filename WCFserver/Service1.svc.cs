@@ -81,6 +81,25 @@ namespace WCFserver
             return acc;
         }
 
+        public EatConstruct[] GetIngredientsForConstructor()
+        {
+            EatConstruct[] ingredients = null;
+            ingredients = _ctx.Ingredients
+                .Include("ProductsType")
+                .Include("Category")
+                .Include("UnitsOfMeasurement")
+                    .Select(i => (new EatConstruct
+                    {
+                        TypeOfMeals = i.ProductsType.Name,
+                        CategoryIngredients = i.Category.Name,
+                        Ingredient = i.Name,
+                        MeasurementUnit = i.UnitsOfMeasurements.Name,
+                        PriceForItem = i.PriceForItem
+                    })).ToArray();
+
+            return ingredients;
+    }
+
         /// <summary>
         /// Method for return meals for face page
         /// </summary>
@@ -101,6 +120,7 @@ namespace WCFserver
                     m.Raiting,
                     m.Size,
                     m.MealPicUrl,
+                    Blogs = m.Blogs.Select(b => b.ID),
                     Price = 1.2 * m.Ingredients.Select(i => i.PriceForItem).Sum(),
                     Ingredients = m.Ingredients.Select(t => new IngredientDTO()
                     {
@@ -118,7 +138,8 @@ namespace WCFserver
                    Size = obj.Size,
                    MealPicUrl = obj.MealPicUrl,
                    Price = Math.Round(obj.Price, 2),
-                   Ingredients = obj.Ingredients.ToArray()
+                   Ingredients = obj.Ingredients.ToArray(),
+                   BlogsIndexes = obj.Blogs.ToArray()
                });
 
             if (mealsCount <= elementsForPage)
@@ -174,25 +195,14 @@ namespace WCFserver
             return readyMealsToReturn;
         }
 
+        //
         public EatConstruct[] TestEatConstGet()
         {
-            ////EatConstruct[] eatConst = null;
-            ////using (var ctx = new GastroModel())
-            ////{
-            //    eatConst = ctx.Ingredients.Include("ProductsType").Include("Category").Include("UnitsOfMeasurement")
-            //        .Select(i => (new EatConstruct
-            //        {
-            //            TypeOfMeals = i.Category.Name,
-            //            CategoryIngredients = i.ProductsType.Name,
-            //            Ingredient = i.Name,
-            //            Amount = i.Name,
-            //            PriceForItem = i.PriceForItem
-            //        })).ToArray();
-            //}
+           
             var eat1 = new EatConstruct
             {
                 TypeOfMeals = "Pizza",
-                Amount = "2",
+                MeasurementUnit = "2",
                 CategoryIngredients = "meat",
                 Ingredient = "Varenka",
                 PriceForItem = 10.87
@@ -201,7 +211,7 @@ namespace WCFserver
             var eat2 = new EatConstruct
             {
                 TypeOfMeals = "Salat",
-                Amount = "3",
+                MeasurementUnit = "3",
                 CategoryIngredients = "vegetables",
                 Ingredient = "potato",
                 PriceForItem = 34.67
