@@ -3,128 +3,14 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="Scripts/bootstrap.js"></script>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="icon" href="../../../../favicon.ico">
-    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="starter-template.css" rel="stylesheet">-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="Styles/StylesForMainWindow.css" rel="stylesheet" />
-
-    <style>
-
-        .block:active {
-            position: absolute;
-            top: 30%;
-            -webkit-transform: scale(2,3);
-            -webkit-transition-timing-function: ease-out;
-            -webkit-transition-duration: 200ms;
-        }
-
-        .styleAsideShowBlogs {
-            overflow-y: scroll;
-            width: 23%;
-            float: right;
-            height: 90vh;
-            margin-top: 5%;
-            margin-right: 0.5%;
-            background-size: cover;
-            border-radius: 3px;
-            background-image: url('Images/backgroundforaside3.jpg');
-        }
-
-         #styleAddWinwrap {
-            display: none;
-            opacity: 0.8;
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            padding: 16px;
-            background-color: rgba(1, 1, 1, 0.725);
-            z-index: 100;
-            overflow: auto;
-        }
-
-        #styleAdditionWindow {
-            width: 600px;
-            height: 200px;
-            margin: 5% auto;
-            display: none;
-            background: #fff;
-            z-index: 200;
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            padding: 16px;
-            border-radius:3px
-        }
-
-        .styleHrefCreateBlog {
-            text-decoration: none;
-            margin-left: 5%;
-            font-size: 20px;
-            color: black;
-            display:initial
-        }
-
-        .styleHrefCreateBlog:hover {
-            text-decoration:dashed overline;
-            color: beige;
-            text-decoration-color:red;
-            cursor:pointer
-        }
-
-    </style>
-
+    <link href="StylesForBlogs.css" rel="stylesheet" />
 </head>
 <body onload="AddDivIncomments()">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">GastroShop</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dishes</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="#">Drinks</a>
-                        <a class="dropdown-item" href="#">Salads</a>
-                        <a class="dropdown-item" href="#">Pizza</a>
-                    </div>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Contacs Us<span class="sr-only"></span></a>
-                </li>
-            </ul>
-
-            <!--<form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Login" aria-label="Login">
-                <input class="form-control mr-sm-2" type="text" placeholder="Password" aria-label="Password">
-                <button class="btn btn-outline-success">Sing In</button>
-            </form>-->
-        </div>
-    </nav>
-
-
-
 
 
     <div onclick="AddCommentNone()" id="styleAddWinwrap"></div>
@@ -216,8 +102,6 @@
         
         
     </aside>
-
-
 
     <script src="ScriptsForBlogs.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
