@@ -46,3 +46,31 @@ function ShowOrHideFilter() {
     }
     filter_visible = !filter_visible;
 }
+
+function RemoveIngredient() {
+    $(this).parent().parent().remove();
+}
+
+$(function () {
+    $('add-ingredient').click(function () {
+        var add_ingr = "<li class='list-group-item'" +
+            "<div style='width: 100%; '>" +
+                "<span style='width: 74%; display:inline-block;'>Cras jusretgre</span>" +
+                "<button style='vertical-align:top; border-radius:10px; display:inline-block;' type='button' class='btn btn-outline-danger btn-sm'><b class='fa fa-close'></b></button>" +
+            "</div>" +
+        "</li>";
+
+        //var additem = $(this).clone();
+        //var coast = parseInt(additem.find('div.coast').html());
+        //value += coast;
+        //additem.click(function () {
+        //    var removedcoast = parseInt(additem.find('div.coast').html());
+        //    value -= removedcoast;
+        //    $('span.value').html(value);
+        //    $(this).remove();
+        //})
+        //$('#useditems').append(additem);
+        //$('#useditems').find('div.handle').removeClass('handle').addClass('delete');
+        //$('span.value').html(value);
+    });
+});
