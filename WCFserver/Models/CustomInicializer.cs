@@ -25,9 +25,11 @@ namespace WCFserver
                 "meager or inconsistent supply of fresh meat. Countries and regions " +
                 "across Europe make their own traditional varieties of salami." };
 
-            ProductsType[] typeForPizzaSalat = { typePizza, typeSalat };
-            ProductsType[] typeForPizza = { typePizza};
-            ProductsType[] typeForSalat = { typeSalat };
+
+
+            //ProductsType[] typeForPizzaSalat = { typePizza, typeSalat };
+            //ProductsType[] typeForPizza = { typePizza};
+            //ProductsType[] typeForSalat = { typeSalat };
 
             var ingCheder = new Ingredients
             {
@@ -60,7 +62,7 @@ namespace WCFserver
 
             var ingAsadero = new Ingredients
             {
-                ProductTypes = typeForPizza,
+                //ProductTypes = typeForPizza,
                 Name = "Asadero",
                 Description = "Asadero is an off-white, semi-firm Mexican cheese often " +
                 "sold in a log shape for convenient and easy slicing. It is an excellent " +
@@ -78,7 +80,7 @@ namespace WCFserver
 
             var ingAsiago = new Ingredients
             {
-                ProductTypes = typeForPizza,
+                //ProductTypes = typeForPizza,
                 Name = "Asiago",
                 Description = "Asiago (/ɑːsiˈɑːɡoʊ/ or /ɑːˈsjɑːɡoʊ/; Italian: [aˈzjaːɡo])" +
                 " is an Italian cow's milk cheese that can assume different textures," +
@@ -112,7 +114,7 @@ namespace WCFserver
 
             var ingSalami = new Ingredients
             {
-                ProductTypes = typeForPizzaSalat,
+               // ProductTypes = typeForPizzaSalat,
                 Name = "Salami",
                 Description = "Salami (singular salame) is a type of cured sausage " +
                 "consisting of fermented and air-dried meat, typically beef or pork. " +
@@ -140,41 +142,41 @@ namespace WCFserver
 
             var ingTomato = new Ingredients
             {
-                ProductTypes = typeForPizzaSalat,
+               // ProductTypes = typeForPizzaSalat,
                 Name = "Tomato",
                 Description = "tasty",
                 PriceForItem = 5.18,
-                Category = catVegatables,
+               // Category = catVegatables,
                 UnitsOfMeasurements = unitsOFMeasurement
             };
 
             var ingSalad = new Ingredients
             {
-                ProductTypes = typeForPizzaSalat,
+                //ProductTypes = typeForPizzaSalat,
                 Name = "Salad",
                 Description = "tasty",
                 PriceForItem = 3.18,
-                Category = catVegatables,
+               // Category = catVegatables,
                 UnitsOfMeasurements = unitsOFMeasurement
             };
 
             var ingGrenka = new Ingredients
             {
-                ProductTypes = typeForSalat,
+                //ProductTypes = typeForSalat,
                 Name = "Grenka",
                 Description = "tasty",
                 PriceForItem = 1.1,
-                Category = catMochne,
+                //Category = catMochne,
                 UnitsOfMeasurements = unitsOFMeasurement
             };
 
             var ingSauces = new Ingredients
             {
-                ProductTypes = typeForSalat,
+               // ProductTypes = typeForSalat,
                 Name = "Sauces creamy",
                 Description = "tasty",
                 PriceForItem = 2,
-                Category = catSauces,
+               // Category = catSauces,
                 UnitsOfMeasurements = unitsOFMeasurement
             };
 
