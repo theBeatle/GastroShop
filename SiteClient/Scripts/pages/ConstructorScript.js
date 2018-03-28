@@ -14,19 +14,20 @@ var value = 0;
 //loadDoc();
 function constructorLoad(categories) {
     var categories = categories;
+    var loaded = "";
     for (var i = 0; i < categories.length; i++) {
-        loaded += "<div class=form-group><div class=titlemiddle><h4>" +++/*+ categories[i] +*/ "</h4></div>";
+        loaded += "<div class=form-group><div class=titlemiddle><h4>" + categories[i].CategoryIngredients +"</h4></div>";
         loaded += "<div class=listwrapper>";
         loaded += "<ul class=pz-items>";
-        //for (var j = 0; j < categories[i].ingredients.length; j++)
-        //{
-        //    loaded += "<li class=pz-item><div class=handle></div><div class=title>" + categories[i].ingredients[j].name + "</div> <div class=coast>" + categories[i].ingredients[j].price + "</div></li>";
-        //}
+        for (var j = 0; j < 1;/*categories[i].ingredients.length;*/ j++)
+        {
+            loaded += "<li class=pz-item><div class=handle></div><div class=title>" + categories[i].Ingredient + "</div> <div class=coast>" + categories[i].PriceForItem + "</div></li>";
+        }
         loaded += "</ul></div></div>";
     }
     $('#rightform').append(loaded);
 }; 
-$(function AddBehavior () {
+function AddBehavior () {
     $('li').click(function () {
         var additem = $(this).clone();
         var coast = parseInt(additem.find('div.coast').html());
@@ -41,7 +42,7 @@ $(function AddBehavior () {
         $('#useditems').find('div.handle').removeClass('handle').addClass('delete');
         $('span.value').html(value);
     });
-});
+};
 $('#ConstructorBucket').click(function () {
     if (value > 0) {
 
@@ -58,10 +59,12 @@ $('#ConstructorBucket').click(function () {
     }
 });
 
+
+
+
 function LoadMealsOnPage() { // функція яка буде вішаться на подію загрузки сторінки
     GetMealsForConstructor() // виклик моєї функції отримання списку страв із сервера з аргументами page і elemsPerPage
         .then(function (data) {
-            alert(data.length);
             constructorLoad(data);
             AddBehavior();
             console.log(data); // тут пишеш що буде відбуватись якщо сервер поверне дані
@@ -74,3 +77,5 @@ function LoadMealsOnPage() { // функція яка буде вішаться 
                 // в цьому випадку можеш вивести на сторінку якийсь напис "Проблема зв'яку із сервером"
             });
 }
+
+$(function () { LoadMealsOnPage(); });
