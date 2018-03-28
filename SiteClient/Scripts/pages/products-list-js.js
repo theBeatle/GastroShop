@@ -89,9 +89,7 @@ function LoadProducts(data) {
     for (let i = 0; i < meals.length; ++i) {
         var s = "<div class='col-xl-3 col-lg-4 col-md-6 col-sm-6 сol-12 product'>";
         s += "<div class='card'>";
-        s += "<div class='product-img-container'>";
         s += "<img src='" + meals[i].MealPicUrl + "' alt='" + data[i].Name + ".jpg' class='card-img-top product-image'>";
-        s += "</div>";
         s += "<div class='card-body'>";
         s += "<h2 class='card-title product-title'>";
         s += "<span class='product-name'>" + meals[i].Name + "</span>";
