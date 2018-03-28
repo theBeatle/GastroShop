@@ -71,12 +71,12 @@ var elemsPerPage = 20;
 function LoadMealsOnPage() { // функція яка буде вішаться на подію загрузки сторінки
     GetMeals(page, elemsPerPage) // виклик моєї функції отримання списку страв із сервера з аргументами page і elemsPerPage
         .then(function (data) {
-            console.log(data); // тут пишеш що буде відбуватись якщо сервер поверне дані
+            console.log("Amount of meals:" + data.length); // тут пишеш що буде відбуватись якщо сервер поверне дані
             LoadProducts(data);
             // data - масив страв
         },
         function (error) {
-            console.log(error); // тут пишеш що буде відбуватись якщо сервер поверне помилку
+            console.log("Smthng wrong "); // тут пишеш що буде відбуватись якщо сервер поверне помилку
             // error - код помилки
             // в цьому випадку можеш вивести на сторінку якийсь напис "Проблема зв'яку із сервером"
         });
@@ -86,7 +86,7 @@ function LoadMealsOnPage() { // функція яка буде вішаться 
 function LoadProducts(data) {
     meals = data;
     $("#products-list").empty();
-    for (let i = 0; i < data.length; ++i) {
+    for (let i = 0; i < meals.length; ++i) {
         var s = "<div class='col-xl-3 col-lg-4 col-md-6 col-sm-6 сol-12 product'>";
         s += "<div class='card'>";
         s += "<div class='product-img-container'>";
@@ -97,13 +97,13 @@ function LoadProducts(data) {
         s += "<span class='product-name'>" + meals[i].Name + "</span>";
         s += "<span class='product-raiting'>" + meals[i].Raiting + "</span>";
         s += "</h2>";
-        s += "<p class='card-text product-description'>";
-        s += "<ul class='ingridient-list'>"
-        meals[i].Ingridients.forEach(function(item, i, arr) {
-            s +="<li class='ingridient' data-toggle='tooltip' data-placement='Top' title='" + item.Description + ">" + item.Name + "</li>"
+        s += "<div class='product-description'>";
+        s += "<ul class='ingridient-list'>";
+        meals[i].Ingredients.forEach(function(item, j, arr) {
+            s += "<li class='ingridient'><span href='#' data-toggle='tooltip' data-placement='bottom' title='" + item.Description + "'>" + item.Name + "</span></li>"
         });
         s += "</ul>";
-        s += meals[i].Description + "</p>";
+        s += "<p class='card-text'>" + meals[i].Description + "</p></div>";
         s += "<span class='product-price'>" + meals[i].Price + "UAH</span>";
         s += "<a href='#' class='btn basket-btn' onclick='AddNewProductToBasket(this)'>Buy</a>";
         s += "</div>";
@@ -111,6 +111,7 @@ function LoadProducts(data) {
         s += "</div>";
         $("#products-list").append(s);
     }
+    $('[data-toggle="tooltip"]').tooltip();
 }
 
 function AddNewProductToBasket(obj)
@@ -215,5 +216,4 @@ function loadMainProductList() {
         currPage = 1;
         LoadMealsOnPage();
     })();
-
 }
