@@ -50,7 +50,6 @@ $('#ConstructorBucket').click(function () {
         value = 0;
         $('#spanValue').html(value);
         $('#Constructor').modal('hide');
-
         $('#quantityInIconCart').html(mass.length);
 
     }
