@@ -8,15 +8,32 @@ namespace WCFserver
         {
             var unitsOFMeasurement = new UnitsOfMeasurement { Name = "Gram", Abbreviation = "g" };
 
-            var catChees = new Category { Name = "Chees", Description = "Chees" };
-            var catMeat = new Category { Name = "Meat", Description = "Meat" };
+            var catChees = new Category { Name = "Cheese", Description = "Cheese is a " +
+                "dairy product derived from milk that is produced in a wide range of " +
+                "flavors, textures, and forms by coagulation of the milk protein casein. " +
+                "It comprises proteins and fat from milk, usually the milk of cows, " +
+                "buffalo, goats, or sheep. During production, the milk is usually " +
+                "acidified, and adding the enzyme rennet causes coagulation. The solids " +
+                "are separated and pressed into final form.[1] Some cheeses have molds " +
+                "on the rind, the outer layer, or throughout. Most cheeses melt at " +
+                "cooking temperature." };
+            var catMeat = new Category { Name = "Salami", Description = "Salami (singular " +
+                "salame) is a type of cured sausage consisting of fermented and air-dried " +
+                "meat, typically beef or pork. Historically, salami was popular among " +
+                "southern and central European peasants because it stores at room " +
+                "temperature for up to 40 days once cut, supplementing a potentially " +
+                "meager or inconsistent supply of fresh meat. Countries and regions " +
+                "across Europe make their own traditional varieties of salami." };
 
 
             var ingCheder = new Ingredients
             {
-               
-                Name = "Cheder",
-                Description = "tasty",
+                Name = "Cheddar",
+                Description = "Cheddar cheese is a relatively hard, off-white " +
+                "(or orange if spices such as annatto are added), sometimes sharp-tasting" +
+                " (i.e., bitter[1]), natural cheese. Originating in the English village " +
+                "of Cheddar in Somerset,[2] cheeses of this style are produced beyond the" +
+                " region and in several countries around the world",
                 PriceForItem = 67.78,
                 Category = catChees,
                 UnitsOfMeasurements = unitsOFMeasurement
@@ -26,8 +43,14 @@ namespace WCFserver
 
             var ingChehel = new Ingredients
             {
-                Name = "Chechel",
-                Description = "tasty",
+                Name = "Sulguni",
+                Description = "Sulguni (Georgian: სულგუნი, სულუგუნი sulguni, suluguni; " +
+                "Mingrelian: სელეგინ selegin) is a brined Georgian cheese from the " +
+                "Samegrelo region. It has a sour, moderately salty flavor, a dimpled " +
+                "texture, and an elastic consistency; these attributes are the result of " +
+                "the process used, as is the source of its moniker \"pickle cheese\". " +
+                "Its color ranges from white to pale yellow. Sulguni is often deep-fried, " +
+                "which masks its odor. It is often served in wedges.",
                 PriceForItem = 32.78,
                 Category = catChees,
                 UnitsOfMeasurements = unitsOFMeasurement
@@ -37,7 +60,14 @@ namespace WCFserver
             var ingAsadero = new Ingredients
             {
                 Name = "Asadero",
-                Description = "tasty",
+                Description = "Asadero is an off-white, semi-firm Mexican cheese often " +
+                "sold in a log shape for convenient and easy slicing. It is an excellent " +
+                "cooking cheese: when it melts, it becomes quite creamy without giving " +
+                "off any oil, even at higher temperatures. It has a light, fresh taste " +
+                "with just a bit of tang to it.It is very creamy, and layered almost " +
+                "like fresh Mozzarella. Made particularly in the Chihuahua area of " +
+                "Northern Mexico.In some parts of Chihuahua, a plant is used to curdle " +
+                "the milk instead of animal rennet.",
                 PriceForItem = 12.78,
                 Category = catChees,
                 UnitsOfMeasurements = unitsOFMeasurement
@@ -47,7 +77,14 @@ namespace WCFserver
             var ingAsiago = new Ingredients
             {
                 Name = "Asiago",
-                Description = "tasty",
+                Description = "Asiago (/ɑːsiˈɑːɡoʊ/ or /ɑːˈsjɑːɡoʊ/; Italian: [aˈzjaːɡo])" +
+                " is an Italian cow's milk cheese that can assume different textures," +
+                " according to its aging, from smooth for the fresh Asiago (Asiago" +
+                " Pressato) to a crumbly texture for the aged cheese (Asiago d'allevo)," +
+                " the flavor of which is similar to Parmesan. The aged cheese is often" +
+                " grated in salads, soups, pastas, and sauces while the fresh Asiago is" +
+                " sliced to prepare panini or sandwiches; it can also be melted on a" +
+                " variety of dishes and cantaloupe.",
                 PriceForItem = 19.78,
                 Category = catChees,
                 UnitsOfMeasurements = unitsOFMeasurement
@@ -56,8 +93,14 @@ namespace WCFserver
 
             var ingPaperoni = new Ingredients
             {
-                Name = "Papperoni",
-                Description = "tasty",
+                Name = "Pepperoni",
+                Description = "Pepperoni (also known as pepperoni sausage) is an " +
+                "American variety of salami, made from cured pork and" +
+                " beef mixed together and seasoned with paprika or other chili" +
+                "pepper. Pepperoni is characteristically soft, slightly smoky, and " +
+                "bright red in color. Thinly sliced pepperoni is a popular pizza " +
+                "topping in American - style pizzerias[5] and is used as filling in " +
+                "the West Virginia pepperoni roll.",
                 PriceForItem = 45.18,
                 Category = catMeat,
                 UnitsOfMeasurements = unitsOFMeasurement
@@ -67,7 +110,13 @@ namespace WCFserver
             var ingSalami = new Ingredients
             {
                 Name = "Salami",
-                Description = "tasty",
+                Description = "Salami (singular salame) is a type of cured sausage " +
+                "consisting of fermented and air-dried meat, typically beef or pork. " +
+                "Historically, salami was popular among southern and central European " +
+                "peasants because it stores at room temperature for up to 40 days once " +
+                "cut, supplementing a potentially meager or inconsistent supply of " +
+                "fresh meat. Countries and regions across Europe make their own " +
+                "traditional varieties of salami.",
                 PriceForItem = 65.18,
                 Category = catMeat,
                 UnitsOfMeasurements = unitsOFMeasurement
@@ -76,8 +125,9 @@ namespace WCFserver
 
             var ingKopchena = new Ingredients
             {
-                Name = "Kopchena",
-                Description = "tasty",
+                Name = "Lardo",
+                Description = "Lardo is a type of salumi made by curing strips of" +
+                " fatback with rosemary and other herbs and spices.",
                 PriceForItem = 45.18,
                 Category = catMeat,
                 UnitsOfMeasurements = unitsOFMeasurement
@@ -89,8 +139,10 @@ namespace WCFserver
             var PizzaFourChees = new ReadyMeals
             {
                 MealPicUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaKXTIRx1VRogry4_aM6RLR9-0pkO0VzfOtAoQs6QXX79jHVu",
-                Name = "PizzaFourChees",
-                Description = "Some tasty pizza",
+                Name = "Quattro Formaggio",
+                Description = "Virtually any combinations of four cheeses can be" +
+                " sued in this pizza, but this one uses Parmesan, Mozzarella," +
+                " Ricotta, and Gorgonzola",
                 Raiting = 5.6,
                 Size = "XXL",
                 Ingredients = ingsFourChees
@@ -127,29 +179,29 @@ namespace WCFserver
             var catBlogsRevie = new BlogsCategory { Name = "Revie", Description = "Revies of food" };
             var catBlogsNews = new BlogsCategory { Name = "News", Description = "Future new meals" };
 
-            var accOleg = new Account
-            {
-                FirstName = "Oleg",
-                Surname = "Knyaz",
-                Login = "Oleg_Knyaz",
-                Password = "steppassword",
-                Email = "oleg_knyaz@gmail.com",
-                Address = "Naberegna 58",
-                Carma = 12,
-                PhoneNumber = "+18076253745",
-            };
-
-            context.Blogs.Add(new Blogs
-            {
-                Account = accOleg,
-                Title = "Revie pizza Diablo",
-                Text = "London is a capital of Great Britain",
-                DateTime = new System.DateTime(12, 10, 2017),
-                BlogsCategory = catBlogsRevie,
-                Raiting = 7.8,
-                ReadyMeals = PizzaDiablo
-                });
-
+           //var accOleg = new Account
+           //{
+           //    FirstName = "Oleg",
+           //    Surname = "Knyaz",
+           //    Login = "Oleg_Knyaz",
+           //    Password = "blablabla",
+           //    Email = "oleg_knyaz@gmail.com",
+           //    Address = "Naberegna 58",
+           //    Carma = 12,
+           //    PhoneNumber = "+18076253745",
+           //};
+           //
+           //context.Blogs.Add(new Blogs
+           //{
+           //    Account = accOleg,
+           //    Title = "Revie pizza Diablo",
+           //    Text = "London is a capital of Great Britain",
+           //    //DateTime = new System.DateTime(12, 10, 2017),
+           //    BlogsCategory = catBlogsRevie,
+           //    Raiting = 7.8,
+           //    ReadyMeals = PizzaDiablo
+           //    });
+           //
 
             context.SaveChanges();
         }

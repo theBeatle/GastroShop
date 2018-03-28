@@ -90,7 +90,7 @@ namespace WCFserver
                 .Include("UnitsOfMeasurement")
                     .Select(i => (new EatConstruct
                     {
-                        TypeOfMeals = i.ProductsType.Name,
+                        //TypeOfMeals = i.ProductsType.Name,
                         CategoryIngredients = i.Category.Name,
                         Ingredient = i.Name,
                         MeasurementUnit = i.UnitsOfMeasurements.Name,
@@ -198,7 +198,6 @@ namespace WCFserver
         //
         public EatConstruct[] TestEatConstGet()
         {
-           
             var eat1 = new EatConstruct
             {
                 TypeOfMeals = "Pizza",
