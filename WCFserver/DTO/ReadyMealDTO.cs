@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WCFserver.DTO;
 
-namespace WCFserver
+namespace WCFserver.DTO
 {
-    public class Meals
+    public class ReadyMealDTO
     {
         public int ID { get; set; }
         public string Name { get; set; }
@@ -15,7 +14,8 @@ namespace WCFserver
         public string MealPicUrl { get; set; }
         public double Price { get; set; }
         public string Size { get; set; }
-        public IngredientDTO[] Ingredients { get; set; }
 
+        public IngredientDTO[] Ingredients { get; set; }
     }
+
 }

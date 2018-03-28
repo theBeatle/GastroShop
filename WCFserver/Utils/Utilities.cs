@@ -11,6 +11,15 @@ namespace WCFserver.Utils
         private static readonly string[] description = { "Descrition 1", "Descrition 2", "Descrition 3", "Descrition 4", "Descrition 5" };
         private static readonly double[] raiting = { 1.1, 4.2, 10.5, 11.1, 7.2 };
         private static readonly string[] size = { "XXL", "XL", "L", "M", "S" };
+        private static readonly string[] pics =
+        {
+             "",
+             "",
+             "",
+
+
+
+        };
 
         public static Meals[] RandomMealsGenerator(int mealsCount)
         {
@@ -26,7 +35,9 @@ namespace WCFserver.Utils
                     Name = name[rand.Next(0, name.Length)],
                     Description = description[rand.Next(0, description.Length)],
                     Raiting = raiting[rand.Next(0, raiting.Length)],
-                    Size = size[rand.Next(0, size.Length)]
+                    Size = size[rand.Next(0, size.Length)],
+                    Price = rand.Next(100)+rand.NextDouble(),
+
                 });
             }
             return myMeals.ToArray();
