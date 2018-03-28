@@ -14,7 +14,7 @@ namespace WCFserver.DTO
         public string MealPicUrl { get; set; }
         public double Price { get; set; }
         public string Size { get; set; }
-
+        public int[] BlogsIndexes { get; set; }
         public IngredientDTO[] Ingredients { get; set; }
     }
 

@@ -10,7 +10,7 @@ namespace WCFserver
         public string TypeOfMeals { get; set; }
         public string CategoryIngredients { get; set; }
         public string Ingredient { get; set; }
-        public string Amount { get; set; }
+        public string MeasurementUnit { get; set; }
         public double PriceForItem { get; set; }
     }
 }
