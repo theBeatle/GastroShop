@@ -14,7 +14,7 @@ namespace WCFserver
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        //private GastroModel _ctx = new GastroModel();
+        private GastroModel _ctx = new GastroModel();
 
         public BlogsCategory[] BlogsCategoriesToReturn()
         {
@@ -81,9 +81,15 @@ namespace WCFserver
             return acc;
         }
 
+        /// <summary>
+        /// Method for return meals for face page
+        /// </summary>
+        /// <param name="pageNum">Page number for product plate</param>
+        /// <param name="elementsForPage">Count of ready meal on page</param>
+        /// <returns>Array of readdy meals for current page</returns>
         public ReadyMealDTO[] GetMeals(int pageNum, int elementsForPage)
         {
-            GastroModel _ctx = new GastroModel();
+            //GastroModel _ctx = new GastroModel();
             var meals = new List<ReadyMealDTO>();
             int mealsCount = _ctx.ReadyMeals.Count();
             var tmpResult = _ctx.ReadyMeals.Include("Ingredients")
@@ -111,7 +117,7 @@ namespace WCFserver
                    Raiting = obj.Raiting,
                    Size = obj.Size,
                    MealPicUrl = obj.MealPicUrl,
-                   Price = obj.Price,
+                   Price = Math.Round(obj.Price, 2),
                    Ingredients = obj.Ingredients.ToArray()
                });
 
@@ -139,16 +145,11 @@ namespace WCFserver
             return ingredientsToReturn;
         }
 
+
+        //remake with LINQ and private DB context
         public int NumberOfReadyMeals()
         {
-            int numb = 0;
-            ReadyMeals[] readyMeals = null;
-            using (var ctx = new GastroModel())
-            {
-                readyMeals = ctx.ReadyMeals.ToArray();
-                numb = readyMeals.Length;
-            }
-            return numb;
+            return _ctx.ReadyMeals.Count();
         }
 
         public ProductsType[] ProductsTypeToReturn()

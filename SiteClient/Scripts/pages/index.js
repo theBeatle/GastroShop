@@ -100,8 +100,8 @@ function GetMealsForConstructor() {
 function GetMeals(page, elemsPerPage) {
 	return new Promise(function (resolve, reject) {
 		$.ajax({
-			//url: "http://10.7.180.110/GastroService/Service1.svc/GetMeals",
-			url: "http://localhost:7212/Service1.svc/GetMeals",
+			url: "http://10.7.180.110/GastroService/Service1.svc/GetMeals",
+			//url: "http://localhost:7212/Service1.svc/GetMeals",
 			type: "POST",
 			data: JSON.stringify({ pageNum: page, elementsForPage: elemsPerPage }),
 			dataType: "json",
