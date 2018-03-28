@@ -89,9 +89,7 @@ function LoadProducts(data) {
     for (let i = 0; i < meals.length; ++i) {
         var s = "<div class='col-xl-3 col-lg-4 col-md-6 col-sm-6 сol-12 product'>";
         s += "<div class='card'>";
-        s += "<div class='product-img-container'>";
         s += "<img src='" + meals[i].MealPicUrl + "' alt='" + data[i].Name + ".jpg' class='card-img-top product-image'>";
-        s += "</div>";
         s += "<div class='card-body'>";
         s += "<h2 class='card-title product-title'>";
         s += "<span class='product-name'>" + meals[i].Name + "</span>";
@@ -118,7 +116,10 @@ function AddNewProductToBasket(obj)
 {
     var o = $(obj).parent().parent();
     var n = $("#products-list .card").index($(obj).parent().parent());
-    alert(meals[n].Name + " added to basket");
+    var newobject = [meals[n].Name, meals[n].Price, ("1")];
+    mass.push(newobject);
+    $('#quantityInIconCart').html(mass.length);
+    $("#cartLinkModal").css("display", "inline-block");
 }
 function loadMainProductList() {
 

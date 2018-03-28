@@ -15,22 +15,32 @@
         .product-description{
             font-size:1em;
             text-align:justify;
-            height:200px;
             overflow-y:auto;
+            height: 0;
+            opacity:0;
+            transition:height 0.5s, opacity ease-in 1s;
         }
 
-
-        .product-img-container {
-            height:100px;
-        }
-         
         .product-price{
             color:green;
         }
         .product-image{
-            height:100px;
-            width: 100%;
-            object-fit:cover;
+            height:400px;
+            width: auto;
+            object-fit:scale-down;
+            transition:all 0.5s;
+        }
+        .card:hover .product-description
+        {
+            height:200px;
+            opacity:1;
+            transition:height 0.5s, opacity ease-in 1s;
+            transition-delay:0.5s;            
+        }
+        .card:hover .product-image{
+            height:200px;
+            transition:all 0.5s;
+            transition-delay:0.25s;
         }
         .product-title{
             width:100%;

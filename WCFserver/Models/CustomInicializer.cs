@@ -25,6 +25,9 @@ namespace WCFserver
                 "meager or inconsistent supply of fresh meat. Countries and regions " +
                 "across Europe make their own traditional varieties of salami." };
 
+            ProductsType[] typeForPizzaSalat = { typePizza, typeSalat };
+            ProductsType[] typeForPizza = { typePizza};
+            ProductsType[] typeForSalat = { typeSalat };
 
             var ingCheder = new Ingredients
             {
@@ -38,8 +41,6 @@ namespace WCFserver
                 Category = catChees,
                 UnitsOfMeasurements = unitsOFMeasurement
             };
-
-
 
             var ingChehel = new Ingredients
             {
@@ -59,6 +60,7 @@ namespace WCFserver
 
             var ingAsadero = new Ingredients
             {
+                ProductTypes = typeForPizza,
                 Name = "Asadero",
                 Description = "Asadero is an off-white, semi-firm Mexican cheese often " +
                 "sold in a log shape for convenient and easy slicing. It is an excellent " +
@@ -76,6 +78,7 @@ namespace WCFserver
 
             var ingAsiago = new Ingredients
             {
+                ProductTypes = typeForPizza,
                 Name = "Asiago",
                 Description = "Asiago (/ɑːsiˈɑːɡoʊ/ or /ɑːˈsjɑːɡoʊ/; Italian: [aˈzjaːɡo])" +
                 " is an Italian cow's milk cheese that can assume different textures," +
@@ -109,6 +112,7 @@ namespace WCFserver
 
             var ingSalami = new Ingredients
             {
+                ProductTypes = typeForPizzaSalat,
                 Name = "Salami",
                 Description = "Salami (singular salame) is a type of cured sausage " +
                 "consisting of fermented and air-dried meat, typically beef or pork. " +
@@ -134,8 +138,59 @@ namespace WCFserver
 
             };
 
-            Ingredients[] ingsFourChees = { ingCheder, ingPaperoni, ingChehel };
+            var ingTomato = new Ingredients
+            {
+                ProductTypes = typeForPizzaSalat,
+                Name = "Tomato",
+                Description = "tasty",
+                PriceForItem = 5.18,
+                Category = catVegatables,
+                UnitsOfMeasurements = unitsOFMeasurement
+            };
 
+            var ingSalad = new Ingredients
+            {
+                ProductTypes = typeForPizzaSalat,
+                Name = "Salad",
+                Description = "tasty",
+                PriceForItem = 3.18,
+                Category = catVegatables,
+                UnitsOfMeasurements = unitsOFMeasurement
+            };
+
+            var ingGrenka = new Ingredients
+            {
+                ProductTypes = typeForSalat,
+                Name = "Grenka",
+                Description = "tasty",
+                PriceForItem = 1.1,
+                Category = catMochne,
+                UnitsOfMeasurements = unitsOFMeasurement
+            };
+
+            var ingSauces = new Ingredients
+            {
+                ProductTypes = typeForSalat,
+                Name = "Sauces creamy",
+                Description = "tasty",
+                PriceForItem = 2,
+                Category = catSauces,
+                UnitsOfMeasurements = unitsOFMeasurement
+            };
+
+            Ingredients[] ingsCeesar = { ingSalad, ingTomato, ingGrenka, ingSalami, ingSauces };
+            var SalatCeesar = new ReadyMeals
+            {
+                MealPicUrl = "https://avatars.mds.yandex.net/get-pdb/34158/380697426-salat-tsezar-caesar-salad-1464179972.11/s800",
+                Name = "Ceesar",
+                Description = "Very good salatik",
+                Raiting = 9.6,
+                Size = "200g",
+                Ingredients = ingsCeesar
+            };
+            context.ReadyMeals.Add(SalatCeesar);
+
+            Ingredients[] ingsFourChees = { ingCheder, ingPaperoni, ingChehel };
             var PizzaFourChees = new ReadyMeals
             {
                 MealPicUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaKXTIRx1VRogry4_aM6RLR9-0pkO0VzfOtAoQs6QXX79jHVu",
@@ -147,11 +202,9 @@ namespace WCFserver
                 Size = "XXL",
                 Ingredients = ingsFourChees
             };
-
             context.ReadyMeals.Add(PizzaFourChees);
 
             Ingredients[] ingsDiablo = { ingKopchena, ingAsiago, ingPaperoni };
-
             var PizzaDiablo = new ReadyMeals
             {
                 MealPicUrl = "http://images.pizza33.ua/products/product/yQfkJqZweoLn9omo68oz5BnaGzaIE0UJ.jpg",
