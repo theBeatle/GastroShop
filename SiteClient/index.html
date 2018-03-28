@@ -19,68 +19,78 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="Styles/StylesForMainWindow.css" rel="stylesheet" />
-
-    <style>
-
-        .block:active {
-            position: absolute;
-            top: 30%;
-            -webkit-transform: scale(2,3);
-            -webkit-transition-timing-function: ease-out;
-            -webkit-transition-duration: 200ms;
-        }
-
-    </style>
-
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">GastroShop</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <!--navigation bar-->
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+        <p class="Logo ">GastroShop</p>
+        <button class="navbar-toggler collapsed" type="button"
+                data-toggle="collapse"
+                data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault"
+                aria-expanded="true"
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dishes</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="#">Drinks</a>
-                        <a class="dropdown-item" href="#">Salads</a>
-                        <a class="dropdown-item" href="#">Pizza</a>
-                    </div>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Contacs Us<span class="sr-only"></span></a>
-                </li>
-            </ul>
+            <div style="width:30%">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link menuInHeader my-2 "
+                           style="margin-left:10px" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle menuInHeader my-2"
+                           href="http://example.com" id="dropdown01"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false">Dishes</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="#">Drinks</a>
+                            <a class="dropdown-item" href="#">Salads</a>
+                            <a class="dropdown-item" href="#">Pizza</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link menuInHeader my-2" href="#">Contacs Us<span class="sr-only"></span></a>
+                    </li>
+                </ul>
+            </div>
 
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Login" aria-label="Login">
-                <input class="form-control mr-sm-2" type="text" placeholder="Password" aria-label="Password">
-                <button class="btn btn-outline-success" type="submit">Sing In</button>
+            <div class="input-group my-3">
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="border-radius: 5px 0 0 5px; margin-left:40px">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button" style="border-radius: 0 5px 5px 0; margin-right:20px">Search</button>
+                </div>
+            </div>
+            <form>
+                <a id="cartLinkModal" href="#modalCart" data-toggle="modal" style=" text-decoration:none; display:none" class="btn btn-outline-success">
+                    <span class="fa fa-cart-plus" style="font-size:30px; display:inline-block; vertical-align:middle; position:relative;"></span>
+                    <span id="quantityInIconCart" class="badge" style="font-size:20px; display:inline-block; vertical-align:middle; position:relative;"></span>
+                </a>
+
+                <button class="btn btn-outline-warning btn-signIn"
+                        id="SignInButton"
+                        data-toggle="modal"
+                        data-target="#SignInWindow"
+                        style="width:100px;
+                        height:40px"
+                        type="button">
+                    <span><b class="sgnIn-btn sgnUp-btn">Sing In</b></span>
+                </button>
+
+                <button type="button" class="btn btn-outline-danger  btn-signUp" id="SignUpBtn"
+                        data-toggle="modal" data-target="#SignUpWindow" style="width:100px; height:40px">
+                    <span><b>Sing Up</b></span>
+                </button>
+                <button type="button" class="btn btn-outline-danger" style="width:150px; height:40px"
+                        data-toggle="modal" data-target="#Constructor">
+                    <span><b>Constructor food</b></span>
+                </button>
             </form>
         </div>
     </nav>
 
-
-     
-    <aside id="divForShowingComments" style="overflow-y:scroll;width:23%;float:right;height:90vh;margin-top:5%;margin-right:0.5%;background-image:url('Images/backgroundforaside3.jpg');background-size:cover" class="border border-info">
-
-        <p style="text-align:center; font-size:25px;font-family:Arial" class="text-dark">Comments</p>
-
-        <button id="btnShowAllCommetns" style="width:45%;height:5vh;margin-left:5%;color:white" class="btn btn-success">Show all</button>
-
-        <button id="btnAddComment" style="width:42%;height:5vh;float:right;margin-right:5%;color:white" class="btn btn-success">Add commetns</button>
-
-    </aside>
-
-
-
-    <script src="ScriptsForBlogs.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../../../assets/js/vendor/popper.min.js"></script>
