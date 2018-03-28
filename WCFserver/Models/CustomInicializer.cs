@@ -14,8 +14,7 @@ namespace WCFserver
 
             var ingCheder = new Ingredients
             {
-                ProductsType
-                
+               
                 Name = "Cheder",
                 Description = "tasty",
                 PriceForItem = 67.78,
