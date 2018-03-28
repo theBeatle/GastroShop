@@ -22,7 +22,7 @@ namespace WCFserver
                 UnitsOfMeasurements = unitsOFMeasurement
             };
 
-          
+
 
             var ingChehel = new Ingredients
             {
@@ -86,7 +86,7 @@ namespace WCFserver
 
             Ingredients[] ingsFourChees = { ingCheder, ingPaperoni, ingChehel };
 
-            context.ReadyMeals.Add(new ReadyMeals
+            var PizzaFourChees = new ReadyMeals
             {
                 MealPicUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwaKXTIRx1VRogry4_aM6RLR9-0pkO0VzfOtAoQs6QXX79jHVu",
                 Name = "PizzaFourChees",
@@ -94,11 +94,13 @@ namespace WCFserver
                 Raiting = 5.6,
                 Size = "XXL",
                 Ingredients = ingsFourChees
-            });
+            };
+
+            context.ReadyMeals.Add(PizzaFourChees);
 
             Ingredients[] ingsDiablo = { ingKopchena, ingAsiago, ingPaperoni };
 
-            context.ReadyMeals.Add(new ReadyMeals
+            var PizzaDiablo = new ReadyMeals
             {
                 MealPicUrl = "http://images.pizza33.ua/products/product/yQfkJqZweoLn9omo68oz5BnaGzaIE0UJ.jpg",
                 Name = "PizzaDiablo",
@@ -106,11 +108,12 @@ namespace WCFserver
                 Raiting = 7.6,
                 Size = "XXL",
                 Ingredients = ingsDiablo
-            });
+            };
+            context.ReadyMeals.Add(PizzaDiablo);
 
             Ingredients[] ingsNapoletana = { ingAsiago, ingAsadero };
 
-            context.ReadyMeals.Add(new ReadyMeals
+            var PizzaNapoletana = new ReadyMeals
             {
                 MealPicUrl = "http://express-pizza.vn.ua/uploads/1/4/145b8f8eb6397682902b47ea3e5eaa2e.png",
                 Name = "PizzaNapoletana",
@@ -118,7 +121,35 @@ namespace WCFserver
                 Raiting = 3.6,
                 Size = "XXL",
                 Ingredients = ingsNapoletana
-            });
+            };
+            context.ReadyMeals.Add(PizzaNapoletana);
+
+            var catBlogsRevie = new BlogsCategory { Name = "Revie", Description = "Revies of food" };
+            var catBlogsNews = new BlogsCategory { Name = "News", Description = "Future new meals" };
+
+            var accOleg = new Account
+            {
+                FirstName = "Oleg",
+                Surname = "Knyaz",
+                Login = "Oleg_Knyaz",
+                Password = "steppassword",
+                Email = "oleg_knyaz@gmail.com",
+                Address = "Naberegna 58",
+                Carma = 12,
+                PhoneNumber = "+18076253745",
+            };
+
+            context.Blogs.Add(new Blogs
+            {
+                Account = accOleg,
+                Title = "Revie pizza Diablo",
+                Text = "London is a capital of Great Britain",
+                DateTime = new System.DateTime(12, 10, 2017),
+                BlogsCategory = catBlogsRevie,
+                Raiting = 7.8,
+                ReadyMeals = PizzaDiablo
+                });
+
 
             context.SaveChanges();
         }

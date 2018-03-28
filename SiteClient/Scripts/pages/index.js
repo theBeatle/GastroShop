@@ -78,23 +78,23 @@ function GetAllCategories() {
 }
 
 function GetMealsForConstructor() {
-    return new Promise(function (resolve, reject) {
-        $.ajax({
-            url: "http://10.7.180.110/GastroService/Service1.svc/TestEatConstGet",
-            //url: "http://localhost:7212/Service1.svc/TestEatConstGet",
-            type: "POST",
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                console.log(data);
-                resolve(data);
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                console.log(textStatus);
-                reject(textStatus);
-            }
-        });
-    });
+	return new Promise(function (resolve, reject) {
+		$.ajax({
+			url: "http://10.7.180.110/GastroService/Service1.svc/TestEatConstGet",
+			//url: "http://localhost:7212/Service1.svc/TestEatConstGet",
+			type: "POST",
+			dataType: "json",
+			contentType: "application/json; charset=utf-8",
+			success: function (data) {
+				console.log(data);
+				resolve(data);
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				console.log(textStatus);
+				reject(textStatus);
+			}
+		});
+	});
 }
 
 function GetMeals(page, elemsPerPage) {
