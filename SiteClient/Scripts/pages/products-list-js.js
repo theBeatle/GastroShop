@@ -116,7 +116,10 @@ function AddNewProductToBasket(obj)
 {
     var o = $(obj).parent().parent();
     var n = $("#products-list .card").index($(obj).parent().parent());
-    alert(meals[n].Name + " added to basket");
+    var newobject = [meals[n].Name, meals[n].Price, ("1")];
+    mass.push(newobject);
+    $('#quantityInIconCart').html(mass.length);
+    $("#cartLinkModal").css("display", "inline-block");
 }
 function loadMainProductList() {
 
