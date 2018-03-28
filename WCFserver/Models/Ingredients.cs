@@ -16,7 +16,7 @@ namespace WCFserver
         [DataMember]
         public double PriceForItem { get; set; }
         public virtual Category Category{get;set;}
-        public virtual ProductsType ProductsType { get; set; }
+        public virtual ICollection<ProductsType> ProductTypes { get; set; }
 
     }
 }
