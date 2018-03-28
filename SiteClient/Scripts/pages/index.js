@@ -80,7 +80,7 @@ function GetAllCategories() {
 function GetMealsForConstructor() {
 	return new Promise(function (resolve, reject) {
 		$.ajax({
-			url: "http://10.7.180.110/GastroService/Service1.svc/TestEatConstGet",
+            url: "http://10.7.180.110/GastroService/Service1.svc/GetIngredientsForConstructor",
 			//url: "http://localhost:7212/Service1.svc/TestEatConstGet",
 			type: "POST",
 			dataType: "json",
